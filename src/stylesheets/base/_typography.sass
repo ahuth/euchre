@@ -1,0 +1,36 @@
++font-face(OpenSans, '../fonts/OpenSans-Regular-webfont')
++font-face(OpenSans, '../fonts/OpenSans-Bold-webfont', bold)
+
+body
+  +font-smoothing // <- _mixins.scss
+  color: $vigetNavy
+  font-family: OpenSans, sans-serif
+  font-size: 1.25em
+  padding: 5%
+  text-align: center
+
+small
+  font-size: 0.75em
+  margin-top: 0.25em
+
+code
+  background-color: $light-grey
+  border-radius: 3px
+  display: inline-block
+  font-family: monospace
+  font-size: 1.25em
+  padding: 0.25em 0.5em
+
+a
+  color: $red
+  text-decoration: none
+  opacity: 1
+  // autoprefixer will prefix this for you!
+  transition: all .2s ease-in-out
+
+  &:hover
+    opacity: 0.75
+
+.screenreader
+  clip: rect(1px, 1px, 1px, 1px)
+  position: absolute !important
