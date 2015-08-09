@@ -1,6 +1,7 @@
 {
   "name": "euchre",
   "version": "0.1.0",
+  "license": "MIT",
   "description": "https://en.wikipedia.org/wiki/Euchre",
   "engines": {
     "node": "0.12.7",
