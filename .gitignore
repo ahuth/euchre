@@ -1,6 +1,8 @@
 .DS_Store
 temp/
 build/
+public/
+src/stylesheets/generated/
 
 # Logs
 logs
