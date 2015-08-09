@@ -1,14 +1,14 @@
 {
-  "name": "gulp-starter",
-  "version": "2.0.0",
-  "description": "Gulp starter with common tasks and scenarios",
+  "name": "euchre",
+  "version": "0.1.0",
+  "description": "https://en.wikipedia.org/wiki/Euchre",
   "engines": {
-    "node": "0.12.2",
-    "npm": "2.7.4"
+    "node": "0.12.7",
+    "npm": "2.12.1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/greypants/gulp-starter.git"
+    "url": "git://github.com/ahuth/euchre.git"
   },
   "scripts": {
     "build": "gulp build:production",
