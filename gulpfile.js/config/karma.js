@@ -6,7 +6,7 @@ var files = './spec/*'
 
 var karmaConfig = {
   frameworks: ['jasmine'],
-  files: [  files ],
+  files: [files],
   preprocessors: {},
   webpack: webpackConfig,
   singleRun: process.env.TRAVIS_CI === 'true',
