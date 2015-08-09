@@ -5,7 +5,7 @@ var webpackConfig = require('./webpack')('test')
 var files = config.sourceDirectory + '/javascripts/**/__tests__/*'
 
 var karmaConfig = {
-  frameworks: ['mocha', 'sinon-chai'],
+  frameworks: ['jasmine'],
   files: [  files ],
   preprocessors: {},
   webpack: webpackConfig,
