@@ -2,7 +2,7 @@ var config = require('./')
 var karmaWebpack = require('karma-webpack')
 var webpackConfig = require('./webpack')('test')
 
-var files = './spec/*'
+var files = config.testDirectory + '/*'
 
 var karmaConfig = {
   frameworks: ['jasmine'],
