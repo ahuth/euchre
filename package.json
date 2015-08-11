@@ -19,7 +19,9 @@
     "watch": "gulp"
   },
   "dependencies": {
-    "react": "^0.13.3"
+    "object-assign": "^3.0.0",
+    "react": "^0.13.3",
+    "redux": "1.0.0-alpha"
   },
   "devDependencies": {
     "babel-core": "^5.8.3",
