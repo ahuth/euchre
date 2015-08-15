@@ -31,7 +31,8 @@ module.exports = function(env) {
   if(env !== 'test') {
     // Karma doesn't need entry points or output settings
     webpackConfig.entry= {
-      index: [ './index.js' ]
+      index: [ './index.js' ],
+      shared: ['react', 'redux', 'object-assign']
     }
 
     webpackConfig.output= {
