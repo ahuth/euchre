@@ -8,7 +8,7 @@ gulp.task('webpack:development', function(callback) {
   var built = false
 
   if(global.watch) {
-    webpack(config).watch(200, function(err, stats) {
+    webpack(config).watch({poll: true}, function(err, stats) {
       logger(err, stats)
       browserSync.reload()
       // On the initial compile, let gulp know the task is done
