@@ -1,11 +1,10 @@
 "use strict";
 
 var React = require("react");
-var Hello = require("./hello");
 
 var Index = React.createClass({
   render: function () {
-    return <Hello />;
+    return <span>hello world</span>;
   }
 });
 
