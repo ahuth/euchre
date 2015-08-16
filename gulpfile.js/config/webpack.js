@@ -31,7 +31,8 @@ module.exports = function(env) {
   if(env !== 'test') {
     // Karma doesn't need entry points or output settings
     webpackConfig.entry= {
-      index: [ './index.js' ]
+      index: [ './index.js' ],
+      vendor: ['react', 'redux', 'object-assign']
     }
 
     webpackConfig.output= {
@@ -40,10 +41,10 @@ module.exports = function(env) {
       publicPath: publicPath
     }
 
-    // Factor out common dependencies into a shared.js
+    // Factor out 3rd party dependencies into a vendor.js
     webpackConfig.plugins.push(
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'shared',
+        name: 'vendor',
         filename: env === 'production' ? '[name]-[hash].js' : '[name].js',
       })
     )
