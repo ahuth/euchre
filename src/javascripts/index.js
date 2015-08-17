@@ -5,7 +5,7 @@ var Card = require("./components/card");
 
 var Index = React.createClass({
   render: function () {
-    return <Card id="AS" />;
+    return <Card card="ace" suit="spades" />;
   }
 });
 
