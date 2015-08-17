@@ -18,11 +18,17 @@ var Card = React.createClass({
 
   render: function () {
     return (
-      <div className="card">
+      <div className="card" style={styles.card}>
         <svg viewBox="0 0 1 1" dangerouslySetInnerHTML={this.dangerouslyRenderSvgSprite()}></svg>
       </div>
     );
   }
 });
+
+var styles = {
+  card: {
+    width: 180
+  }
+};
 
 module.exports = Card;
