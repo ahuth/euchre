@@ -1,10 +1,11 @@
 "use strict";
 
 var React = require("react");
+var Card = require("./components/card");
 
 var Index = React.createClass({
   render: function () {
-    return <span>hello world</span>;
+    return <Card id="AS" />;
   }
 });
 
