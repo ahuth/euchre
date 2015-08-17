@@ -1,11 +1,26 @@
 "use strict";
 
 var React = require("react");
-var Card = require("./components/card");
+var Hand = require("./components/hand");
 
 var Index = React.createClass({
+  getInitialState: function () {
+    return {cards: []};
+  },
+
+  drawCard: function () {
+    this.setState({
+      cards: this.state.cards.concat([{face: "ace", suit: "spades"}])
+    });
+  },
+
   render: function () {
-    return <Card face="ace" suit="spades" />;
+    return (
+      <div>
+        <button onClick={this.drawCard}>Draw!</button>
+        <Hand cards={this.state.cards} />
+      </div>
+    );
   }
 });
 
