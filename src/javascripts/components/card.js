@@ -12,14 +12,14 @@ var Card = React.createClass({
     return `${face}${suit}`;
   },
 
-  renderSvgSprite: function () {
+  dangerouslyRenderSvgSprite: function () {
     return {__html: `<use xlink:href='images/spritesheets/sprites.svg#${this.getCardId()}' />`};
   },
 
   render: function () {
     return (
       <div className="card">
-        <svg viewBox="0 0 1 1" dangerouslySetInnerHTML={this.renderSvgSprite()}></svg>
+        <svg viewBox="0 0 1 1" dangerouslySetInnerHTML={this.dangerouslyRenderSvgSprite()}></svg>
       </div>
     );
   }
