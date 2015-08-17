@@ -19,7 +19,7 @@ describe("Card", function () {
     expect(spritePath).toBe("images/spritesheets/sprites.svg#6C");
   });
 
-  it("uses the right sprite for the ace of diamons", function () {
+  it("uses the right sprite for the ace of diamonds", function () {
     var component = TestUtils.renderIntoDocument(<Card face="ace" suit="diamonds" />);
     var importedSprite = component.getDOMNode().querySelector("use");
     const spritePath = importedSprite.attributes["xlink:href"].value;
