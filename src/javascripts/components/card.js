@@ -19,7 +19,7 @@ var Card = React.createClass({
   render: function () {
     return (
       <div className="card" style={styles.card}>
-        <svg viewBox="0 0 1 1" dangerouslySetInnerHTML={this.dangerouslyRenderSvgSprite()}></svg>
+        <svg viewBox="0 0 167.0869141 242.6669922" dangerouslySetInnerHTML={this.dangerouslyRenderSvgSprite()}></svg>
       </div>
     );
   }
@@ -27,7 +27,8 @@ var Card = React.createClass({
 
 var styles = {
   card: {
-    width: 180
+    width: 167.0869141,
+    height: 242.6669922
   }
 };
 
