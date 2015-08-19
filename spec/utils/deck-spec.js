@@ -27,10 +27,9 @@ describe("Deck", function () {
     });
 
     it("returns true when there are no more cards", function () {
-      const cardsInDeck = deck.cards.length;
       expect(deck.cards.length).toBeGreaterThan(0);
       expect(deck.isEmpty()).toBe(false);
-      for(let n = 0; n < cardsInDeck; n++) {
+      for(let n = 0; n < 24; n++) {
         deck.draw();
       }
       expect(deck.cards.length).toBe(0);
