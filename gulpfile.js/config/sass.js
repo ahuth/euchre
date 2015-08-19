@@ -5,7 +5,7 @@ module.exports = {
   src: config.sourceAssets + "/stylesheets/**/*.{sass,scss}",
   dest: config.publicAssets + '/stylesheets',
   settings: {
-    indentedSyntax: true, // Enable .sass syntax!
+    indentedSyntax: false,
     imagePath: 'images' // Used by the image-url helper
   }
 }
