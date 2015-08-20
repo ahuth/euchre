@@ -7,6 +7,7 @@ var suitMappings = {clubs: "C", diamonds: "D", hearts: "H", spades: "S"};
 
 var Card = React.createClass({
   getCardId: function () {
+    if (this.props.face === "back") { return "back"; }
     const face = faceMappings[this.props.face];
     const suit = suitMappings[this.props.suit];
     return `${face}${suit}`;

@@ -32,4 +32,11 @@ describe("Card", function () {
     const spritePath = importedSprite.attributes["xlink:href"].value;
     expect(spritePath).toBe("images/spritesheets/sprites.svg#10S");
   });
+
+  it("uses the right sprite for the back of the card", function () {
+    var component = TestUtils.renderIntoDocument(<Card face="back" />);
+    var importedSprite = component.getDOMNode().querySelector("use");
+    const spritePath = importedSprite.attributes["xlink:href"].value;
+    expect(spritePath).toBe("images/spritesheets/sprites.svg#back");
+  });
 });
