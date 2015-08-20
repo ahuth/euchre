@@ -10,7 +10,7 @@ var Game = React.createClass({
 
   drawCard: function () {
     this.setState({
-      score: this.state.score + 1
+      score: this.state.score < 10 ? this.state.score + 1 : 0
     });
   },
 
