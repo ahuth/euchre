@@ -1,31 +1,24 @@
 "use strict";
 
 var React = require("react");
-var Hand = require("./hand");
-var Deck = require("../utils/deck");
+var Score = require("./score");
 
 var Game = React.createClass({
   getInitialState: function () {
-    return {cards: []};
-  },
-
-  componentWillMount: function () {
-    this.deck = new Deck();
+    return {score: 0};
   },
 
   drawCard: function () {
-    if (!this.deck.isEmpty()) {
-      this.setState({
-        cards: this.state.cards.concat([this.deck.draw()])
-      });
-    }
+    this.setState({
+      score: this.state.score + 1
+    });
   },
 
   render: function () {
     return (
       <div>
         <button onClick={this.drawCard}>Draw!</button>
-        <Hand cards={this.state.cards} />
+        <Score score={this.state.score} suit="hearts" />
       </div>
     );
   }
