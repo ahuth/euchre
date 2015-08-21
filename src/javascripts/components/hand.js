@@ -8,7 +8,11 @@ var Hand = React.createClass({
     return (
       <div className="hand" style={styles.hand}>
         {this.props.cards.map(function (card, index) {
-          return <Card key={index} face={card.face} suit={card.suit} />;
+          return (
+            <div style={styles.card} key={index}>
+              <Card face={card.face} suit={card.suit} />
+            </div>
+          );
         })}
       </div>
     );
@@ -19,6 +23,9 @@ var styles={
   hand: {
     display: "flex",
     flexWrap: "wrap"
+  },
+  card: {
+    marginRight: 8
   }
 };
 
