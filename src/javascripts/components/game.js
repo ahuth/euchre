@@ -23,7 +23,7 @@ var Game = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div className="game">
         <button onClick={this.drawCard}>Draw!</button>
         <Hand cards={this.state.cards} />
       </div>

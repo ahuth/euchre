@@ -25,7 +25,7 @@ var Score = React.createClass({
   renderLowScore: function () {
     var backStyles = backPositions[this.props.score];
     return (
-      <div style={styles.container}>
+      <div className="score" style={styles.container}>
         <div style={styles.card}>
           <Card face="six" suit={this.props.suit} />
         </div>
@@ -39,7 +39,7 @@ var Score = React.createClass({
   renderHighScore: function () {
     var sixStyles = sixPositions[this.props.score];
     return (
-      <div style={styles.container}>
+      <div className="score" style={styles.container}>
         <div style={styles.card}>
           <Card face="four" suit={this.props.suit} />
         </div>
