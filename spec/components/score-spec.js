@@ -68,7 +68,7 @@ describe("Score", function () {
       shallowRenderer.render(<Score score="1" suit="clubs" />);
       var component = shallowRenderer.getRenderOutput();
       var scoreCardStyles = component.props.children[1].props.style;
-      expect(scoreCardStyles).toEqual(jasmine.objectContaining({top: 0, left: 50}));
+      expect(scoreCardStyles).toEqual(jasmine.objectContaining({top: 10, left: 18, transform: "rotate(36deg)"}));
     });
 
     it("uncovers 2 suit symbols when the score is 2", function () {
@@ -82,7 +82,7 @@ describe("Score", function () {
       shallowRenderer.render(<Score score="3" suit="clubs" />);
       var component = shallowRenderer.getRenderOutput();
       var scoreCardStyles = component.props.children[1].props.style;
-      expect(scoreCardStyles).toEqual(jasmine.objectContaining({top: 50, left: 50}));
+      expect(scoreCardStyles).toEqual(jasmine.objectContaining({top: 62, left: 18, transform: "rotate(30deg)"}));
     });
 
     it("uncovers 4 suit symbols when the score is 4", function () {
@@ -110,7 +110,7 @@ describe("Score", function () {
       shallowRenderer.render(<Score score="7" suit="clubs" />);
       var component = shallowRenderer.getRenderOutput();
       var scoreCardStyles = component.props.children[1].props.style;
-      expect(scoreCardStyles).toEqual(jasmine.objectContaining({top: 0, left: 50}));
+      expect(scoreCardStyles).toEqual(jasmine.objectContaining({top: 18, left: 26, transform: "rotate(28deg)"}));
     });
 
     it("uncovers 2 suit symbols when the score is 8", function () {

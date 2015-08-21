@@ -6,16 +6,16 @@ var objectAssign = require('object-assign');
 
 var backPositions = {
   0: {top: 0, left: 0},
-  1: {top: 0, left: 50},
+  1: {top: 10, left: 18, transform: "rotate(36deg)"},
   2: {top: 50, left: 0},
-  3: {top: 50, left: 50},
+  3: {top: 62, left: 18, transform: "rotate(30deg)"},
   4: {top: 100, left: 0},
   5: {top: 100, left: 50}
 };
 
 var sixPositions = {
   6: {top: 0, left: 0},
-  7: {top: 0, left: 50},
+  7: {top: 18, left: 26, transform: "rotate(28deg)"},
   8: {top: 75, left: 0},
   9: {top: 75, left: 50},
   10: {top: 150, left: 0}
