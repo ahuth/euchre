@@ -16,7 +16,7 @@ var Game = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div className="game">
         <button onClick={this.drawCard}>Draw!</button>
         <Score score={this.state.score} suit="hearts" />
       </div>
