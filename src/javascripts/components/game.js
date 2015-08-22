@@ -1,24 +1,40 @@
 "use strict";
 
 var React = require("react");
-var Score = require("./score");
+var Pile = require("./pile");
+var Deck = require("../utils/deck");
 
 var Game = React.createClass({
   getInitialState: function () {
-    return {score: 0};
+    return {};
+  },
+
+  componentWillMount: function () {
+    this.deck = new Deck();
   },
 
   drawCard: function () {
-    this.setState({
-      score: this.state.score < 10 ? this.state.score + 1 : 0
-    });
+    if (!this.state.north) {
+      this.setState({north: this.deck.draw()});
+    } else if (!this.state.east) {
+      this.setState({east: this.deck.draw()});
+    } else if (!this.state.south) {
+      this.setState({south: this.deck.draw()});
+    } else if (!this.state.west) {
+      this.setState({west: this.deck.draw()});
+    }
   },
 
   render: function () {
     return (
       <div className="game">
         <button onClick={this.drawCard}>Draw!</button>
-        <Score score={this.state.score} suit="hearts" />
+        <Pile
+          north={this.state.north}
+          east={this.state.east}
+          south={this.state.south}
+          west={this.state.west}
+        />
       </div>
     );
   }
