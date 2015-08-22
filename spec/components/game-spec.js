@@ -11,8 +11,4 @@ describe("Game", function () {
   beforeEach(function () {
     component = TestUtils.renderIntoDocument(<Game />);
   });
-
-  it("renders a pile of cards", function () {
-    expect(TestUtils.scryRenderedComponentsWithType(component, Pile).length).toBe(1);
-  });
 });
