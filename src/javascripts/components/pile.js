@@ -28,7 +28,8 @@ var styles = {
   container: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    justifyContent: "space-between"
   },
   middle: {
     display: "flex",
