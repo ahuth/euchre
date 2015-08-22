@@ -1,40 +1,38 @@
 "use strict";
 
 var React = require("react");
-var Pile = require("./pile");
-var Deck = require("../utils/deck");
+var Hand = require("./hand");
+var { createStore, combineReducers } = require("redux");
+var reducers = require("../reducers");
+var actions = require("../actions");
+var app = combineReducers(reducers);
+var store = createStore(app);
 
 var Game = React.createClass({
   getInitialState: function () {
-    return {};
+    return store.getState();
   },
 
   componentWillMount: function () {
-    this.deck = new Deck();
+    store.unsubscribe = store.subscribe(this.onChange);
+    store.dispatch(actions.dealHands());
   },
 
-  drawCard: function () {
-    if (!this.state.north) {
-      this.setState({north: this.deck.draw()});
-    } else if (!this.state.east) {
-      this.setState({east: this.deck.draw()});
-    } else if (!this.state.south) {
-      this.setState({south: this.deck.draw()});
-    } else if (!this.state.west) {
-      this.setState({west: this.deck.draw()});
-    }
+  componentWillUnmount: function () {
+    store.unsubscribe();
+  },
+
+  onChange: function () {
+    this.setState(store.getState());
   },
 
   render: function () {
     return (
       <div className="game">
-        <button onClick={this.drawCard}>Draw!</button>
-        <Pile
-          north={this.state.north}
-          east={this.state.east}
-          south={this.state.south}
-          west={this.state.west}
-        />
+        <Hand cards={this.state.hands.north} />
+        <Hand cards={this.state.hands.east} />
+        <Hand cards={this.state.hands.south} />
+        <Hand cards={this.state.hands.west} />
       </div>
     );
   }

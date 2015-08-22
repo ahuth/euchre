@@ -2,7 +2,7 @@
 
 var React = require("react/addons");
 var Game = require("../../src/javascripts/components/game");
-var Pile = require("../../src/javascripts/components/pile");
+var Hand = require("../../src/javascripts/components/hand");
 var TestUtils = React.addons.TestUtils;
 
 describe("Game", function () {
@@ -12,7 +12,7 @@ describe("Game", function () {
     component = TestUtils.renderIntoDocument(<Game />);
   });
 
-  it("renders a pile of cards", function () {
-    expect(TestUtils.scryRenderedComponentsWithType(component, Pile).length).toBe(1);
+  it("deals four hands", function () {
+    expect(TestUtils.scryRenderedComponentsWithType(component, Hand).length).toBe(4);
   });
 });

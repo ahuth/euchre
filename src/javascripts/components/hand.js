@@ -25,7 +25,7 @@ var styles={
     flexWrap: "wrap"
   },
   card: {
-    marginRight: 8
+    marginRight: -40
   }
 };
 
