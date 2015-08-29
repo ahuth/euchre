@@ -28,14 +28,31 @@ var Game = React.createClass({
 
   render: function () {
     return (
-      <div className="game">
+      <div className="game" style={styles.container}>
         <Hand cards={this.state.hands.north} />
-        <Hand cards={this.state.hands.east} />
+        <div style={styles.middle}>
+          <Hand cards={this.state.hands.west} />
+          <Hand cards={this.state.hands.east} />
+        </div>
         <Hand cards={this.state.hands.south} />
-        <Hand cards={this.state.hands.west} />
       </div>
     );
   }
 });
+
+var styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
+  middle: {
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-between"
+  }
+};
 
 module.exports = Game;
