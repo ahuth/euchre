@@ -25,35 +25,35 @@ describe("Pile", function () {
   it("renders no cards if none are passed in", function () {
     shallowRenderer.render(<Pile />);
     var component = shallowRenderer.getRenderOutput();
-    expect(component.props.children[0]).toEqual(false);
-    expect(component.props.children[1].props.children[0]).toEqual(false);
-    expect(component.props.children[1].props.children[1]).toEqual(false);
-    expect(component.props.children[2]).toEqual(false);
+    expect(component.props.children[0]).toBeFalsy();
+    expect(component.props.children[1].props.children[0]).toBeFalsy();
+    expect(component.props.children[1].props.children[1]).toBeFalsy();
+    expect(component.props.children[2]).toBeFalsy();
   });
 
   it("renders one card if one is passed in", function () {
     shallowRenderer.render(<Pile north={hearts_10} />);
     var component = shallowRenderer.getRenderOutput();
     expect(component.props.children[0]).toEqual(<Card face="ten" suit="hearts" />);
-    expect(component.props.children[1].props.children[0]).toEqual(false);
-    expect(component.props.children[1].props.children[1]).toEqual(false);
-    expect(component.props.children[2]).toEqual(false);
+    expect(component.props.children[1].props.children[0]).toBeFalsy();
+    expect(component.props.children[1].props.children[1]).toBeFalsy();
+    expect(component.props.children[2]).toBeFalsy();
   });
 
   it("renders two cards if two are passed in", function () {
     shallowRenderer.render(<Pile north={spades_queen} east={hearts_ace} />);
     var component = shallowRenderer.getRenderOutput();
     expect(component.props.children[0]).toEqual(<Card face="queen" suit="spades" />);
-    expect(component.props.children[1].props.children[0]).toEqual(false);
+    expect(component.props.children[1].props.children[0]).toBeFalsy();
     expect(component.props.children[1].props.children[1]).toEqual(<Card face="ace" suit="hearts" />);
-    expect(component.props.children[2]).toEqual(false);
+    expect(component.props.children[2]).toBeFalsy();
   });
 
   it("renders three cards if three are passed in", function () {
     shallowRenderer.render(<Pile north={hearts_ace} east={hearts_10} south={diamonds_10} />);
     var component = shallowRenderer.getRenderOutput();
     expect(component.props.children[0]).toEqual(<Card face="ace" suit="hearts" />);
-    expect(component.props.children[1].props.children[0]).toEqual(false);
+    expect(component.props.children[1].props.children[0]).toBeFalsy();
     expect(component.props.children[1].props.children[1]).toEqual(<Card face="ten" suit="hearts" />);
     expect(component.props.children[2]).toEqual(<Card face="ten" suit="diamonds" />);
   });
