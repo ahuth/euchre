@@ -8,6 +8,7 @@ var Pile = React.createClass({
     if (card) {
       return <Card face={card.face} suit={card.suit} />;
     }
+    return false;
   },
 
   render: function () {
