@@ -13,7 +13,7 @@ var cards = [
 
 var Deck = function () {
   this.cards = shuffle(cards, {copy: true});
-}
+};
 
 Deck.prototype.isEmpty = function () {
   return this.cards.length === 0;

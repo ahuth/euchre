@@ -8,17 +8,18 @@ var Pile = React.createClass({
     if (card) {
       return <Card face={card.face} suit={card.suit} />;
     }
+    return false;
   },
 
   render: function () {
     return (
       <div className="pile" style={styles.container}>
-        <div>{this.renderCard(this.props.north)}</div>
+        {this.renderCard(this.props.north)}
         <div style={styles.middle}>
-          <div>{this.renderCard(this.props.west)}</div>
-          <div>{this.renderCard(this.props.east)}</div>
+          {this.renderCard(this.props.west)}
+          {this.renderCard(this.props.east)}
         </div>
-        <div>{this.renderCard(this.props.south)}</div>
+        {this.renderCard(this.props.south)}
       </div>
     );
   }
