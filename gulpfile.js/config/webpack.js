@@ -32,7 +32,7 @@ module.exports = function(env) {
     // Karma doesn't need entry points or output settings
     webpackConfig.entry= {
       index: [ './index.js' ],
-      vendor: ['react', 'redux', 'object-assign']
+      vendor: ['react', 'redux']
     }
 
     webpackConfig.output= {

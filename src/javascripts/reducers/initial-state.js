@@ -3,6 +3,7 @@
 const initialState = {
   phase: "",
   dealer: "",
+  action: "",
   scores: {
     north: 0,
     west: 0

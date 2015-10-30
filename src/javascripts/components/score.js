@@ -2,7 +2,6 @@
 
 var React = require("react");
 var Card = require("./card");
-var objectAssign = require('object-assign');
 
 var backPositions = {
   0: {top: 0, left: 0},
@@ -29,7 +28,7 @@ var Score = React.createClass({
         <div style={styles.card}>
           <Card face="six" suit={this.props.suit} />
         </div>
-        <div style={objectAssign({}, styles.card, backStyles)}>
+        <div style={Object.assign({}, styles.card, backStyles)}>
           <Card face="back" />
         </div>
       </div>
@@ -43,7 +42,7 @@ var Score = React.createClass({
         <div style={styles.card}>
           <Card face="four" suit={this.props.suit} />
         </div>
-        <div style={objectAssign({}, styles.card, sixStyles)}>
+        <div style={Object.assign({}, styles.card, sixStyles)}>
           <Card face="six" suit={this.props.suit} />
         </div>
       </div>

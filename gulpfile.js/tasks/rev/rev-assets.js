@@ -1,5 +1,4 @@
 var config = require('../../config');
-var iconFontConfig = require('../../config/iconFont');
 var gulp   = require('gulp');
 var rev    = require('gulp-rev');
 
