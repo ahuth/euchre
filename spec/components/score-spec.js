@@ -1,14 +1,14 @@
 "use strict";
 
-var React = require("react/addons");
+var React = require("react");
+var ReactTestUtils = require('react-addons-test-utils');
 var Score = require("../../src/javascripts/components/score");
-var TestUtils = React.addons.TestUtils;
 
 describe("Score", function () {
   var shallowRenderer;
 
   beforeEach(function () {
-    shallowRenderer = TestUtils.createRenderer();
+    shallowRenderer = ReactTestUtils.createRenderer();
   });
 
   it("renders cards with the correct suit", function () {

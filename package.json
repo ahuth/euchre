@@ -19,7 +19,8 @@
     "watch": "gulp"
   },
   "dependencies": {
-    "react": "^0.13.3",
+    "react": "^0.14.1",
+    "react-dom": "^0.14.1",
     "redux": "^1.0.1",
     "shuffle-array": "^0.1.0"
   },
@@ -58,6 +59,7 @@
     "karma-webpack": "^1.7.0",
     "morgan": "^1.6.1",
     "open": "0.0.5",
+    "react-addons-test-utils": "^0.14.1",
     "require-dir": "^0.3.0",
     "webpack": "^1.10.1"
   }

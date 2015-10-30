@@ -1,14 +1,14 @@
 "use strict";
 
-var React = require("react/addons");
+var React = require("react");
+var ReactTestUtils = require('react-addons-test-utils');
 var Hand = require("../../src/javascripts/components/hand");
-var TestUtils = React.addons.TestUtils;
 
 describe("Hand", function () {
   var shallowRenderer;
 
   beforeEach(function () {
-    shallowRenderer = TestUtils.createRenderer();
+    shallowRenderer = ReactTestUtils.createRenderer();
   });
 
   it("does not render anything if no cards are passed in", function () {
