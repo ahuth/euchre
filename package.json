@@ -21,7 +21,7 @@
   "dependencies": {
     "react": "^0.14.1",
     "react-dom": "^0.14.1",
-    "redux": "^1.0.1",
+    "redux": "^3.0.4",
     "shuffle-array": "^0.1.0"
   },
   "devDependencies": {
