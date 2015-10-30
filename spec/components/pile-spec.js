@@ -1,9 +1,9 @@
 "use strict";
 
-var React = require("react/addons");
+var React = require("react");
+var ReactTestUtils = require('react-addons-test-utils');
 var Pile = require("../../src/javascripts/components/pile");
 var Card = require("../../src/javascripts/components/card");
-var TestUtils = React.addons.TestUtils;
 
 describe("Pile", function () {
   var shallowRenderer;
@@ -13,7 +13,7 @@ describe("Pile", function () {
   var diamonds_10 = {face: "ten", suit: "diamonds"};
 
   beforeEach(function () {
-    shallowRenderer = TestUtils.createRenderer();
+    shallowRenderer = ReactTestUtils.createRenderer();
   });
 
   it("renders cards into the correct spot", function () {

@@ -1,18 +1,18 @@
 "use strict";
 
-var React = require("react/addons");
+var React = require("react");
+var ReactTestUtils = require('react-addons-test-utils');
 var Game = require("../../src/javascripts/components/game");
 var Hand = require("../../src/javascripts/components/hand");
-var TestUtils = React.addons.TestUtils;
 
 describe("Game", function () {
   var component;
 
   beforeEach(function () {
-    component = TestUtils.renderIntoDocument(<Game />);
+    component = ReactTestUtils.renderIntoDocument(<Game />);
   });
 
   it("deals four hands", function () {
-    expect(TestUtils.scryRenderedComponentsWithType(component, Hand).length).toBe(4);
+    expect(ReactTestUtils.scryRenderedComponentsWithType(component, Hand).length).toBe(4);
   });
 });
