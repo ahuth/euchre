@@ -4,8 +4,8 @@
   "license": "MIT",
   "description": "https://en.wikipedia.org/wiki/Euchre",
   "engines": {
-    "node": "0.12.7",
-    "npm": "2.12.1"
+    "node": "^5.0",
+    "npm": "^3.3"
   },
   "repository": {
     "type": "git",
