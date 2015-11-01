@@ -2,6 +2,7 @@
 
 var React = require("react");
 var Hand = require("./hand");
+var Card = require("./card");
 var { createStore, combineReducers } = require("redux");
 var reducers = require("../reducers");
 var actions = require("../actions");
@@ -26,15 +27,20 @@ var Game = React.createClass({
     this.setState(store.getState());
   },
 
+  handleCardClick: function (card) {
+    store.dispatch(actions.selectCard(card));
+  },
+
   render: function () {
     return (
       <div className="game" style={styles.container}>
-        <Hand cards={this.state.hands.north} />
+        <Hand cards={this.state.hands.north} cardClick={this.handleCardClick} />
         <div style={styles.middle}>
-          <Hand cards={this.state.hands.west} />
-          <Hand cards={this.state.hands.east} />
+          <Hand cards={this.state.hands.west} cardClick={this.handleCardClick} />
+          <Card face={this.state.played.face} suit={this.state.played.suit} />
+          <Hand cards={this.state.hands.east} cardClick={this.handleCardClick} />
         </div>
-        <Hand cards={this.state.hands.south} />
+        <Hand cards={this.state.hands.south} cardClick={this.handleCardClick} />
       </div>
     );
   }
