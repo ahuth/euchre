@@ -3,11 +3,8 @@
 var React = require("react");
 var Hand = require("./hand");
 var Card = require("./card");
-var { createStore, combineReducers } = require("redux");
-var reducers = require("../reducers");
 var actions = require("../actions");
-var app = combineReducers(reducers);
-var store = createStore(app);
+var store = require ("../store");
 
 var Game = React.createClass({
   getInitialState: function () {
