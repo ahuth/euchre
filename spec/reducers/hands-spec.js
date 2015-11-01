@@ -18,14 +18,14 @@ describe("hands", function () {
       north: [{ face: "ace", suit: "clubs" }, { face: "king", suit: "diamonds" }],
       south: [{ face: "ten", suit: "spades" }],
       east: [{ face: "queen", suit: "diamonds" }],
-      west: [{ face: "jack", suit: "hearts" }, { face: "jack", suit: "diamonds" }]
+      west: [{ face: "jack", suit: "hearts" }, { face: "ace", suit: "diamonds" }]
     };
     var action = actions.selectCard({face: "ace", suit: "clubs"});
     expect(hands(currentState, action)).toEqual({
       north: [{ face: "king", suit: "diamonds" }],
       south: [{ face: "ten", suit: "spades" }],
       east: [{ face: "queen", suit: "diamonds" }],
-      west: [{ face: "jack", suit: "hearts" }, { face: "jack", suit: "diamonds" }]
+      west: [{ face: "jack", suit: "hearts" }, { face: "ace", suit: "diamonds" }]
     })
   });
 
