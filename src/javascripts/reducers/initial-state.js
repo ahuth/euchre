@@ -19,10 +19,8 @@ const initialState = {
     west: []
   },
   played: {
-    north: {},
-    south: {},
-    east: {},
-    west: {}
+    face: "",
+    suit: ""
   }
 };
 
