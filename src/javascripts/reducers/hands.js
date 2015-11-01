@@ -7,6 +7,8 @@ function hands(state = initialState.hands, action) {
   switch (action.type) {
     case "DEAL_HANDS":
       return dealHands();
+    case "SELECT_CARD":
+      return removeCard(state, action.card);
     default:
       return state;
   }
@@ -19,6 +21,18 @@ function dealHands() {
     south: dealFive(deck),
     east: dealFive(deck),
     west: dealFive(deck)
+  };
+}
+
+function removeCard(state, card) {
+  var notCard = function (item) {
+    return !(item.face === card.face && item.suit === card.suit);
+  };
+  return {
+    north: state.north.filter(notCard),
+    south: state.south.filter(notCard),
+    east: state.east.filter(notCard),
+    west: state.west.filter(notCard)
   };
 }
 
