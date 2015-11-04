@@ -22,7 +22,7 @@ describe("Hand", function () {
       shallowRenderer.render(<Hand cards={[{face: "jack", suit: "hearts"}]} />);
       var component = shallowRenderer.getRenderOutput();
       expect(component.props.children.length).toBe(1);
-      expect(component.props.children[0].props.children.props).toEqual({face: "jack", suit: "hearts"});
+      expect(component.props.children[0].props.children.props).toEqual(jasmine.objectContaining({face: "jack", suit: "hearts"}));
     });
 
     it("renders many cards if many are passed in", function () {
@@ -33,9 +33,9 @@ describe("Hand", function () {
       ]} />);
       var component = shallowRenderer.getRenderOutput();
       expect(component.props.children.length).toBe(3);
-      expect(component.props.children[0].props.children.props).toEqual({face: "jack", suit: "hearts"});
-      expect(component.props.children[1].props.children.props).toEqual({face: "four", suit: "clubs"});
-      expect(component.props.children[2].props.children.props).toEqual({face: "king", suit: "diamonds"});
+      expect(component.props.children[0].props.children.props).toEqual(jasmine.objectContaining({face: "jack", suit: "hearts"}));
+      expect(component.props.children[1].props.children.props).toEqual(jasmine.objectContaining({face: "four", suit: "clubs"}));
+      expect(component.props.children[2].props.children.props).toEqual(jasmine.objectContaining({face: "king", suit: "diamonds"}));
     });
   });
 
