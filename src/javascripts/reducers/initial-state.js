@@ -4,6 +4,7 @@ const initialState = {
   phase: "",
   dealer: "",
   action: "",
+  upCard: undefined,
   scores: {
     north: 0,
     west: 0
@@ -19,8 +20,10 @@ const initialState = {
     west: []
   },
   played: {
-    face: "",
-    suit: ""
+    north: undefined,
+    south: undefined,
+    east: undefined,
+    west: undefined
   }
 };
 
