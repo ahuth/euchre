@@ -57,8 +57,8 @@ describe("Card", function () {
       expect(component.props.style.transformOrigin).not.toBeDefined();
     });
 
-    it("can be horizontally orientated", function () {
-      shallowRenderer.render(<Card face="queen" suit="hearts" orientation="horizontal" />);
+    it("can be orientated towards the east player", function () {
+      shallowRenderer.render(<Card face="queen" suit="hearts" orientation="east" />);
       var component = shallowRenderer.getRenderOutput();
       expect(component.props.style.transform).toBe("rotate(90deg)");
       expect(component.props.style.transformOrigin).toBe("72% 48%");

@@ -18,7 +18,7 @@ var Card = React.createClass({
   },
 
   getStyles: function () {
-    var rotateStyles = this.props.orientation === "horizontal" ? styles.rotated : {};
+    var rotateStyles = this.props.orientation === "east" ? styles.rotated : {};
     return Object.assign({}, styles.card, rotateStyles);
   },
 
