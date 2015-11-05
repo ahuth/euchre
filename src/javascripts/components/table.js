@@ -15,7 +15,7 @@ var Table = React.createClass({
 
   render: function () {
     return (
-      <div className="table" style={styles.table}>
+      <div className="table">
         <div style={styles.row}>
           <div style={styles.side}><Score score={this.props.scores.west} suit="spades" /></div>
           <div style={styles.middle}><Hand cards={this.props.hands.north} cardClick={this.createClickHandler("north")} /></div>
@@ -45,7 +45,6 @@ var Table = React.createClass({
 });
 
 var styles = {
-  table: {},
   row: {
     display: "flex"
   },
