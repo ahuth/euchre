@@ -4,13 +4,25 @@ var React = require("react");
 var Card = require("./card");
 
 var Hand = React.createClass({
+  isRotated: function () {
+    return this.props.orientation === "east";
+  },
+
+  getHandStyles: function () {
+    return this.isRotated() ? styles.handRotated : styles.hand;
+  },
+
+  getCardStyles: function () {
+    return this.isRotated() ? styles.cardRotated : styles.card;
+  },
+
   render: function () {
     return (
-      <div className="hand" style={styles.hand}>
+      <div className="hand" style={this.getHandStyles()}>
         {this.props.cards.map(function (card, index) {
           return (
-            <div style={styles.card} key={index} onClick={() => this.props.cardClick(card)}>
-              <Card face={card.face} suit={card.suit} />
+            <div style={this.getCardStyles()} key={index} onClick={() => this.props.cardClick(card)}>
+              <Card face={card.face} suit={card.suit} orientation={this.props.orientation} />
             </div>
           );
         }, this)}
@@ -22,10 +34,16 @@ var Hand = React.createClass({
 var styles={
   hand: {
     display: "flex",
-    flexWrap: "wrap"
+  },
+  handRotated: {
+    display: "flex",
+    flexDirection: "column"
   },
   card: {
     marginRight: -40
+  },
+  cardRotated: {
+    marginBottom: -100
   }
 };
 

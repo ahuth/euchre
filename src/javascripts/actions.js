@@ -4,8 +4,8 @@ function dealHands() {
   return {type: "DEAL_HANDS"};
 }
 
-function selectCard(card) {
-  return {type: "SELECT_CARD", card: card};
+function selectCard(card, from) {
+  return {type: "SELECT_CARD", card: card, from: from};
 }
 
 module.exports = {

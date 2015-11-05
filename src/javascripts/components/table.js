@@ -3,41 +3,57 @@
 var React = require("react");
 var Hand = require("./hand");
 var Card = require("./card");
+var Score = require("./score");
+var Pile = require("./pile");
 
 var Table = React.createClass({
-  handleCardClick: function (card) {
-    if (this.props.cardClick) {
-      this.props.cardClick(card);
-    }
+  createClickHandler: function (from) {
+    return function (card) {
+      this.props.cardClick(card, from);
+    }.bind(this);
   },
 
   render: function () {
     return (
-      <div className="table" style={styles.container}>
-        <Hand cards={this.props.hands.north} cardClick={this.handleCardClick} />
-        <div style={styles.middle}>
-          <Hand cards={this.props.hands.west} cardClick={this.handleCardClick} />
-          <Card face={this.props.played.face} suit={this.props.played.suit} />
-          <Hand cards={this.props.hands.east} cardClick={this.handleCardClick} />
+      <div className="table" style={styles.table}>
+        <div style={styles.row}>
+          <div style={styles.side}><Score score={this.props.scores.west} suit="spades" /></div>
+          <div style={styles.middle}><Hand cards={this.props.hands.north} cardClick={this.createClickHandler("north")} /></div>
+          <div style={styles.side}></div>
         </div>
-        <Hand cards={this.props.hands.south} cardClick={this.handleCardClick} />
+        <div style={styles.row}>
+          <div style={styles.side}><Hand cards={this.props.hands.west} orientation="east" cardClick={this.createClickHandler("west")} /></div>
+          <div style={styles.middle}>
+            <Pile
+              north={this.props.played.north}
+              south={this.props.played.south}
+              east={this.props.played.east}
+              west={this.props.played.west}
+              middle={this.props.middle}
+            />
+          </div>
+          <div style={styles.side}><Hand cards={this.props.hands.east} orientation="east" cardClick={this.createClickHandler("east")} /></div>
+        </div>
+        <div style={styles.row}>
+          <div style={styles.side}></div>
+          <div style={styles.middle}><Hand cards={this.props.hands.south} cardClick={this.createClickHandler("south")} /></div>
+          <div style={styles.side}><Score score={this.props.scores.north} suit="hearts" /></div>
+        </div>
       </div>
     );
   }
 });
 
 var styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "space-between"
+  table: {},
+  row: {
+    display: "flex"
+  },
+  side: {
+    flex: 1
   },
   middle: {
-    display: "flex",
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-between"
+    flex: 3
   }
 };
 
