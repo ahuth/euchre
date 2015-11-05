@@ -4,13 +4,16 @@ var React = require("react");
 var Card = require("./card");
 
 var Hand = React.createClass({
+  isRotated: function () {
+    return this.props.orientation === "east";
+  },
+
   getHandStyles: function () {
-    var rotateStyles = this.props.orientation === "east" ? styles.handRotated : {};
-    return Object.assign({}, styles.hand, rotateStyles);
+    return this.isRotated() ? styles.handRotated : styles.hand;
   },
 
   getCardStyles: function () {
-    return this.props.orientation === "east" ? styles.cardRotated : styles.card;
+    return this.isRotated() ? styles.cardRotated : styles.card;
   },
 
   render: function () {
@@ -31,9 +34,9 @@ var Hand = React.createClass({
 var styles={
   hand: {
     display: "flex",
-    flexWrap: "wrap"
   },
   handRotated: {
+    display: "flex",
     flexDirection: "column"
   },
   card: {
