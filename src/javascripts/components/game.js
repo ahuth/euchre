@@ -23,8 +23,8 @@ var Game = React.createClass({
     this.setState(store.getState());
   },
 
-  handleCardClick: function (card) {
-    store.dispatch(actions.selectCard(card));
+  handleCardClick: function (card, from) {
+    store.dispatch(actions.selectCard(card, from));
   },
 
   render: function () {
@@ -33,6 +33,8 @@ var Game = React.createClass({
         <Table
           hands={this.state.hands}
           played={this.state.played}
+          scores={this.state.scores}
+          middle={this.state.upCard}
           cardClick={this.handleCardClick}
         />
       </div>

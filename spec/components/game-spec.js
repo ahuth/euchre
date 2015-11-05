@@ -19,13 +19,13 @@ describe("Game", function () {
     expect(ReactTestUtils.scryRenderedComponentsWithType(component, Table).length).toBe(1);
   });
 
-  it("deals five cards to each player and has a discard spot", function () {
-    expect(ReactTestUtils.scryRenderedComponentsWithType(component, Card).length).toBe(21);
+  it("deals five cards to each player, has four score cards, four discard spots, and a single card in the middle", function () {
+    expect(ReactTestUtils.scryRenderedComponentsWithType(component, Card).length).toBe(29);
   });
 
   it("dispatches the SELECT_CARD action when a card is clicked", function () {
     var selectCardSpy = spyOn(actions, "selectCard").and.callThrough();
-    var card = ReactTestUtils.scryRenderedComponentsWithType(component, Card)[0];
+    var card = ReactTestUtils.scryRenderedComponentsWithType(component, Card)[10];
     var node = ReactDOM.findDOMNode(card);
     ReactTestUtils.Simulate.click(node);
     expect(selectCardSpy).toHaveBeenCalled();
