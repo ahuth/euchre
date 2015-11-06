@@ -27,7 +27,7 @@ function dealHands() {
 function removeCard(state, card, from) {
   var output = {};
   output[from] = state[from].filter(function (item) {
-    return areEqual(card, item);
+    return !areEqual(card, item);
   });
   return output;
 }
@@ -39,7 +39,7 @@ function dealFive(deck) {
 }
 
 function areEqual(card, otherCard) {
-  return card.face !== otherCard.face || card.suit !== otherCard.suit;
+  return card.face === otherCard.face && card.suit === otherCard.suit;
 }
 
 module.exports = hands;
