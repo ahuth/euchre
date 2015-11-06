@@ -8,7 +8,7 @@ function hands(state = initialState.hands, action) {
     case "DEAL_HANDS":
       return dealHands();
     case "SELECT_CARD":
-      return removeCard(state, action.card);
+      return Object.assign({}, state, removeCard(state, action.card, action.from));
     default:
       return state;
   }
@@ -24,16 +24,12 @@ function dealHands() {
   };
 }
 
-function removeCard(state, card) {
-  var notCard = function (item) {
+function removeCard(state, card, from) {
+  var output = {};
+  output[from] = state[from].filter(function (item) {
     return !(item.face === card.face && item.suit === card.suit);
-  };
-  return {
-    north: state.north.filter(notCard),
-    south: state.south.filter(notCard),
-    east: state.east.filter(notCard),
-    west: state.west.filter(notCard)
-  };
+  });
+  return output;
 }
 
 function dealFive(deck) {
