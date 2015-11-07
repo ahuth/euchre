@@ -35,13 +35,13 @@ describe("Pile", function () {
   it("renders the East card", function () {
     var rows = component.props.children;
     var cell = rows[1].props.children[2];
-    expect(cell.props.children).toEqual(<Card face="ace" suit="clubs" orientation="east" />);
+    expect(cell.props.children).toEqual(<Card face="ace" suit="clubs" />);
   });
 
   it("renders the West card", function () {
     var rows = component.props.children;
     var cell = rows[1].props.children[0];
-    expect(cell.props.children).toEqual(<Card face="ace" suit="hearts" orientation="east" />);
+    expect(cell.props.children).toEqual(<Card face="ace" suit="hearts" />);
   });
 
   it("renders the middle card", function () {

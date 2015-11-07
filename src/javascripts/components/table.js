@@ -22,7 +22,7 @@ var Table = React.createClass({
           <div style={styles.side}></div>
         </div>
         <div style={styles.row}>
-          <div style={styles.side}><Hand cards={this.props.hands.west} orientation="east" cardClick={this.createClickHandler("west")} /></div>
+          <div style={styles.side}><Hand cards={this.props.hands.west} cardClick={this.createClickHandler("west")} /></div>
           <div style={styles.middle}>
             <Pile
               north={this.props.played.north}
@@ -32,7 +32,7 @@ var Table = React.createClass({
               middle={this.props.middle}
             />
           </div>
-          <div style={styles.side}><Hand cards={this.props.hands.east} orientation="east" cardClick={this.createClickHandler("east")} /></div>
+          <div style={styles.side}><Hand cards={this.props.hands.east} cardClick={this.createClickHandler("east")} /></div>
         </div>
         <div style={styles.row}>
           <div style={styles.side}></div>

@@ -41,20 +41,4 @@ describe("Hand", function () {
       expect(cards[2].props.children.props).toEqual(jasmine.objectContaining({face: "king", suit: "diamonds"}));
     });
   });
-
-  describe("orientation", function () {
-    it("is oriented towards the North player by default", function () {
-      shallowRenderer.render(<Hand cards={[{face: "jack", suit: "hearts"}]} />);
-      var component = shallowRenderer.getRenderOutput();
-      expect(component.props.style.flexDirection).not.toBeDefined();
-      expect(component.props.children[0].props.children.props.orientation).not.toBeDefined();
-    });
-
-    it("can be oriented towards the East player", function () {
-      shallowRenderer.render(<Hand cards={[{face: "jack", suit: "hearts"}]} orientation="east" />);
-      var component = shallowRenderer.getRenderOutput();
-      expect(component.props.style.flexDirection).toBe("column")
-      expect(component.props.children[0].props.children.props.orientation).toBe("east");
-    });
-  });
 });

@@ -42,26 +42,4 @@ describe("Card", function () {
       expect(spritePath).toBe("images/spritesheets/sprites.svg#back");
     });
   });
-
-  describe("orientation", function () {
-    var shallowRenderer;
-
-    beforeEach(function () {
-      shallowRenderer = ReactTestUtils.createRenderer();
-    });
-
-    it("is vertically orientated by default", function () {
-      shallowRenderer.render(<Card face="queen" suit="hearts" />);
-      var component = shallowRenderer.getRenderOutput();
-      expect(component.props.style.transform).not.toBeDefined();
-      expect(component.props.style.transformOrigin).not.toBeDefined();
-    });
-
-    it("can be orientated towards the east player", function () {
-      shallowRenderer.render(<Card face="queen" suit="hearts" orientation="east" />);
-      var component = shallowRenderer.getRenderOutput();
-      expect(component.props.style.transform).toBe("rotate(90deg)");
-      expect(component.props.style.transformOrigin).toBe("72% 48%");
-    });
-  });
 });
