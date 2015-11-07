@@ -13,9 +13,9 @@ var Pile = React.createClass({
           <div style={styles.cell}></div>
         </div>
         <div style={styles.row}>
-          <div style={styles.cell}><Card face={this.props.west.face} suit={this.props.west.suit} orientation="east"/></div>
+          <div style={styles.cell}><Card face={this.props.west.face} suit={this.props.west.suit} /></div>
           <div style={styles.cell}><Card face={this.props.middle.face} suit={this.props.middle.suit} /></div>
-          <div style={styles.cell}><Card face={this.props.east.face} suit={this.props.east.suit} orientation="east"/></div>
+          <div style={styles.cell}><Card face={this.props.east.face} suit={this.props.east.suit} /></div>
         </div>
         <div style={styles.row}>
           <div style={styles.cell}></div>

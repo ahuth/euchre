@@ -17,14 +17,9 @@ var Card = React.createClass({
     return {__html: `<use xlink:href='images/spritesheets/sprites.svg#${this.getCardId()}' />`};
   },
 
-  getStyles: function () {
-    var rotateStyles = this.props.orientation === "east" ? styles.rotated : {};
-    return Object.assign({}, styles.card, rotateStyles);
-  },
-
   render: function () {
     return (
-      <div className="card" style={this.getStyles()}>
+      <div className="card" style={styles.card}>
         <svg viewBox="0 0 167 242.6" dangerouslySetInnerHTML={this.dangerouslyRenderSvgSprite()}></svg>
       </div>
     );
@@ -33,12 +28,8 @@ var Card = React.createClass({
 
 var styles = {
   card: {
-    width: 100,
-    height: 145
-  },
-  rotated: {
-    transform: "rotate(90deg)",
-    transformOrigin: "72% 48%"
+    width: 90,
+    height: 130
   }
 };
 
