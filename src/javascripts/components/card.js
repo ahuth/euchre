@@ -28,8 +28,8 @@ var Card = React.createClass({
 
 var styles = {
   card: {
-    width: 100,
-    height: 145
+    width: 90,
+    height: 130
   }
 };
 
