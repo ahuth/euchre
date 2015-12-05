@@ -15,9 +15,7 @@ var Card = React.createClass({
   render: function () {
     const identifier = this.getCardId();
     const filename = identifier ? `images/${this.getCardId()}.svg` : ""
-    return (
-      <img src={filename} style={styles.card} />
-    );
+    return <img src={filename} style={styles.card} />;
   }
 });
 
