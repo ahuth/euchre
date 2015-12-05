@@ -2,7 +2,7 @@
 
 var React = require("react");
 
-var faceMappings = {four: 4, six: 6, nine: 9, ten: 10, jack: "j", queen: "q", king: "k", ace: "1", back: "back"};
+var faceMappings = {four: 4, six: 6, nine: 9, ten: 10, jack: "j", queen: "q", king: "k", ace: "1"};
 var suitMappings = {clubs: "c", diamonds: "d", hearts: "h", spades: "s"};
 
 var Card = React.createClass({
