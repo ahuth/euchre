@@ -46,5 +46,11 @@ describe("Card", function () {
     const path = component.props.src;
     expect(path).toBe("images/back.svg");
   });
+
+  it("does not have a src attribute if the card is not recognized", function () {
+    shallowRenderer.render(<Card face="ninja" suit="turtles" />);
+    var component = shallowRenderer.getRenderOutput();
+    const path = component.props.src;
+    expect(path).toBe("");
   });
 });
