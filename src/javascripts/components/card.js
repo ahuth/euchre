@@ -22,7 +22,9 @@ var Card = React.createClass({
 var styles = {
   card: {
     width: 90,
-    height: 130
+    height: 130,
+    border: "1px solid lightgrey",
+    borderRadius: "4px"
   }
 };
 
