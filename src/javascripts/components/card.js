@@ -2,8 +2,8 @@
 
 var React = require("react");
 
-var faceMappings = {four: 4, six: 6, nine: 9, ten: 10, jack: "J", queen: "Q", king: "K", ace: "A"};
-var suitMappings = {clubs: "C", diamonds: "D", hearts: "H", spades: "S"};
+var faceMappings = {four: 4, six: 6, nine: 9, ten: 10, jack: "j", queen: "q", king: "k", ace: "1"};
+var suitMappings = {clubs: "c", diamonds: "d", hearts: "h", spades: "s"};
 
 var Card = React.createClass({
   getCardId: function () {
@@ -13,15 +13,11 @@ var Card = React.createClass({
     return `${face}${suit}`;
   },
 
-  dangerouslyRenderSvgSprite: function () {
-    return {__html: `<use xlink:href='images/spritesheets/sprites.svg#${this.getCardId()}' />`};
-  },
-
   render: function () {
+    const identifier = this.getCardId();
+    const filename = identifier ? `images/${this.getCardId()}.svg` : ""
     return (
-      <div className="card" style={styles.card}>
-        <svg viewBox="0 0 167 242.6" dangerouslySetInnerHTML={this.dangerouslyRenderSvgSprite()}></svg>
-      </div>
+      <img src={filename} style={styles.card} />
     );
   }
 });
