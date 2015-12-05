@@ -25,6 +25,7 @@ var styles = {
   card: {
     width: 90,
     height: 130,
+    boxSizing: "border-box",
     border: "1px solid lightgrey",
     borderRadius: "4px"
   },
