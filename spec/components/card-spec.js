@@ -15,35 +15,35 @@ describe("Card", function () {
     shallowRenderer.render(<Card face="queen" suit="hearts" />);
     var component = shallowRenderer.getRenderOutput();
     const path = component.props.src;
-    expect(path).toBe("images/qh.svg");
+    expect(path).toBe("images/cards/qh.svg");
   });
 
   it("uses the right image for the six of clubs", function () {
     shallowRenderer.render(<Card face="six" suit="clubs" />);
     var component = shallowRenderer.getRenderOutput();
     const path = component.props.src;
-    expect(path).toBe("images/6c.svg");
+    expect(path).toBe("images/cards/6c.svg");
   });
 
   it("uses the right image for the ace of diamonds", function () {
     shallowRenderer.render(<Card face="ace" suit="diamonds" />);
     var component = shallowRenderer.getRenderOutput();
     const path = component.props.src;
-    expect(path).toBe("images/1d.svg");
+    expect(path).toBe("images/cards/1d.svg");
   });
 
   it("uses the right image for the ten of spades", function () {
     shallowRenderer.render(<Card face="ten" suit="spades" />);
     var component = shallowRenderer.getRenderOutput();
     const path = component.props.src;
-    expect(path).toBe("images/10s.svg");
+    expect(path).toBe("images/cards/10s.svg");
   });
 
   it("uses the right image for the back of the card", function () {
     shallowRenderer.render(<Card face="back" />);
     var component = shallowRenderer.getRenderOutput();
     const path = component.props.src;
-    expect(path).toBe("images/back.svg");
+    expect(path).toBe("images/cards/back.svg");
   });
 
   it("does not have a src attribute if the card is not recognized", function () {
