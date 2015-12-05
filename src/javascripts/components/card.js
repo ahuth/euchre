@@ -7,15 +7,16 @@ var suitMappings = {clubs: "c", diamonds: "d", hearts: "h", spades: "s"};
 
 var Card = React.createClass({
   getCardId: function () {
-    const face = faceMappings[this.props.face] || "";
-    const suit = suitMappings[this.props.suit] || "";
-    return `${face}${suit}`;
+    if (this.props.face === "back") { return "back"; }
+    const face = faceMappings[this.props.face];
+    const suit = suitMappings[this.props.suit];
+    return face && suit ? `${face}${suit}` : false;
   },
 
   render: function () {
     const identifier = this.getCardId();
     const filename = identifier ? `images/cards/${this.getCardId()}.svg` : ""
-    const cardStyles = filename ? styles.card : Object.assign({}, styles.card, styles.noCard);
+    const cardStyles = filename ? styles.card : styles.noCard;
     return <img src={filename} style={cardStyles} />;
   }
 });
@@ -28,6 +29,8 @@ var styles = {
     borderRadius: "4px"
   },
   noCard: {
+    width: 90,
+    height: 130,
     visibility: "hidden"
   }
 };
