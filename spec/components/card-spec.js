@@ -46,8 +46,14 @@ describe("Card", function () {
     expect(path).toBe("images/cards/back.svg");
   });
 
-  it("does show anything if the card is not recognized", function () {
+  it("does show anything if nothing about the card is recognized", function () {
     shallowRenderer.render(<Card face="ninja" suit="turtles" />);
+    var component = shallowRenderer.getRenderOutput();
+    expect(component.props.style).toEqual(jasmine.objectContaining({visibility: "hidden"}));
+  });
+
+  it("does show anything if part of the card is not recognized", function () {
+    shallowRenderer.render(<Card face="ninja" suit="spades" />);
     var component = shallowRenderer.getRenderOutput();
     expect(component.props.style).toEqual(jasmine.objectContaining({visibility: "hidden"}));
   });
