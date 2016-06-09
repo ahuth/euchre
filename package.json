@@ -12,11 +12,7 @@
     "url": "git://github.com/ahuth/euchre.git"
   },
   "scripts": {
-    "build": "gulp build:production",
-    "deploy": "gulp deploy",
-    "start": "gulp build:production && gulp server",
-    "test": "./node_modules/karma/bin/karma start --auto-watch",
-    "watch": "gulp"
+    "test": "./node_modules/karma/bin/karma start --auto-watch"
   },
   "dependencies": {
     "react": "^15.1.0",
