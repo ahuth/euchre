@@ -1,28 +1,18 @@
 "use strict";
 
+import PlayingCard from "../utils/playing-card";
 import React from "react";
 
-const faceMapping = {nine: "9", ten: "10", jack: "J", queen: "Q", king: "K", ace: "A"};
-const suitMapping = {spades: "♠", clubs: "♣", hearts: "♥", diamonds: "♦"};
-
-function isRed(suitCharacter) {
-  return [suitMapping.hearts, suitMapping.diamonds].indexOf(suitCharacter) >= 0;
-}
-
-function Card({face, suit}) {
-  const faceCharacter = faceMapping[face];
-  const suitCharacter = suitMapping[suit];
-  const suitColor = isRed(suitCharacter) ? "red" : "black";
+function Card({card}) {
   return (
     <div style={styles.card} className="card">
-      <span style={{color: suitColor}}>{faceCharacter}{suitCharacter}</span>
+      <span style={{color: card.color()}}>{card.toString()}</span>
     </div>
   );
 }
 
 Card.propTypes = {
-  face: React.PropTypes.oneOf(Object.keys(faceMapping)).isRequired,
-  suit: React.PropTypes.oneOf(Object.keys(suitMapping)).isRequired
+  card: React.PropTypes.instanceOf(PlayingCard).isRequired
 };
 
 var styles = {

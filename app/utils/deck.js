@@ -1,5 +1,6 @@
 "use strict";
 
+import PlayingCard from "./playing-card";
 import shuffle from "shuffle-array";
 
 var cards = [
@@ -11,12 +12,14 @@ var cards = [
   {face: "ace", suit: "hearts"}, {face: "ace", suit: "clubs"}, {face: "ace", suit: "diamonds"}, {face: "ace", suit: "spades"}
 ];
 
-var Deck = function () {
-  this.cards = shuffle(cards, {copy: true});
+function Deck() {
+  this.cards = shuffle(cards, {copy: true}).map(function (card) {
+    return new PlayingCard(card);
+  });
 };
 
 Deck.prototype.draw = function (num = 1) {
-  var cards = Array(num).fill().map(() => {
+  var cards = times(num).map(() => {
     return this.cards.pop();
   });
   return compact(cards);
@@ -26,6 +29,10 @@ function compact(array) {
   return array.filter(function (item) {
     return item;
   });
+}
+
+function times(num) {
+  return Array(num).fill();
 }
 
 export default Deck;
