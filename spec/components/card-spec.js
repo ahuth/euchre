@@ -15,6 +15,12 @@ describe("<Card />", function () {
     it("has the right text", function () {
       expect(component.text()).toBe("9♠")
     });
+
+    it("has the right color", function () {
+      expect(component.find("span").prop("style")).toEqual(jasmine.objectContaining({
+        color: "black"
+      }));
+    });
   });
 
   describe("the 10 if clubs", function () {
@@ -24,6 +30,12 @@ describe("<Card />", function () {
 
     it("has the right text", function () {
       expect(component.text()).toBe("10♣")
+    });
+
+    it("has the right color", function () {
+      expect(component.find("span").prop("style")).toEqual(jasmine.objectContaining({
+        color: "black"
+      }));
     });
   });
 
@@ -35,6 +47,12 @@ describe("<Card />", function () {
     it("has the right text", function () {
       expect(component.text()).toBe("J♥")
     });
+
+    it("has the right color", function () {
+      expect(component.find("span").prop("style")).toEqual(jasmine.objectContaining({
+        color: "red"
+      }));
+    });
   });
 
   describe("the queen of diamonds", function () {
@@ -44,6 +62,12 @@ describe("<Card />", function () {
 
     it("has the right text", function () {
       expect(component.text()).toBe("Q♦")
+    });
+
+    it("has the right color", function () {
+      expect(component.find("span").prop("style")).toEqual(jasmine.objectContaining({
+        color: "red"
+      }));
     });
   });
 
@@ -55,6 +79,12 @@ describe("<Card />", function () {
     it("has the right text", function () {
       expect(component.text()).toBe("K♠")
     });
+
+    it("has the right color", function () {
+      expect(component.find("span").prop("style")).toEqual(jasmine.objectContaining({
+        color: "black"
+      }));
+    });
   });
 
   describe("the aces of hearts", function () {
@@ -64,6 +94,12 @@ describe("<Card />", function () {
 
     it("has the right text", function () {
       expect(component.text()).toBe("A♥")
+    });
+
+    it("has the right color", function () {
+      expect(component.find("span").prop("style")).toEqual(jasmine.objectContaining({
+        color: "red"
+      }));
     });
   });
 });

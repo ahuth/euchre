@@ -8,9 +8,10 @@ const suitMapping = {spades: "♠", clubs: "♣", hearts: "♥", diamonds: "♦"
 function Card({face, suit}) {
   const faceCharacter = faceMapping[face];
   const suitCharacter = suitMapping[suit];
+  const suitColor = [suitMapping.hearts, suitMapping.diamonds].indexOf(suitCharacter) >= 0 ? "red" : "black";
   return (
-    <div style={styles}>
-      <span>{faceCharacter}{suitCharacter}</span>
+    <div>
+      <span style={{color: suitColor}}>{faceCharacter}{suitCharacter}</span>
     </div>
   );
 }
