@@ -14,7 +14,7 @@ function Card({face, suit}) {
   const suitCharacter = suitMapping[suit];
   const suitColor = isRed(suitCharacter) ? "red" : "black";
   return (
-    <div className="card">
+    <div style={styles.card} className="card">
       <span style={{color: suitColor}}>{faceCharacter}{suitCharacter}</span>
     </div>
   );
@@ -25,6 +25,14 @@ Card.propTypes = {
   suit: React.PropTypes.oneOf(Object.keys(suitMapping)).isRequired
 };
 
-var styles = {};
+var styles = {
+  card: {
+    height: 100,
+    width: 75,
+    border: "1px solid black",
+    borderRadius: 5,
+    fontSize: 22
+  }
+};
 
 export default Card;
