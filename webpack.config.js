@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./app/javascripts/index.js",
+  entry: "./app/index.js",
 
   output: {
     path: "./build/",
