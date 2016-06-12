@@ -14,7 +14,10 @@ function Hand({cards}) {
 }
 
 Hand.propTypes = {
-  cards: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
+  cards: React.PropTypes.arrayOf(React.PropTypes.shape({
+    face: React.PropTypes.string.isRequired,
+    suit: React.PropTypes.string.isRequired
+  })).isRequired
 };
 
 export default Hand;
