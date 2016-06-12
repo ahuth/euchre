@@ -20,7 +20,7 @@ PlayingCard.prototype.color = function () {
 };
 
 function isRed(suitCharacter) {
-  return [suitMapping.hearts, suitMapping.diamonds].indexOf(suitCharacter) >= 0;
+  return suitCharacter == suitMapping.hearts || suitCharacter == suitMapping.diamonds
 }
 
 export default PlayingCard;
