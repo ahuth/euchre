@@ -16,11 +16,8 @@ PlayingCard.prototype.toString = function () {
 
 PlayingCard.prototype.color = function () {
   const suitCharacter = suitMapping[this.suit];
-  return isRed(suitCharacter) ? "red" : "black";
+  const isRed = suitCharacter == suitMapping.hearts || suitCharacter == suitMapping.diamonds;
+  return isRed ? "red" : "black";
 };
-
-function isRed(suitCharacter) {
-  return suitCharacter == suitMapping.hearts || suitCharacter == suitMapping.diamonds
-}
 
 export default PlayingCard;
