@@ -19,7 +19,7 @@ describe("PlayingCard", function () {
     });
   });
 
-  describe("the 10 if clubs", function () {
+  describe("the 10 of clubs", function () {
     beforeEach(function () {
       playingCard = new PlayingCard({face: "ten", suit: "clubs"});
     });
