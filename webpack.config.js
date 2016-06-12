@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./src/javascripts/index.js",
+  entry: "./app/index.js",
 
   output: {
     path: "./build/",
@@ -18,7 +18,9 @@ module.exports = {
     }]
   },
 
-  resolve: {},
+  resolve: {
+    root: [__dirname + "/app"]
+  },
 
   plugins: []
 };
