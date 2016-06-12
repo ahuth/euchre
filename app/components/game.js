@@ -1,6 +1,6 @@
 "use strict";
 
-import Card from "./card";
+import Hand from "./hand";
 import React from "react";
 import store from "../store";
 import {dealHands} from "../actions";
@@ -26,9 +26,7 @@ var Game = React.createClass({
   render: function () {
     return (
       <div className="game">
-        {this.state.hands.south.map(function (card, index) {
-          return <Card face={card.face} suit={card.suit} key={index} />;
-        })}
+        <Hand cards={this.state.hands.south} />
       </div>
     );
   }
