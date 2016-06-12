@@ -2,12 +2,9 @@
 
 var React = require("react");
 var ReactDOM = require("react-dom");
-var Game = require("./components/game");
 
-var Index = React.createClass({
-  render: function () {
-    return <Game />;
-  }
-});
+function Index() {
+  return <div>Hello world</div>;
+}
 
 ReactDOM.render(<Index />, document.getElementById("content"));
