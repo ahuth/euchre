@@ -11,6 +11,7 @@ webpackConfig.plugins = [];
 // Specify external requires needed for Enzyme, so that webpack doesn't actually
 // try to load them.
 webpackConfig.externals = {
+  'cheerio': 'window',
   'react/addons': true,
   'react/lib/ExecutionEnvironment': true,
   'react/lib/ReactContext': true
