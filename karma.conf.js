@@ -8,6 +8,14 @@ var webpackConfig = require('./webpack.config.js');
 webpackConfig.entry = {};
 webpackConfig.plugins = [];
 
+// Specify external requires needed for Enzyme, so that webpack doesn't actually
+// try to load them.
+webpackConfig.externals = {
+  'react/addons': true,
+  'react/lib/ExecutionEnvironment': true,
+  'react/lib/ReactContext': true
+};
+
 module.exports = function(config) {
   config.set({
 
