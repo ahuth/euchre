@@ -19,7 +19,7 @@ var Deck = function () {
 };
 
 Deck.prototype.draw = function (num = 1) {
-  var cards = Array(num).fill().map(() => {
+  var cards = times(num).map(() => {
     return this.cards.pop();
   });
   return compact(cards);
@@ -29,6 +29,10 @@ function compact(array) {
   return array.filter(function (item) {
     return item;
   });
+}
+
+function times(num) {
+  return Array(num).fill();
 }
 
 export default Deck;
