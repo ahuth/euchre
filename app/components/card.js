@@ -5,10 +5,14 @@ import React from "react";
 const faceMapping = {nine: "9", ten: "10", jack: "J", queen: "Q", king: "K", ace: "A"};
 const suitMapping = {spades: "♠", clubs: "♣", hearts: "♥", diamonds: "♦"};
 
+function isRed(suitCharacter) {
+  return [suitMapping.hearts, suitMapping.diamonds].indexOf(suitCharacter) >= 0;
+}
+
 function Card({face, suit}) {
   const faceCharacter = faceMapping[face];
   const suitCharacter = suitMapping[suit];
-  const suitColor = [suitMapping.hearts, suitMapping.diamonds].indexOf(suitCharacter) >= 0 ? "red" : "black";
+  const suitColor = isRed(suitCharacter) ? "red" : "black";
   return (
     <div>
       <span style={{color: suitColor}}>{faceCharacter}{suitCharacter}</span>
