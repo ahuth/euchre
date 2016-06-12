@@ -7,11 +7,63 @@ import {shallow} from "enzyme";
 describe("<Card />", function () {
   var component;
 
-  beforeEach(function () {
-    component = shallow(<Card face="ace" suit="hearts" />);
+  describe("the nine of spades", function () {
+    beforeEach(function () {
+      component = shallow(<Card face="nine" suit="spades" />);
+    });
+
+    it("has the right text", function () {
+      expect(component.text()).toBe("9♠")
+    });
   });
 
-  it("says Hi", function () {
-    expect(component.text()).toBe("Hi");
+  describe("the 10 if clubs", function () {
+    beforeEach(function () {
+      component = shallow(<Card face="ten" suit="clubs" />);
+    });
+
+    it("has the right text", function () {
+      expect(component.text()).toBe("10♣")
+    });
+  });
+
+  describe("the jack of hearts", function () {
+    beforeEach(function () {
+      component = shallow(<Card face="jack" suit="hearts" />);
+    });
+
+    it("has the right text", function () {
+      expect(component.text()).toBe("J♥")
+    });
+  });
+
+  describe("the queen of diamonds", function () {
+    beforeEach(function () {
+      component = shallow(<Card face="queen" suit="diamonds" />);
+    });
+
+    it("has the right text", function () {
+      expect(component.text()).toBe("Q♦")
+    });
+  });
+
+  describe("the king of spades", function () {
+    beforeEach(function () {
+      component = shallow(<Card face="king" suit="spades" />);
+    });
+
+    it("has the right text", function () {
+      expect(component.text()).toBe("K♠")
+    });
+  });
+
+  describe("the aces of hearts", function () {
+    beforeEach(function () {
+      component = shallow(<Card face="ace" suit="hearts" />);
+    });
+
+    it("has the right text", function () {
+      expect(component.text()).toBe("A♥")
+    });
   });
 });
