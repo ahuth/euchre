@@ -3,6 +3,7 @@
 import Card from "./card";
 import React from "react";
 import store from "../store";
+import {dealHands} from "../actions";
 
 var Game = React.createClass({
   getInitialState: function () {
@@ -11,6 +12,7 @@ var Game = React.createClass({
 
   componentWillMount: function () {
     store.unsubscribe = store.subscribe(this.onChange);
+    store.dispatch(dealHands());
   },
 
   componentWillUnmount: function () {
@@ -22,7 +24,13 @@ var Game = React.createClass({
   },
 
   render: function () {
-    return <Card face="ten" suit="spades" />;
+    return (
+      <div className="game">
+        {this.state.hands.south.map(function (card, index) {
+          return <Card face={card.face} suit={card.suit} key={index} />;
+        })}
+      </div>
+    );
   }
 });
 

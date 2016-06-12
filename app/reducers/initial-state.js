@@ -1,5 +1,9 @@
 "use strict";
 
-const initialState = {};
+const initialState = {
+  hands: {
+    south: []
+  }
+};
 
 export default initialState;
