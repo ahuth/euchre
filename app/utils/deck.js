@@ -1,5 +1,6 @@
 "use strict";
 
+import PlayingCard from "./playing-card";
 import shuffle from "shuffle-array";
 
 var cards = [
@@ -12,7 +13,9 @@ var cards = [
 ];
 
 var Deck = function () {
-  this.cards = shuffle(cards, {copy: true});
+  this.cards = shuffle(cards, {copy: true}).map(function (card) {
+    return new PlayingCard(card);
+  });
 };
 
 Deck.prototype.draw = function (num = 1) {

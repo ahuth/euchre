@@ -1,6 +1,7 @@
 "use strict";
 
 import Deck from "utils/deck";
+import PlayingCard from "utils/playing-card";
 
 describe("Deck", function () {
   var deck;
@@ -10,11 +11,10 @@ describe("Deck", function () {
   });
 
   describe("#draw", function () {
-    it("returns an array of objects representing cards", function () {
+    it("returns an array of playing cards", function () {
       var cards = deck.draw(4);
       expect(cards.length).toBe(4);
-      expect(cards[0].face).toBeTruthy();
-      expect(cards[0].suit).toBeTruthy();
+      expect(cards[0] instanceof PlayingCard).toBe(true);
     });
 
     it("returns any number of cards", function () {
