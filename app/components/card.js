@@ -16,8 +16,8 @@ function Card({face, suit}) {
 }
 
 Card.propTypes = {
-  face: React.PropTypes.string.isRequired,
-  suit: React.PropTypes.string.isRequired
+  face: React.PropTypes.oneOf(Object.keys(faceMapping)).isRequired,
+  suit: React.PropTypes.oneOf(Object.keys(suitMapping)).isRequired
 };
 
 var styles = {};
