@@ -10,19 +10,29 @@ describe("Deck", function () {
   });
 
   describe("#draw", function () {
-    it("returns an object representing a card", function () {
-      var card = deck.draw();
-      expect(card.face).toBeTruthy();
-      expect(card.suit).toBeTruthy();
+    it("returns an array of objects representing cards", function () {
+      var cards = deck.draw(4);
+      expect(cards.length).toBe(4);
+      expect(cards[0].face).toBeTruthy();
+      expect(cards[0].suit).toBeTruthy();
     });
 
-    it("returns undefined when there are no more cards", function () {
-      expect(deck.cards.length).toBeGreaterThan(0);
-      for(let n = 0; n < 24; n++) {
-        deck.draw();
-      }
-      expect(deck.cards.length).toBe(0);
-      expect(deck.draw()).toBeUndefined();
+    it("returns any number of cards", function () {
+      var cards = deck.draw(7);
+      expect(cards.length).toBe(7);
+    });
+
+    it("returns one card by default", function () {
+      var cards = deck.draw();
+      expect(cards.length).toBe(1);
+    });
+
+    it("stops returning cards once they're gone", function () {
+      var numCards = deck.cards.length
+      expect(numCards).toBeGreaterThan(0);
+      deck.draw(numCards - 1);
+      var cards = deck.draw(3);
+      expect(cards.length).toBe(1);
     });
   });
 });

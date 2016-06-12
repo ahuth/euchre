@@ -16,14 +16,8 @@ function hands(state = initialState.hands, action) {
 function dealHands() {
   var deck = new Deck();
   return {
-    south: dealFive(deck)
+    south: deck.draw(5)
   };
-}
-
-function dealFive(deck) {
-  return [0, 1, 2, 3, 4].map(function () {
-    return deck.draw();
-  });
 }
 
 export default hands;

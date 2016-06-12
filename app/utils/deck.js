@@ -15,8 +15,17 @@ var Deck = function () {
   this.cards = shuffle(cards, {copy: true});
 };
 
-Deck.prototype.draw = function () {
-  return this.cards.pop();
+Deck.prototype.draw = function (num = 1) {
+  var cards = Array(num).fill().map(() => {
+    return this.cards.pop();
+  });
+  return compact(cards);
 };
+
+function compact(array) {
+  return array.filter(function (item) {
+    return item;
+  });
+}
 
 export default Deck;

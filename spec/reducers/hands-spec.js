@@ -8,6 +8,8 @@ describe("hands", function () {
     var action = dealHands();
     var output = hands(null, action);
     expect(output.south.length).toBe(5);
+    expect(output.south[0].face).toBeTruthy();
+    expect(output.south[0].suit).toBeTruthy();
   });
 
   it("returns the current state for any unknown action", function () {
