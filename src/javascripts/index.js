@@ -1,10 +1,11 @@
 "use strict";
 
-var React = require("react");
-var ReactDOM = require("react-dom");
+import Game from "./components/game";
+import React from "react";
+import ReactDOM from "react-dom";
 
 function Index() {
-  return <div>Hello world</div>;
+  return <Game />;
 }
 
 ReactDOM.render(<Index />, document.getElementById("content"));
