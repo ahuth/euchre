@@ -1,6 +1,7 @@
 "use strict";
 
 import Card from "components/card";
+import PlayingCard from "utils/playing-card";
 import React from "react";
 import {shallow} from "enzyme";
 
@@ -9,7 +10,9 @@ describe("<Card />", function () {
 
   describe("a spade", function () {
     beforeEach(function () {
-      component = shallow(<Card face="nine" suit="spades" />);
+      component = shallow(
+        <Card card={new PlayingCard({face: "nine", suit: "spades"})} />
+      );
     });
 
     it("has the right text", function () {
@@ -25,7 +28,9 @@ describe("<Card />", function () {
 
   describe("a club", function () {
     beforeEach(function () {
-      component = shallow(<Card face="ace" suit="clubs" />);
+      component = shallow(
+        <Card card={new PlayingCard({face: "ace", suit: "clubs"})} />
+      );
     });
 
     it("has the right text", function () {
@@ -41,7 +46,9 @@ describe("<Card />", function () {
 
   describe("a heart", function () {
     beforeEach(function () {
-      component = shallow(<Card face="jack" suit="hearts" />);
+      component = shallow(
+        <Card card={new PlayingCard({face: "jack", suit: "hearts"})} />
+      );
     });
 
     it("has the right text", function () {
@@ -57,7 +64,9 @@ describe("<Card />", function () {
 
   describe("a diamond", function () {
     beforeEach(function () {
-      component = shallow(<Card face="ten" suit="diamonds" />);
+      component = shallow(
+        <Card card={new PlayingCard({face: "ten", suit: "diamonds"})} />
+      );
     });
 
     it("has the right text", function () {

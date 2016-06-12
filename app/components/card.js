@@ -3,8 +3,7 @@
 import PlayingCard from "../utils/playing-card";
 import React from "react";
 
-function Card({face, suit}) {
-  const card = new PlayingCard({face: face, suit: suit});
+function Card({card}) {
   return (
     <div style={styles.card} className="card">
       <span style={{color: card.color()}}>{card.toString()}</span>
@@ -13,8 +12,7 @@ function Card({face, suit}) {
 }
 
 Card.propTypes = {
-  face: React.PropTypes.oneOf(["nine", "ten", "jack", "queen", "king", "ace"]).isRequired,
-  suit: React.PropTypes.oneOf(["spades", "clubs", "hearts", "diamonds"]).isRequired
+  card: React.PropTypes.instanceOf(PlayingCard).isRequired
 };
 
 var styles = {
