@@ -2,7 +2,8 @@ module.exports = {
   entry: "./src/javascripts/index.js",
 
   output: {
-    path: "./public/js",
+    path: "./build/",
+    publicPath: "/assets/",
     filename: "app.js"
   },
 

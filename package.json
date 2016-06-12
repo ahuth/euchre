@@ -12,6 +12,7 @@
     "url": "git://github.com/ahuth/euchre.git"
   },
   "scripts": {
+    "start": "webpack-dev-server",
     "test": "./node_modules/karma/bin/karma start --auto-watch"
   },
   "dependencies": {

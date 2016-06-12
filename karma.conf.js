@@ -72,6 +72,15 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+
+    // Webpack integration. Note that we use our "normal" webpack configuration,
+    // except without any entry points.
+    webpack: webpackConfig,
+
+    webpackMiddleware: {
+      noInfo: true
+    }
   })
 }
