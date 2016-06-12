@@ -14,7 +14,7 @@ function Card({face, suit}) {
   const suitCharacter = suitMapping[suit];
   const suitColor = isRed(suitCharacter) ? "red" : "black";
   return (
-    <div>
+    <div className="card">
       <span style={{color: suitColor}}>{faceCharacter}{suitCharacter}</span>
     </div>
   );
