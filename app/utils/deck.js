@@ -12,7 +12,7 @@ var cards = [
   {face: "ace", suit: "hearts"}, {face: "ace", suit: "clubs"}, {face: "ace", suit: "diamonds"}, {face: "ace", suit: "spades"}
 ];
 
-var Deck = function () {
+function Deck() {
   this.cards = shuffle(cards, {copy: true}).map(function (card) {
     return new PlayingCard(card);
   });
