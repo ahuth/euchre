@@ -87,7 +87,7 @@ describe("<Card />", function () {
     });
   });
 
-  describe("the aces of hearts", function () {
+  describe("the ace of hearts", function () {
     beforeEach(function () {
       component = shallow(<Card face="ace" suit="hearts" />);
     });
