@@ -1,10 +1,35 @@
 "use strict";
 
-import Card from "./card";
+import Hand from "./hand";
 import React from "react";
+import store from "../store";
+import {dealHands} from "../actions";
 
-function Game() {
-  return <Card face="ten" suit="spades" />;
-}
+var Game = React.createClass({
+  getInitialState: function () {
+    return store.getState();
+  },
+
+  componentWillMount: function () {
+    store.unsubscribe = store.subscribe(this.onChange);
+    store.dispatch(dealHands());
+  },
+
+  componentWillUnmount: function () {
+    store.unsubscribe();
+  },
+
+  onChange: function () {
+    this.setState(store.getState());
+  },
+
+  render: function () {
+    return (
+      <div className="game">
+        <Hand cards={this.state.hands.south} />
+      </div>
+    );
+  }
+});
 
 export default Game;

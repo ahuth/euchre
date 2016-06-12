@@ -1,7 +1,7 @@
 "use strict";
 
-var { createStore, combineReducers } = require("redux");
-var reducers = require("./reducers");
+import * as reducers from "./reducers";
+import {combineReducers, createStore} from "redux"
 var app = combineReducers(reducers);
 var store = createStore(app);
 
