@@ -1,6 +1,6 @@
 "use strict";
 
-import Card from "../../app/components/card";
+import Card from "components/card";
 import React from "react";
 import {shallow} from "enzyme";
 

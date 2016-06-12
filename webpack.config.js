@@ -18,7 +18,9 @@ module.exports = {
     }]
   },
 
-  resolve: {},
+  resolve: {
+    root: [__dirname + "/app"]
+  },
 
   plugins: []
 };
