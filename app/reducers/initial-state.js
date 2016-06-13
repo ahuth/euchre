@@ -2,7 +2,10 @@
 
 const initialState = {
   hands: {
-    south: []
+    north: [],
+    south: [],
+    east: [],
+    west: []
   }
 };
 
