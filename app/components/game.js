@@ -26,6 +26,9 @@ var Game = React.createClass({
   render: function () {
     return (
       <div className="game">
+        <Hand cards={this.state.hands.north} />
+        <Hand cards={this.state.hands.west} />
+        <Hand cards={this.state.hands.east} />
         <Hand cards={this.state.hands.south} />
       </div>
     );

@@ -16,7 +16,10 @@ function hands(state = initialState.hands, action) {
 function dealHands() {
   var deck = new Deck();
   return {
-    south: deck.draw(5)
+    north: deck.draw(5),
+    south: deck.draw(5),
+    east: deck.draw(5),
+    west: deck.draw(5)
   };
 }
 

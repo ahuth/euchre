@@ -19,9 +19,12 @@ describe("hands", function () {
       action = dealHands();
     });
 
-    it("deals 5 objects", function () {
+    it("deals 5 objects to each player", function () {
       var output = hands(null, action);
+      expect(output.north.length).toBe(5);
       expect(output.south.length).toBe(5);
+      expect(output.east.length).toBe(5);
+      expect(output.west.length).toBe(5);
     });
 
     it("deals objects that represents cards", function () {
