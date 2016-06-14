@@ -2,14 +2,11 @@
 
 import hands from "reducers/hands";
 import PlayingCard from "utils/playing-card";
-import playingCards from "utils/playing-cards";
 import {dealHands} from "../../app/actions";
 
 describe("hands", function () {
   it("returns the current state for unknown actions", function () {
-    var currentState = {
-      south: [playingCards.queen.hearts]
-    }
+    var currentState = {south: ["hi"]};
     expect(hands(currentState, {type: "WAT"})).toEqual(currentState);
   });
 
