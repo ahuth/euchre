@@ -1,8 +1,8 @@
 "use strict";
 
-import PlayingCard from "utils/playing-card";
 import React from "react";
 import Table from "components/table";
+import {ace} from "utils/playing-cards";
 import {shallow} from "enzyme";
 
 describe("<Table />", function () {
@@ -10,10 +10,10 @@ describe("<Table />", function () {
 
   beforeEach(function () {
     var hands = {
-      north: [new PlayingCard({face: "ace", suit: "hearts"})],
-      south: [new PlayingCard({face: "ace", suit: "clubs"})],
-      east: [new PlayingCard({face: "ace", suit: "diamonds"})],
-      west: [new PlayingCard({face: "ace", suit: "spades"})]
+      north: [ace.hearts],
+      south: [ace.clubs],
+      east: [ace.diamonds],
+      west: [ace.spades]
     };
     component = shallow(<Table hands={hands} />);
   });

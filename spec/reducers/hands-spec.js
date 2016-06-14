@@ -6,9 +6,7 @@ import {dealHands} from "../../app/actions";
 
 describe("hands", function () {
   it("returns the current state for unknown actions", function () {
-    var currentState = {
-      south: [new PlayingCard({face: "queen", suit: "hearts"})]
-    }
+    var currentState = {south: ["hi"]};
     expect(hands(currentState, {type: "WAT"})).toEqual(currentState);
   });
 
