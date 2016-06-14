@@ -2,16 +2,16 @@
 
 import Card from "components/card";
 import Hand from "components/hand";
-import playingCards from "utils/playing-cards";
 import React from "react";
+import {jack} from "utils/playing-cards";
 import {shallow} from "enzyme";
 
 describe("<Hand />", function () {
   var component, right, left;
 
   beforeEach(function () {
-    right = playingCards.jack.clubs;
-    left = playingCards.jack.spades;
+    right = jack.clubs;
+    left = jack.spades;
     component = shallow(<Hand cards={[right, left]} />);
   });
 

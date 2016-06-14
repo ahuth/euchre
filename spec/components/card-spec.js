@@ -1,8 +1,8 @@
 "use strict";
 
 import Card from "components/card";
-import playingCards from "utils/playing-cards";
 import React from "react";
+import {nine, ace, jack, ten} from "utils/playing-cards";
 import {shallow} from "enzyme";
 
 describe("<Card />", function () {
@@ -11,7 +11,7 @@ describe("<Card />", function () {
   describe("a spade", function () {
     beforeEach(function () {
       component = shallow(
-        <Card card={playingCards.nine.spades} />
+        <Card card={nine.spades} />
       );
     });
 
@@ -29,7 +29,7 @@ describe("<Card />", function () {
   describe("a club", function () {
     beforeEach(function () {
       component = shallow(
-        <Card card={playingCards.ace.clubs} />
+        <Card card={ace.clubs} />
       );
     });
 
@@ -47,7 +47,7 @@ describe("<Card />", function () {
   describe("a heart", function () {
     beforeEach(function () {
       component = shallow(
-        <Card card={playingCards.jack.hearts} />
+        <Card card={jack.hearts} />
       );
     });
 
@@ -65,7 +65,7 @@ describe("<Card />", function () {
   describe("a diamond", function () {
     beforeEach(function () {
       component = shallow(
-        <Card card={playingCards.ten.diamonds} />
+        <Card card={ten.diamonds} />
       );
     });
 
