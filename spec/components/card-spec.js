@@ -2,7 +2,7 @@
 
 import Card from "components/card";
 import React from "react";
-import {nine, ace, jack, ten} from "utils/playing-cards";
+import {ace, jack, nine, ten} from "utils/playing-cards";
 import {shallow} from "enzyme";
 
 describe("<Card />", function () {
