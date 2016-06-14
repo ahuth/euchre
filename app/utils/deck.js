@@ -1,21 +1,19 @@
 "use strict";
 
-import PlayingCard from "./playing-card";
+import playingCards from "./playing-cards";
 import shuffle from "shuffle-array";
 
 var cards = [
-  {face: "nine", suit: "hearts"}, {face: "nine", suit: "clubs"}, {face: "nine", suit: "diamonds"}, {face: "nine", suit: "spades"},
-  {face: "ten", suit: "hearts"}, {face: "ten", suit: "clubs"}, {face: "ten", suit: "diamonds"}, {face: "ten", suit: "spades"},
-  {face: "jack", suit: "hearts"}, {face: "jack", suit: "clubs"}, {face: "jack", suit: "diamonds"}, {face: "jack", suit: "spades"},
-  {face: "queen", suit: "hearts"}, {face: "queen", suit: "clubs"}, {face: "queen", suit: "diamonds"}, {face: "queen", suit: "spades"},
-  {face: "king", suit: "hearts"}, {face: "king", suit: "clubs"}, {face: "king", suit: "diamonds"}, {face: "king", suit: "spades"},
-  {face: "ace", suit: "hearts"}, {face: "ace", suit: "clubs"}, {face: "ace", suit: "diamonds"}, {face: "ace", suit: "spades"}
+  playingCards.nine.hearts, playingCards.nine.clubs, playingCards.nine.diamonds, playingCards.nine.spades,
+  playingCards.ten.hearts, playingCards.ten.clubs, playingCards.ten.diamonds, playingCards.ten.spades,
+  playingCards.jack.hearts, playingCards.jack.clubs, playingCards.jack.diamonds, playingCards.jack.spades,
+  playingCards.queen.hearts, playingCards.queen.clubs, playingCards.queen.diamonds, playingCards.queen.spades,
+  playingCards.king.hearts, playingCards.king.clubs, playingCards.king.diamonds, playingCards.king.spades,
+  playingCards.ace.hearts, playingCards.ace.clubs, playingCards.ace.diamonds, playingCards.ace.spades
 ];
 
 function Deck() {
-  this.cards = shuffle(cards, {copy: true}).map(function (card) {
-    return new PlayingCard(card);
-  });
+  this.cards = shuffle(cards, {copy: true})
 };
 
 Deck.prototype.draw = function (num = 1) {
