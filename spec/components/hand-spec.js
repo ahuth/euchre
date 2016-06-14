@@ -2,7 +2,7 @@
 
 import Card from "components/card";
 import Hand from "components/hand";
-import PlayingCard from "utils/playing-card";
+import playingCards from "utils/playing-cards";
 import React from "react";
 import {shallow} from "enzyme";
 
@@ -10,8 +10,8 @@ describe("<Hand />", function () {
   var component, right, left;
 
   beforeEach(function () {
-    right = new PlayingCard({face: "jack", suit: "clubs"});
-    left = new PlayingCard({face: "jack", suit: "spades"})
+    right = playingCards.jack.clubs;
+    left = playingCards.jack.spades;
     component = shallow(<Hand cards={[right, left]} />);
   });
 
