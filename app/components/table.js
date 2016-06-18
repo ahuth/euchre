@@ -46,7 +46,8 @@ Table.propTypes = {
 var styles = {
   container: {
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    height: "100%"
   },
   row: {
     display: "flex"
