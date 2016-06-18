@@ -50,10 +50,11 @@ var styles = {
     height: "100%"
   },
   row: {
-    display: "flex"
+    display: "flex",
+    flex: "0 0 33.3333%"
   },
   section: {
-    flex: 1
+    flex: "0 0 33.3333%"
   }
 };
 
