@@ -7,14 +7,14 @@ import React from "react";
 function Table({hands}) {
   return (
     <div style={styles.container} className="table">
-      <div style={styles.row}>
+      <div style={Object.assign({}, styles.row, styles.top)}>
         <div style={styles.section}></div>
         <div style={styles.section}>
           <Hand cards={hands.north} />
         </div>
         <div style={styles.section}></div>
       </div>
-      <div style={styles.row}>
+      <div style={Object.assign({}, styles.row, styles.middle)}>
         <div style={styles.section}>
           <Hand cards={hands.west} />
         </div>
@@ -23,7 +23,7 @@ function Table({hands}) {
           <Hand cards={hands.east} />
         </div>
       </div>
-      <div style={styles.row}>
+      <div style={Object.assign({}, styles.row, styles.bottom)}>
         <div style={styles.section}></div>
         <div style={styles.section}>
           <Hand cards={hands.south} />
@@ -52,6 +52,15 @@ var styles = {
   row: {
     display: "flex",
     flex: "0 0 33.3333%"
+  },
+  top: {
+    alignItems: "flex-start"
+  },
+  middle: {
+    alignItems: "center"
+  },
+  bottom: {
+    alignItems: "flex-end"
   },
   section: {
     flex: "0 0 33.3333%"
