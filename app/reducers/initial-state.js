@@ -1,5 +1,7 @@
 "use strict";
 
+import {phases} from "../constants";
+
 const initialState = {
   hands: {
     north: [],
@@ -7,7 +9,8 @@ const initialState = {
     east: [],
     west: [],
     kitty: []
-  }
+  },
+  phase: phases.ORDER_UP
 };
 
 export default initialState;
