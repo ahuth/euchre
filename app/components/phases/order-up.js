@@ -5,16 +5,18 @@ import PlayingCard from "../../utils/playing-card";
 import React from "react";
 import Table from "../table";
 
-function OrderUp({hands}) {
-  return (
-    <div style={styles.container} className="order-up">
-      <Table hands={{north: hands.north, south: hands.south, east: hands.east, west: hands.west}} />
-      <div style={styles.kitty}>
-        <Kitty cards={hands.kitty} />
+var OrderUp = React.createClass({
+  render: function () {
+    return (
+      <div style={styles.container} className="order-up">
+        <Table hands={{north: this.props.hands.north, south: this.props.hands.south, east: this.props.hands.east, west: this.props.hands.west}} />
+        <div style={styles.kitty}>
+          <Kitty cards={this.props.hands.kitty} />
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+});
 
 OrderUp.propTypes = {
   hands: React.PropTypes.object.isRequired
