@@ -25,6 +25,11 @@ describe("hands", function () {
       expect(output.west.length).toBe(5);
     });
 
+    it("puts 4 objects in the kitty", function () {
+      var output = hands(null, action);
+      expect(output.kitty.length).toBe(4);
+    });
+
     it("deals objects that represents cards", function () {
       var output = hands(null, action);
       expect(output.south[0] instanceof PlayingCard).toBe(true);
