@@ -1,5 +1,6 @@
 "use strict";
 
+import Kitty from "./kitty";
 import Table from "./table";
 import React from "react";
 import store from "../store";
@@ -26,9 +27,10 @@ var Game = React.createClass({
   render: function () {
     return (
       <div style={styles.container} className="game">
-        <Table
-          hands={this.state.hands}
-        />
+        <Table hands={this.state.hands} />
+        <div style={styles.kitty}>
+          <Kitty cards={this.state.hands.kitty} />
+        </div>
       </div>
     );
   }
@@ -36,7 +38,13 @@ var Game = React.createClass({
 
 var styles = {
   container: {
-    height: "97vh"
+    height: "97vh",
+    position: "relative"
+  },
+  kitty: {
+    position: "absolute",
+    top: "calc(50% - 51px)",
+    right: "calc(50% - 31px)"
   }
 }
 
