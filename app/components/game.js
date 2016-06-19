@@ -4,6 +4,7 @@ import OrderUp from "./phases/order-up";
 import React from "react";
 import store from "../store";
 import {dealHands} from "../actions";
+import {phases} from "../constants";
 
 var Game = React.createClass({
   getInitialState: function () {
@@ -23,10 +24,17 @@ var Game = React.createClass({
     this.setState(store.getState());
   },
 
+  renderPhase: function (phase) {
+    switch (phase) {
+      case phases.ORDER_UP:
+        return <OrderUp hands={this.state.hands} />;
+    }
+  },
+
   render: function () {
     return (
       <div style={styles.container} className="game">
-        <OrderUp hands={this.state.hands} />
+        {this.renderPhase(this.state.phase)}
       </div>
     );
   }

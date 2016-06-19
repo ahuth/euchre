@@ -7,11 +7,19 @@ import {shallow} from "enzyme";
 describe("<Game />", function () {
   var component;
 
-  beforeEach(function () {
-    component = shallow(<Game />);
-  });
+  describe("rendering the correct phase", function () {
+    beforeEach(function () {
+      component = shallow(<Game />);
+    });
 
-  it("renders the order-up phase", function () {
-    expect(component.find("OrderUp").length).toBe(1);
+    describe("when in the order-up phase", function () {
+      beforeEach(function () {
+        expect(component.state("phase")).toBe("order_up");
+      });
+
+      it("renders the correct component", function () {
+        expect(component.find("OrderUp").length).toBe(1);
+      });
+    });
   });
 });
