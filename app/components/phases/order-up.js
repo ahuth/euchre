@@ -1,6 +1,7 @@
 "use strict";
 
 import Kitty from "../kitty";
+import PlayingCard from "../../utils/playing-card";
 import React from "react";
 import Table from "../table";
 
@@ -15,7 +16,15 @@ function OrderUp({hands}) {
   );
 }
 
-OrderUp.propTypes = {};
+OrderUp.propTypes = {
+  hands: React.PropTypes.shape({
+    north: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
+    south: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
+    east: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
+    west: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
+    kitty: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired
+  }).isRequired
+};
 
 var styles = {
   container: {
