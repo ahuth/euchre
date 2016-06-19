@@ -11,12 +11,12 @@ var Game = React.createClass({
   },
 
   componentWillMount: function () {
-    store.unsubscribe = store.subscribe(this.onChange);
+    this.unsubscribe = store.subscribe(this.onChange);
     store.dispatch(dealHands());
   },
 
   componentWillUnmount: function () {
-    store.unsubscribe();
+    this.unsubscribe();
   },
 
   onChange: function () {
