@@ -6,11 +6,30 @@ import React from "react";
 
 function Table({hands}) {
   return (
-    <div className="table">
-      <Hand cards={hands.north} />
-      <Hand cards={hands.west} />
-      <Hand cards={hands.east} />
-      <Hand cards={hands.south} />
+    <div style={styles.container} className="table">
+      <div style={Object.assign({}, styles.row, styles.top)}>
+        <div style={styles.section}></div>
+        <div style={styles.section}>
+          <Hand cards={hands.north} />
+        </div>
+        <div style={styles.section}></div>
+      </div>
+      <div style={Object.assign({}, styles.row, styles.middle)}>
+        <div style={styles.section}>
+          <Hand cards={hands.west} />
+        </div>
+        <div style={styles.section}></div>
+        <div style={styles.section}>
+          <Hand cards={hands.east} />
+        </div>
+      </div>
+      <div style={Object.assign({}, styles.row, styles.bottom)}>
+        <div style={styles.section}></div>
+        <div style={styles.section}>
+          <Hand cards={hands.south} />
+        </div>
+        <div style={styles.section}></div>
+      </div>
     </div>
   );
 }
@@ -22,6 +41,30 @@ Table.propTypes = {
     east: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
     west: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired
   }).isRequired
+};
+
+var styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    height: "100%"
+  },
+  row: {
+    display: "flex",
+    flex: "0 0 33.3333%"
+  },
+  top: {
+    alignItems: "flex-start"
+  },
+  middle: {
+    alignItems: "center"
+  },
+  bottom: {
+    alignItems: "flex-end"
+  },
+  section: {
+    flex: "0 0 33.3333%"
+  }
 };
 
 export default Table;

@@ -11,12 +11,12 @@ var Game = React.createClass({
   },
 
   componentWillMount: function () {
-    store.unsubscribe = store.subscribe(this.onChange);
+    this.unsubscribe = store.subscribe(this.onChange);
     store.dispatch(dealHands());
   },
 
   componentWillUnmount: function () {
-    store.unsubscribe();
+    this.unsubscribe();
   },
 
   onChange: function () {
@@ -25,7 +25,7 @@ var Game = React.createClass({
 
   render: function () {
     return (
-      <div className="game">
+      <div style={styles.container} className="game">
         <Table
           hands={this.state.hands}
         />
@@ -33,5 +33,11 @@ var Game = React.createClass({
     );
   }
 });
+
+var styles = {
+  container: {
+    height: "97vh"
+  }
+}
 
 export default Game;
