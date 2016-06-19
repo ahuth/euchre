@@ -21,32 +21,14 @@ describe("components", function () {
         );
       });
 
-      it("has two options", function () {
-        expect(component.find("Answer").length).toBe(2);
+      it("has the option to pass", function () {
+        var option = <Answer text="Pass" handleClick={passSpy} />;
+        expect(component.contains(option)).toBe(true);
       });
 
-      describe("the option to pass", function () {
-        var option;
-
-        beforeEach(function () {
-          option = component.find("Answer").first()
-        });
-
-        it("exists", function () {
-          expect(option.equals(<Answer text="Pass" handleClick={passSpy} />)).toBe(true)
-        });
-      });
-
-      describe("the option to order up", function () {
-        var option;
-
-        beforeEach(function () {
-          option = component.find("Answer").last()
-        });
-
-        it("exists", function () {
-          expect(option.equals(<Answer text="Order Up" handleClick={orderUpSpy} />)).toBe(true)
-        });
+      it("has the option to order up", function () {
+        var option = <Answer text="Order Up" handleClick={orderUpSpy} />;
+        expect(component.contains(option)).toBe(true);
       });
     });
   })
