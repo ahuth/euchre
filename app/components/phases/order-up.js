@@ -17,13 +17,7 @@ function OrderUp({hands}) {
 }
 
 OrderUp.propTypes = {
-  hands: React.PropTypes.shape({
-    north: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
-    south: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
-    east: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
-    west: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
-    kitty: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired
-  }).isRequired
+  hands: React.PropTypes.object.isRequired
 };
 
 var styles = {
