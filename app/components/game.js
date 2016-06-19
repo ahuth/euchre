@@ -1,7 +1,6 @@
 "use strict";
 
-import Kitty from "./kitty";
-import Table from "./table";
+import OrderUp from "./phases/order-up";
 import React from "react";
 import store from "../store";
 import {dealHands} from "../actions";
@@ -27,10 +26,7 @@ var Game = React.createClass({
   render: function () {
     return (
       <div style={styles.container} className="game">
-        <Table hands={this.state.hands} />
-        <div style={styles.kitty}>
-          <Kitty cards={this.state.hands.kitty} />
-        </div>
+        <OrderUp hands={this.state.hands} />
       </div>
     );
   }
@@ -38,13 +34,7 @@ var Game = React.createClass({
 
 var styles = {
   container: {
-    height: "97vh",
-    position: "relative"
-  },
-  kitty: {
-    position: "absolute",
-    top: "calc(50% - 51px)",
-    right: "calc(50% - 31px)"
+    height: "97vh"
   }
 }
 

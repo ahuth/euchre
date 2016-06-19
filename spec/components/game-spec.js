@@ -11,11 +11,7 @@ describe("<Game />", function () {
     component = shallow(<Game />);
   });
 
-  it("renders a table", function () {
-    expect(component.find("Table").length).toBe(1);
-  });
-
-  it("renders the kitty", function () {
-    expect(component.find("Kitty").length).toBe(1);
+  it("renders the order-up phase", function () {
+    expect(component.find("OrderUp").length).toBe(1);
   });
 });
