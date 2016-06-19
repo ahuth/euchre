@@ -19,7 +19,8 @@ function dealHands() {
     north: deck.draw(5),
     south: deck.draw(5),
     east: deck.draw(5),
-    west: deck.draw(5)
+    west: deck.draw(5),
+    kitty: deck.draw(4)
   };
 }
 

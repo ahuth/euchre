@@ -5,7 +5,8 @@ const initialState = {
     north: [],
     south: [],
     east: [],
-    west: []
+    west: [],
+    kitty: []
   }
 };
 
