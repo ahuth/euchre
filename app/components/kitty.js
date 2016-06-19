@@ -5,11 +5,7 @@ import PlayingCard from "../utils/playing-card";
 import React from "react";
 
 function Kitty({cards}) {
-  return (
-    <div>
-      <Card card={cards[0]} />
-    </div>
-  );
+  return <Card card={cards[0]} />;
 }
 
 Kitty.propTypes = {
