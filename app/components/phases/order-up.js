@@ -3,27 +3,35 @@
 import Kitty from "../kitty";
 import PlayingCard from "../../utils/playing-card";
 import React from "react";
+import ShouldOrderUp from "../questions/should-order-up";
 import Table from "../table";
 
-function OrderUp({hands}) {
-  return (
-    <div style={styles.container} className="order-up">
-      <Table hands={{north: hands.north, south: hands.south, east: hands.east, west: hands.west}} />
-      <div style={styles.kitty}>
-        <Kitty cards={hands.kitty} />
+var OrderUp = React.createClass({
+  handlePass: function () {
+    console.log("Pass!");
+  },
+
+  handleOrderUp: function () {
+    console.log("Order Up!");
+  },
+
+  render: function () {
+    return (
+      <div style={styles.container} className="order-up">
+        <Table hands={{north: this.props.hands.north, south: this.props.hands.south, east: this.props.hands.east, west: this.props.hands.west}} />
+        <div style={styles.kitty}>
+          <Kitty cards={this.props.hands.kitty} />
+        </div>
+        <div style={styles.question}>
+          <ShouldOrderUp handlePass={this.handlePass} handleOrderUp={this.handleOrderUp} />
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+});
 
 OrderUp.propTypes = {
-  hands: React.PropTypes.shape({
-    north: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
-    south: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
-    east: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
-    west: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
-    kitty: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired
-  }).isRequired
+  hands: React.PropTypes.object.isRequired
 };
 
 var styles = {
@@ -35,6 +43,12 @@ var styles = {
     position: "absolute",
     top: "calc(50% - 51px)",
     right: "calc(50% - 31px)"
+  },
+  question: {
+    position: "absolute",
+    bottom: 120,
+    width: "100%",
+    textAlign: "center"
   }
 }
 

@@ -31,6 +31,10 @@ describe("components", function () {
       it("renders the kitty", function () {
         expect(component.find("Kitty").length).toBe(1);
       });
+
+      it("renders the order up question", function () {
+        expect(component.find("ShouldOrderUp").length).toBe(1);
+      });
     });
   });
 });
