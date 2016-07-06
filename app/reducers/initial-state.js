@@ -3,6 +3,7 @@
 import {phases, positions} from "../constants";
 
 const initialState = {
+  current: positions.WEST,
   dealer: positions.SOUTH,
   hands: {
     north: [],
