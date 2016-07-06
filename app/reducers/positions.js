@@ -3,11 +3,11 @@
 import initialState from "./initial-state";
 import {actionTypes} from "../constants";
 
-function dealer(state = initialState.dealer, action) {
+function positions(state = initialState.positions, action) {
   switch (action.type) {
     default:
       return state;
   }
 }
 
-export default dealer;
+export default positions;

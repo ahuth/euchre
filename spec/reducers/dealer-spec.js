@@ -1,12 +1,12 @@
 "use strict";
 
-import dealer from "reducers/dealer";
+import positions from "reducers/positions";
 
 describe("reducers", function () {
-  describe("dealer", function () {
+  describe("positions", function () {
     it("returns the current state for unknown actions", function () {
       var currentState = "hi";
-      expect(dealer(currentState, {type: "WAT"})).toEqual(currentState);
+      expect(positions(currentState, {type: "WAT"})).toEqual(currentState);
     });
   });
 });

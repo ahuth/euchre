@@ -3,8 +3,6 @@
 import {phases, positions} from "../constants";
 
 const initialState = {
-  current: positions.WEST,
-  dealer: positions.SOUTH,
   hands: {
     north: [],
     south: [],
@@ -12,7 +10,11 @@ const initialState = {
     west: [],
     kitty: []
   },
-  phase: phases.ORDER_UP
+  phase: phases.ORDER_UP,
+  positions: {
+    current: positions.WEST,
+    dealer: positions.SOUTH
+  }
 };
 
 export default initialState;
