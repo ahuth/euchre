@@ -6,14 +6,14 @@ import {actionTypes, positions as positionTypes} from "../constants";
 function positions(state = initialState.positions, action) {
   switch (action.type) {
     case actionTypes.PASS_ORDER_UP:
-      return Object.assign({}, state, {current: rotateCurrent(state.current)});
+      return Object.assign({}, state, {current: rotate(state.current)});
     default:
       return state;
   }
 }
 
-function rotateCurrent(current) {
-  switch (current) {
+function rotate(position) {
+  switch (position) {
     case positionTypes.NORTH:
       return positionTypes.EAST;
     case positionTypes.SOUTH:
