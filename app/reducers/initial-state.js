@@ -13,7 +13,8 @@ const initialState = {
   phase: phases.ORDER_UP,
   positions: {
     current: positions.WEST,
-    dealer: positions.SOUTH
+    dealer: positions.SOUTH,
+    initial: positions.WEST
   }
 };
 
