@@ -7,3 +7,9 @@ export function dealHands() {
     type: actionTypes.DEAL_HANDS
   };
 }
+
+export function passOrderUp() {
+  return {
+    type: actionTypes.PASS_ORDER_UP
+  };
+}
