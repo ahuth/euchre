@@ -1,8 +1,9 @@
 "use strict";
 
-import {phases} from "../constants";
+import {phases, positions} from "../constants";
 
 const initialState = {
+  dealer: positions.SOUTH,
   hands: {
     north: [],
     south: [],
