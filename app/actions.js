@@ -8,6 +8,12 @@ export function dealHands() {
   };
 }
 
+export function acceptOrderUp() {
+  return {
+    type: actionTypes.ACCEPT_ORDER_UP
+  };
+}
+
 export function passOrderUp() {
   return {
     type: actionTypes.PASS_ORDER_UP

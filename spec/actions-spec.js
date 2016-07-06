@@ -9,6 +9,12 @@ describe("actions", function () {
     });
   });
 
+  describe("acceptOrderUp", function () {
+    it("returns the correct action", function () {
+      expect(actions.acceptOrderUp()).toEqual({type: "accept_order_up"});
+    });
+  });
+
   describe("passOrderUp", function () {
     it("returns the correct action", function () {
       expect(actions.passOrderUp()).toEqual({type: "pass_order_up"});
