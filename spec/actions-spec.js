@@ -24,4 +24,10 @@ describe("actions", function () {
       expect(actions.passOrderUp()).toEqual({type: "pass_order_up"});
     });
   });
+
+  describe("passOrderUpFinal", function () {
+    it("returns the correct action", function () {
+      expect(actions.passOrderUpFinal()).toEqual({type: "pass_order_up_final"});
+    });
+  });
 });

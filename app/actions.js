@@ -21,3 +21,9 @@ export function passOrderUp() {
     type: actionTypes.PASS_ORDER_UP
   };
 }
+
+export function passOrderUpFinal() {
+  return {
+    type: actionTypes.PASS_ORDER_UP_FINAL
+  };
+}
