@@ -9,23 +9,23 @@ describe("reducers", function () {
       var currentState = "hi";
       expect(trump(currentState, {type: "WAT"})).toEqual(currentState);
     });
-  });
 
-  describe("for acceptOrderUp", function () {
-    var state;
+    describe("for acceptOrderUp", function () {
+      var state;
 
-    beforeEach(function () {
-      var action = acceptOrderUp("hearts", "north");
-      state = {suit: "spades", caller: "south"};
-      state = trump(state, action);
-    });
+      beforeEach(function () {
+        var action = acceptOrderUp("hearts", "north");
+        state = {suit: "spades", caller: "south"};
+        state = trump(state, action);
+      });
 
-    it("sets the suit", function () {
-      expect(state.suit).toBe("hearts");
-    });
+      it("sets the suit", function () {
+        expect(state.suit).toBe("hearts");
+      });
 
-    it("sets the caller", function () {
-      expect(state.caller).toBe("north");
+      it("sets the caller", function () {
+        expect(state.caller).toBe("north");
+      });
     });
   });
 });
