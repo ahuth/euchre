@@ -7,7 +7,8 @@ export const actionTypes = {
 };
 
 export const phases = {
-  ORDER_UP: "order_up"
+  ORDER_UP: "order_up",
+  TRICK_WINNING: "trick_winning"
 };
 
 export const positions = {
