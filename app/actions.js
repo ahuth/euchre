@@ -4,13 +4,13 @@ import {actionTypes} from "./constants";
 
 export function dealHands() {
   return {
-    type: actionTypes.DEAL_HANDS
+    type: actionTypes.HANDS_DEAL
   };
 }
 
 export function acceptOrderUp(suit, caller) {
   return {
-    type: actionTypes.ACCEPT_ORDER_UP,
+    type: actionTypes.ORDER_UP_ACCEPT,
     suit: suit,
     caller: caller
   };
@@ -18,12 +18,12 @@ export function acceptOrderUp(suit, caller) {
 
 export function passOrderUp() {
   return {
-    type: actionTypes.PASS_ORDER_UP
+    type: actionTypes.ORDER_UP_PASS
   };
 }
 
 export function passOrderUpFinal() {
   return {
-    type: actionTypes.PASS_ORDER_UP_FINAL
+    type: actionTypes.ORDER_UP_PASS_FINAL
   };
 }

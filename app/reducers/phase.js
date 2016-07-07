@@ -5,9 +5,9 @@ import {actionTypes, phases} from "../constants";
 
 function phase(state = initialState.phase, action) {
   switch (action.type) {
-    case actionTypes.ACCEPT_ORDER_UP:
+    case actionTypes.ORDER_UP_ACCEPT:
       return phases.TRICK_WINNING;
-    case actionTypes.PASS_ORDER_UP_FINAL:
+    case actionTypes.ORDER_UP_PASS_FINAL:
       return phases.PICK_TRUMP;
     default:
       return state;
