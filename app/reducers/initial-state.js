@@ -15,6 +15,10 @@ const initialState = {
     current: positions.WEST,
     dealer: positions.SOUTH,
     initial: positions.WEST
+  },
+  trump: {
+    caller: "",
+    suit: ""
   }
 };
 
