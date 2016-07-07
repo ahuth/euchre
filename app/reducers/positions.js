@@ -5,6 +5,8 @@ import {actionTypes, positions as positionTypes} from "../constants";
 
 function positions(state = initialState.positions, action) {
   switch (action.type) {
+    case actionTypes.ACCEPT_ORDER_UP:
+      return Object.assign({}, state, {current: rotate(state.dealer), initial: rotate(state.dealer)});
     case actionTypes.PASS_ORDER_UP:
       return Object.assign({}, state, {current: rotate(state.current)});
     default:

@@ -1,7 +1,7 @@
 "use strict";
 
 import positions from "reducers/positions";
-import {passOrderUp} from "../../app/actions";
+import {acceptOrderUp, passOrderUp} from "../../app/actions";
 
 describe("reducers", function () {
   describe("positions", function () {
@@ -27,6 +27,24 @@ describe("reducers", function () {
         expect(state.current).toBe("south");
         state = positions(state, action);
         expect(state.current).toBe("west");
+      });
+    });
+
+    describe("for acceptOrderUp", function () {
+      var state;
+
+      beforeEach(function () {
+        var action = acceptOrderUp();
+        state = {current: "west", dealer: "north", initial: "south"};
+        state = positions(state, action);
+      });
+
+      it("sets the current position to left of the dealer", function () {
+        expect(state.current).toBe("east");
+      });
+
+      it("sets the initial position to left of the dealer", function () {
+        expect(state.initial).toBe("east");
       });
     });
   });
