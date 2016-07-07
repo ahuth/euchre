@@ -10,6 +10,24 @@ describe("reducers", function () {
       expect(positions(currentState, {type: "WAT"})).toEqual(currentState);
     });
 
+    describe("for acceptOrderUp", function () {
+      var state;
+
+      beforeEach(function () {
+        var action = acceptOrderUp();
+        state = {current: "west", dealer: "north", initial: "south"};
+        state = positions(state, action);
+      });
+
+      it("sets the current position to left of the dealer", function () {
+        expect(state.current).toBe("east");
+      });
+
+      it("sets the initial position to left of the dealer", function () {
+        expect(state.initial).toBe("east");
+      });
+    });
+
     describe("for passOrderUp", function () {
       var action, state;
 
@@ -45,24 +63,6 @@ describe("reducers", function () {
 
       it("sets the initial position to left of the dealer", function () {
         expect(state.initial).toBe("west");
-      });
-    });
-
-    describe("for acceptOrderUp", function () {
-      var state;
-
-      beforeEach(function () {
-        var action = acceptOrderUp();
-        state = {current: "west", dealer: "north", initial: "south"};
-        state = positions(state, action);
-      });
-
-      it("sets the current position to left of the dealer", function () {
-        expect(state.current).toBe("east");
-      });
-
-      it("sets the initial position to left of the dealer", function () {
-        expect(state.initial).toBe("east");
       });
     });
   });
