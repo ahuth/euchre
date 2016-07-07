@@ -1,6 +1,6 @@
 "use strict";
 
-import {phases} from "../constants";
+import {phases, positions} from "../constants";
 
 const initialState = {
   hands: {
@@ -10,7 +10,16 @@ const initialState = {
     west: [],
     kitty: []
   },
-  phase: phases.ORDER_UP
+  phase: phases.ORDER_UP,
+  positions: {
+    current: positions.WEST,
+    dealer: positions.SOUTH,
+    initial: positions.WEST
+  },
+  trump: {
+    caller: "",
+    suit: ""
+  }
 };
 
 export default initialState;
