@@ -6,7 +6,7 @@ import {actionTypes} from "../constants";
 
 function hands(state = initialState.hands, action) {
   switch (action.type) {
-    case actionTypes.DEAL_HANDS:
+    case actionTypes.HANDS_DEAL:
       return Object.assign({}, state, dealHands());
     default:
       return state;

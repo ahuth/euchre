@@ -2,7 +2,7 @@
 
 import * as reducers from "./reducers";
 import {combineReducers, createStore} from "redux"
-var app = combineReducers(reducers);
-var store = createStore(app);
+var root = combineReducers(reducers);
+var store = createStore(root);
 
 export default store;

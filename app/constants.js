@@ -1,10 +1,10 @@
 "use strict";
 
 export const actionTypes = {
-  ACCEPT_ORDER_UP: "accept_order_up",
-  DEAL_HANDS: "deal_hands",
-  PASS_ORDER_UP: "pass_order_up",
-  PASS_ORDER_UP_FINAL: "pass_order_up_final"
+  HANDS_DEAL: "hands_deal",
+  ORDER_UP_ACCEPT: "order_up_accept",
+  ORDER_UP_PASS: "order_up_pass",
+  ORDER_UP_PASS_FINAL: "order_up_pass_final"
 };
 
 export const phases = {
