@@ -8,9 +8,11 @@ export function dealHands() {
   };
 }
 
-export function acceptOrderUp() {
+export function acceptOrderUp(suit, caller) {
   return {
-    type: actionTypes.ACCEPT_ORDER_UP
+    type: actionTypes.ACCEPT_ORDER_UP,
+    suit: suit,
+    caller: caller
   };
 }
 

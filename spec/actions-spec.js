@@ -11,7 +11,11 @@ describe("actions", function () {
 
   describe("acceptOrderUp", function () {
     it("returns the correct action", function () {
-      expect(actions.acceptOrderUp()).toEqual({type: "accept_order_up"});
+      expect(actions.acceptOrderUp("clubs", "west")).toEqual({
+        type: "accept_order_up",
+        suit: "clubs",
+        caller: "west"
+      });
     });
   });
 
