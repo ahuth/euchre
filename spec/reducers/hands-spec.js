@@ -2,7 +2,7 @@
 
 import hands from "reducers/hands";
 import PlayingCard from "utils/playing-card";
-import {dealHands} from "../../app/actions";
+import {dealHands} from "actions";
 
 describe("reducers", function () {
   describe("hands", function () {

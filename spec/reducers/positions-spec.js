@@ -1,7 +1,7 @@
 "use strict";
 
 import positions from "reducers/positions";
-import {acceptOrderUp, passOrderUpInitial, passOrderUpFinal} from "../../app/actions";
+import {acceptOrderUp, passOrderUpInitial, passOrderUpFinal} from "actions";
 
 describe("reducers", function () {
   describe("positions", function () {

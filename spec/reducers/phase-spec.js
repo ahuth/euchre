@@ -1,8 +1,8 @@
 "use strict";
 
 import phase from "reducers/phase";
-import {acceptOrderUp, dealHands, passOrderUpFinal} from "../../app/actions";
-import {phases} from "../../app/constants";
+import {acceptOrderUp, dealHands, passOrderUpFinal} from "actions";
+import {phases} from "constants";
 
 describe("reducers", function () {
   describe("phase", function () {

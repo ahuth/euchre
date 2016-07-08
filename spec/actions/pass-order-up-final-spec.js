@@ -1,7 +1,7 @@
 "use strict";
 
 import passOrderUpFinal from "actions/pass-order-up-final";
-import {actionTypes} from "../../app/constants";
+import {actionTypes} from "constants";
 
 describe("actions", function () {
   describe("passOrderUpFinal", function () {

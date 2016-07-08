@@ -1,7 +1,7 @@
 "use strict";
 
 import passOrderUpInitial from "actions/pass-order-up-initial";
-import {actionTypes} from "../../app/constants";
+import {actionTypes} from "constants";
 
 describe("actions", function () {
   describe("passOrderUpInitial", function () {
