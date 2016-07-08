@@ -5,13 +5,16 @@ import passOrderUpInitial from "./pass-order-up-initial";
 
 function passOrderUp() {
   return function (dispatch, getState) {
-    var positions = getState().positions;
-    if (positions.current === positions.dealer) {
+    if (isLastTurn(getState())) {
       dispatch(passOrderUpFinal());
     } else {
       dispatch(passOrderUpInitial());
     }
   };
+}
+
+function isLastTurn({positions}) {
+  return positions.current === positions.dealer;
 }
 
 export default passOrderUp;
