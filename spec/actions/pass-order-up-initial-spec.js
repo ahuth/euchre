@@ -1,18 +1,18 @@
 "use strict";
 
-import passOrderUp from "actions/pass-order-up";
+import passOrderUpInitial from "actions/pass-order-up-initial";
 import {actionTypes} from "../../app/constants";
 
 describe("actions", function () {
-  describe("passOrderUp", function () {
+  describe("passOrderUpInitial", function () {
     var action;
 
     beforeEach(function () {
-      action = passOrderUp();
+      action = passOrderUpInitial();
     });
 
     it("returns the correct action", function () {
-      expect(action).toEqual({type: actionTypes.ORDER_UP_PASS});
+      expect(action).toEqual({type: actionTypes.ORDER_UP_PASS_INITIAL});
     });
   });
 });

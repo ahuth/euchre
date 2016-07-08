@@ -7,10 +7,10 @@ function positions(state = initialState.positions, action) {
   switch (action.type) {
     case actionTypes.ORDER_UP_ACCEPT:
       return Object.assign({}, state, {current: rotate(state.dealer), initial: rotate(state.dealer)});
-    case actionTypes.ORDER_UP_PASS:
-      return Object.assign({}, state, {current: rotate(state.current)});
     case actionTypes.ORDER_UP_PASS_FINAL:
       return Object.assign({}, state, {current: rotate(state.dealer), initial: rotate(state.dealer)});
+    case actionTypes.ORDER_UP_PASS_INITIAL:
+      return Object.assign({}, state, {current: rotate(state.current)});
     default:
       return state;
   }
