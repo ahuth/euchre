@@ -13,6 +13,7 @@ describe("components", function () {
       beforeEach(function () {
         component = shallow(
           <OrderUp
+            dispatch={jasmine.createSpy("dispatch")}
             hands={{
               north: [nine.clubs],
               south: [nine.spades],

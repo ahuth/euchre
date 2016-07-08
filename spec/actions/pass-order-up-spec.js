@@ -1,18 +1,53 @@
 "use strict";
 
-import passOrderUp from "actions/pass-order-up";
-import {actionTypes} from "../../app/constants";
+import {actionTypes} from "constants";
+import {passOrderUp, passOrderUpFinal, passOrderUpInitial} from "actions";
 
 describe("actions", function () {
   describe("passOrderUp", function () {
-    var action;
+    var dispatchSpy, getStateSpy;
 
     beforeEach(function () {
-      action = passOrderUp();
+      dispatchSpy = jasmine.createSpy("dispatch");
+      getStateSpy = jasmine.createSpy("getState");
     });
 
-    it("returns the correct action", function () {
-      expect(action).toEqual({type: actionTypes.ORDER_UP_PASS});
+    describe("when the current position is the dealer", function () {
+      beforeEach(function () {
+        var state = {positions: {current: "a", dealer: "a"}};
+        getStateSpy.and.returnValue(state);
+      });
+
+      describe("executing the thunk", function () {
+        beforeEach(function () {
+          var thunk = passOrderUp();
+          thunk(dispatchSpy, getStateSpy);
+        });
+
+        it("dispatches the correct action", function () {
+          var action = passOrderUpFinal();
+          expect(dispatchSpy).toHaveBeenCalledWith(action);
+        });
+      });
+    });
+
+    describe("when the current position is not the dealer", function () {
+      beforeEach(function () {
+        var state = {positions: {current: "a", dealer: "b"}};
+        getStateSpy.and.returnValue(state);
+      });
+
+      describe("executing the thunk", function () {
+        beforeEach(function () {
+          var thunk = passOrderUp();
+          thunk(dispatchSpy, getStateSpy);
+        });
+
+        it("dispatches the correct action", function () {
+          var action = passOrderUpInitial();
+          expect(dispatchSpy).toHaveBeenCalledWith(action);
+        });
+      });
     });
   });
 });

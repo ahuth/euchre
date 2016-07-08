@@ -1,7 +1,7 @@
 "use strict";
 
 import trump from "reducers/trump";
-import {acceptOrderUp} from "../../app/actions";
+import {acceptOrderUp} from "actions";
 
 describe("reducers", function () {
   describe("trump", function () {

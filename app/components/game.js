@@ -27,7 +27,7 @@ var Game = React.createClass({
   renderPhase: function (phase) {
     switch (phase) {
       case phases.ORDER_UP:
-        return <OrderUp hands={this.state.hands} />;
+        return <OrderUp dispatch={store.dispatch} hands={this.state.hands} />;
     }
   },
 

@@ -1,7 +1,7 @@
 "use strict";
 
 import acceptOrderUp from "actions/accept-order-up";
-import {actionTypes} from "../../app/constants";
+import {actionTypes} from "constants";
 
 describe("actions", function () {
   describe("acceptOrderUp", function () {

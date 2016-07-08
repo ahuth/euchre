@@ -5,14 +5,15 @@ import PlayingCard from "../../utils/playing-card";
 import React from "react";
 import ShouldOrderUp from "../questions/should-order-up";
 import Table from "../table";
+import {acceptOrderUp, passOrderUp} from "../../actions";
 
 var OrderUp = React.createClass({
   handlePass: function () {
-    console.log("Pass!");
+    this.props.dispatch(passOrderUp());
   },
 
   handleOrderUp: function () {
-    console.log("Order Up!");
+    this.props.dispatch(acceptOrderUp());
   },
 
   render: function () {
@@ -31,6 +32,7 @@ var OrderUp = React.createClass({
 });
 
 OrderUp.propTypes = {
+  dispatch: React.PropTypes.func.isRequired,
   hands: React.PropTypes.object.isRequired
 };
 

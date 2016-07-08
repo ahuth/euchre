@@ -1,7 +1,7 @@
 "use strict";
 
 import positions from "reducers/positions";
-import {acceptOrderUp, passOrderUp, passOrderUpFinal} from "../../app/actions";
+import {acceptOrderUp, passOrderUpInitial, passOrderUpFinal} from "actions";
 
 describe("reducers", function () {
   describe("positions", function () {
@@ -28,11 +28,11 @@ describe("reducers", function () {
       });
     });
 
-    describe("for passOrderUp", function () {
+    describe("for passOrderUpInitial", function () {
       var action, state;
 
       beforeEach(function () {
-        action = passOrderUp();
+        action = passOrderUpInitial();
         state = {current: "west", dealer: "south", initial: "west"};
         state = positions(state, action);
       });
