@@ -35,3 +35,7 @@ npm test
 ```
 
 A server will start and chrome will open. When done, stop the test server with `ctrl-c`.
+
+License
+============
+Licensed under the MIT license. See the [LICENSE](LICENSE) file for more information.
