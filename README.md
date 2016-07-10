@@ -2,6 +2,8 @@ Euchre
 ============
 https://en.wikipedia.org/wiki/Euchre
 
+Euchre is a trick-taking card game played between two teams of two players. This is an implementation of it in Javascript. [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org/docs/basics/UsageWithReact.html) are used for the UI and state respectively.
+
 Prerequisites
 ============
 This app requires [NodeJS](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) to be installed.
