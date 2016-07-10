@@ -10,7 +10,7 @@ Prerequisites
 
 Installation
 ============
-Download the ZIP file of the repo, or clone it with
+Download the ZIP file of the repo and extract it, or clone with
 
 ```bash
 git clone https://github.com/ahuth/euchre.git
