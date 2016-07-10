@@ -6,7 +6,7 @@ Euchre is a trick-taking card game played between two teams of two players. This
 
 Prerequisites
 ============
-This app requires [NodeJS](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) to be installed.
+[NodeJS](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) are required to be installed.
 
 Installation
 ============
