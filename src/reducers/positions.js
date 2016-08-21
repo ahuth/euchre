@@ -24,6 +24,8 @@ function rotate(position) {
       return positionTypes.SOUTH;
     case positionTypes.WEST:
       return positionTypes.NORTH;
+    default:
+      return positionTypes.NORTH;
   }
 }
 

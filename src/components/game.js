@@ -2,7 +2,6 @@ import OrderUp from "./phases/order-up";
 import React from "react";
 import store from "../store";
 import {dealHands} from "../actions";
-import {phases} from "../constants";
 
 const styles = {
   container: {
@@ -30,7 +29,7 @@ var Game = React.createClass({
 
   renderPhase: function (phase) {
     switch (phase) {
-      case phases.ORDER_UP:
+      default:
         return <OrderUp dispatch={store.dispatch} hands={this.state.hands} />;
     }
   },
