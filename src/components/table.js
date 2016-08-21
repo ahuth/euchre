@@ -2,6 +2,30 @@ import Hand from "./hand";
 import PlayingCard from "../utils/playing-card";
 import React from "react";
 
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    height: "100%"
+  },
+  row: {
+    display: "flex",
+    flex: "0 0 33.3333%"
+  },
+  top: {
+    alignItems: "flex-start"
+  },
+  middle: {
+    alignItems: "center"
+  },
+  bottom: {
+    alignItems: "flex-end"
+  },
+  section: {
+    flex: "0 0 33.3333%"
+  }
+};
+
 function Table({hands}) {
   return (
     <div style={styles.container} className="table">
@@ -39,30 +63,6 @@ Table.propTypes = {
     east: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired,
     west: React.PropTypes.arrayOf(React.PropTypes.instanceOf(PlayingCard)).isRequired
   }).isRequired
-};
-
-var styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    height: "100%"
-  },
-  row: {
-    display: "flex",
-    flex: "0 0 33.3333%"
-  },
-  top: {
-    alignItems: "flex-start"
-  },
-  middle: {
-    alignItems: "center"
-  },
-  bottom: {
-    alignItems: "flex-end"
-  },
-  section: {
-    flex: "0 0 33.3333%"
-  }
 };
 
 export default Table;

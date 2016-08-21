@@ -5,6 +5,24 @@ import ShouldOrderUp from "../questions/should-order-up";
 import Table from "../table";
 import {acceptOrderUp, passOrderUp} from "../../actions";
 
+const styles = {
+  container: {
+    height: "100%",
+    position: "relative"
+  },
+  kitty: {
+    position: "absolute",
+    top: "calc(50% - 51px)",
+    right: "calc(50% - 31px)"
+  },
+  question: {
+    position: "absolute",
+    bottom: 120,
+    width: "100%",
+    textAlign: "center"
+  }
+};
+
 var OrderUp = React.createClass({
   handlePass: function () {
     this.props.dispatch(passOrderUp());
@@ -33,23 +51,5 @@ OrderUp.propTypes = {
   dispatch: React.PropTypes.func.isRequired,
   hands: React.PropTypes.object.isRequired
 };
-
-var styles = {
-  container: {
-    height: "100%",
-    position: "relative"
-  },
-  kitty: {
-    position: "absolute",
-    top: "calc(50% - 51px)",
-    right: "calc(50% - 31px)"
-  },
-  question: {
-    position: "absolute",
-    bottom: 120,
-    width: "100%",
-    textAlign: "center"
-  }
-}
 
 export default OrderUp;

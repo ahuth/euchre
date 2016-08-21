@@ -4,6 +4,12 @@ import store from "../store";
 import {dealHands} from "../actions";
 import {phases} from "../constants";
 
+const styles = {
+  container: {
+    height: "97vh"
+  }
+}
+
 var Game = React.createClass({
   getInitialState: function () {
     return store.getState();
@@ -37,11 +43,5 @@ var Game = React.createClass({
     );
   }
 });
-
-var styles = {
-  container: {
-    height: "97vh"
-  }
-}
 
 export default Game;
