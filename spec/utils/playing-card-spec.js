@@ -1,5 +1,3 @@
-"use strict";
-
 import PlayingCard from "utils/playing-card";
 
 describe("utils", function () {

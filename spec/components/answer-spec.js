@@ -1,5 +1,3 @@
-"use strict";
-
 import Answer from "components/answer";
 import React from "react";
 import {shallow} from "enzyme";

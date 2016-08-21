@@ -1,5 +1,3 @@
-"use strict";
-
 import Card from "components/card";
 import React from "react";
 import {ace, jack, nine, ten} from "utils/playing-cards";

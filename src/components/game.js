@@ -1,5 +1,3 @@
-"use strict";
-
 import OrderUp from "./phases/order-up";
 import React from "react";
 import store from "../store";

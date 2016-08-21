@@ -1,5 +1,3 @@
-"use strict";
-
 import Deck from "utils/deck";
 import PlayingCard from "utils/playing-card";
 

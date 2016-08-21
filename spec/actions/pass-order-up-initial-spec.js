@@ -1,5 +1,3 @@
-"use strict";
-
 import passOrderUpInitial from "actions/pass-order-up-initial";
 import {actionTypes} from "constants";
 

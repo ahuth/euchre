@@ -1,5 +1,3 @@
-"use strict";
-
 import dealHands from "actions/deal-hands";
 import {actionTypes} from "constants";
 

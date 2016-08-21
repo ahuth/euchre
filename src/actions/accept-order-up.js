@@ -1,5 +1,3 @@
-"use strict";
-
 import {actionTypes} from "../constants";
 
 function acceptOrderUp(suit, caller) {

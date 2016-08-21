@@ -1,5 +1,3 @@
-"use strict";
-
 import playingCards from "./playing-cards";
 import shuffle from "shuffle-array";
 

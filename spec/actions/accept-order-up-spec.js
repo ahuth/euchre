@@ -1,5 +1,3 @@
-"use strict";
-
 import acceptOrderUp from "actions/accept-order-up";
 import {actionTypes} from "constants";
 

@@ -1,5 +1,3 @@
-"use strict";
-
 import Hand from "./hand";
 import PlayingCard from "../utils/playing-card";
 import React from "react";

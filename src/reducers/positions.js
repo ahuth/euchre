@@ -1,5 +1,3 @@
-"use strict";
-
 import initialState from "./initial-state";
 import {actionTypes, positions as positionTypes} from "../constants";
 

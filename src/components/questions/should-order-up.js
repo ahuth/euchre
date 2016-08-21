@@ -1,5 +1,3 @@
-"use strict";
-
 import Answer from "../answer";
 import React from "react";
 

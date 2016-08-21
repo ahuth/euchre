@@ -1,5 +1,3 @@
-"use strict";
-
 import OrderUp from "components/phases/order-up";
 import React from "react";
 import {ace, nine} from "utils/playing-cards";

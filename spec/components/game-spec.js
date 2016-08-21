@@ -1,5 +1,3 @@
-"use strict";
-
 import Game from "components/game";
 import React from "react";
 import {shallow} from "enzyme";

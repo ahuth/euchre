@@ -1,5 +1,3 @@
-"use strict";
-
 const faceMapping = {nine: "9", ten: "10", jack: "J", queen: "Q", king: "K", ace: "A"};
 const suitMapping = {spades: "♠", clubs: "♣", hearts: "♥", diamonds: "♦"};
 

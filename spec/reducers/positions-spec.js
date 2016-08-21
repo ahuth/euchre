@@ -1,5 +1,3 @@
-"use strict";
-
 import positions from "reducers/positions";
 import {acceptOrderUp, passOrderUpInitial, passOrderUpFinal} from "actions";
 

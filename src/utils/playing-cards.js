@@ -1,5 +1,3 @@
-"use strict";
-
 import PlayingCard from "./playing-card";
 
 export const nine = {

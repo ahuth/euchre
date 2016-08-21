@@ -1,5 +1,3 @@
-"use strict";
-
 import {phases, positions} from "../constants";
 
 const initialState = {

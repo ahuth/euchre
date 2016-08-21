@@ -1,5 +1,3 @@
-"use strict";
-
 export const actionTypes = {
   HANDS_DEAL: "hands_deal",
   ORDER_UP_ACCEPT: "order_up_accept",

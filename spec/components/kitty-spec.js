@@ -1,5 +1,3 @@
-"use strict";
-
 import Card from "components/card";
 import Kitty from "components/kitty";
 import React from "react";

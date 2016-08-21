@@ -1,5 +1,3 @@
-"use strict";
-
 import Answer from "components/answer";
 import ShouldOrderUp from "components/questions/should-order-up";
 import React from "react";

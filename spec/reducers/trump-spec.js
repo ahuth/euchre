@@ -1,5 +1,3 @@
-"use strict";
-
 import trump from "reducers/trump";
 import {acceptOrderUp} from "actions";
 

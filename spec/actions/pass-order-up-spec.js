@@ -1,5 +1,3 @@
-"use strict";
-
 import {actionTypes} from "constants";
 import {passOrderUp, passOrderUpFinal, passOrderUpInitial} from "actions";
 

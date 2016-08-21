@@ -1,5 +1,3 @@
-"use strict";
-
 import passOrderUpFinal from "./pass-order-up-final";
 import passOrderUpInitial from "./pass-order-up-initial";
 

@@ -1,5 +1,3 @@
-"use strict";
-
 import hands from "reducers/hands";
 import PlayingCard from "utils/playing-card";
 import {dealHands} from "actions";

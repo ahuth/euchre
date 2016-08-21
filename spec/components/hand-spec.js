@@ -1,5 +1,3 @@
-"use strict";
-
 import Card from "components/card";
 import Hand from "components/hand";
 import React from "react";

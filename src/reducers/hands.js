@@ -1,5 +1,3 @@
-"use strict";
-
 import Deck from "utils/deck";
 import initialState from "./initial-state";
 import {actionTypes} from "../constants";
