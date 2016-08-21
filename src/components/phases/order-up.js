@@ -1,5 +1,4 @@
 import Kitty from "../kitty";
-import PlayingCard from "../../utils/playing-card";
 import React from "react";
 import ShouldOrderUp from "../questions/should-order-up";
 import Table from "../table";
