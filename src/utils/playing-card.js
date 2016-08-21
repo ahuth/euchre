@@ -13,7 +13,7 @@ PlayingCard.prototype.toString = function () {
 };
 
 PlayingCard.prototype.color = function () {
-  const isRed = this.suit == "hearts" || this.suit == "diamonds"
+  const isRed = this.suit === "hearts" || this.suit === "diamonds"
   return isRed ? "red" : "black";
 };
 
