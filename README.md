@@ -16,6 +16,12 @@ Download the ZIP file of the repo and extract it, or clone with
 git clone https://github.com/ahuth/euchre.git
 ```
 
+Then, install depdendencies with
+
+```bash
+npm install
+```
+
 Running
 ============
 Start the server with
