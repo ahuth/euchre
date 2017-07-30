@@ -1,7 +1,7 @@
 import React from "react"
 import SuitAndRank from "./suit-and-rank"
 
-export default function Card({ rank, suit }) {
+export default function Card({rank, suit}) {
   return (
     <div style={styles}>
       <SuitAndRank rank={rank} suit={suit} />

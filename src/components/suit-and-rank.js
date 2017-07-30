@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function SuitAndRank({ suit, rank, bottom }) {
+export default function SuitAndRank({suit, rank, bottom}) {
   const styles = {
     bottom: bottom && 4,
     color: colors[suit],
