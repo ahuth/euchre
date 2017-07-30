@@ -1,11 +1,14 @@
 import React from "react"
 import SuitAndRank from "./suit-and-rank"
+import {Invert} from "./layout"
 
 export default function Card({rank, suit}) {
   return (
     <div style={styles}>
       <SuitAndRank rank={rank} suit={suit} />
-      <SuitAndRank rank={rank} suit={suit} bottom />
+      <Invert position={{bottom: 4, right: 4}}>
+        <SuitAndRank rank={rank} suit={suit} />
+      </Invert>
     </div>
   )
 }

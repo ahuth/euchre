@@ -1,14 +1,10 @@
 import React from "react"
 
-export default function SuitAndRank({suit, rank, bottom}) {
+export default function SuitAndRank({suit, rank}) {
   const styles = {
-    bottom: bottom && 4,
     color: colors[suit],
     display: "inline-block",
-    position: "absolute",
-    right: bottom && 4,
     textAlign: "center",
-    transform: bottom && "rotate(180deg)",
   }
 
   return (
