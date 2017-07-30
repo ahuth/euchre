@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
-import './app.css';
+import React from "react"
+import Card from "./card"
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+export default function App() {
+  return (
+    <div>
+      <Card rank="A" suit="hearts" />
+      <Card rank="K" suit="clubs" />
+      <Card rank="Q" suit="diamonds" />
+      <Card rank="J" suit="spades" />
+    </div>
+  )
 }
-
-export default App;
