@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
-import './app.css';
+import React from "react"
+import Card from "./card"
+import {Box, Flex} from "reflexbox"
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+export default function App() {
+  return (
+    <Flex p={1}>
+      <Box p={1}><Card rank="A" suit="hearts" /></Box>
+      <Box p={1}><Card rank="K" suit="clubs" /></Box>
+      <Box p={1}><Card rank="Q" suit="diamonds" /></Box>
+      <Box p={1}><Card rank="J" suit="spades" /></Box>
+    </Flex>
+  )
 }
-
-export default App;
