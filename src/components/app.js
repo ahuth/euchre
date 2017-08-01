@@ -2,7 +2,7 @@ import React from "react"
 import Card from "./card"
 import {Box, Flex} from "reflexbox"
 
-export default function App({ cards }) {
+export default function App({cards}) {
   return (
     <Flex p={1}>
       {cards.map((card) => {
