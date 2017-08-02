@@ -1,6 +1,6 @@
 import React from "react"
 
-export function Invert({children}) {
+export default function Invert({children}) {
   const styles = {
     transform: "rotate(180deg)",
   }

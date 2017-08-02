@@ -1,7 +1,7 @@
 import React from "react"
 import {Box, Flex} from "reflexbox"
+import Invert from "./invert"
 import SuitAndRank from "./suit-and-rank"
-import {Invert} from "./layout"
 
 export default function Card({rank, suit}) {
   return (
