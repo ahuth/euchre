@@ -1,5 +1,7 @@
 const initialState = {
-  cards: [],
+  hands: {
+    south: [],
+  }
 }
 
 export default initialState

@@ -5,7 +5,7 @@ import {startGame} from "../actions"
 
 function mapStateToProps(state) {
   return {
-    cards: state.cards,
+    cards: state.hands.south,
   }
 }
 
