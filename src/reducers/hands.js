@@ -1,5 +1,5 @@
-import take from "lodash/take"
 import shuffle from "lodash/shuffle"
+import take from "lodash/take"
 import initialState from "./initial-state"
 import {CARDS} from "../constants"
 
