@@ -6,7 +6,8 @@ import {CARDS} from "../constants"
 export default function Hands(state = initialState.hands, action) {
   switch (action.type) {
     case "START_GAME":
-      return {...state, south: take(shuffle(CARDS), 5)}
+      const shuffled = shuffle(CARDS)
+      return {south: take(shuffled, 5)}
     default:
       return state
   }
