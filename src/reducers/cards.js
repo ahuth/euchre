@@ -1,14 +1,12 @@
+import take from "lodash/take"
+import shuffle from "lodash/shuffle"
 import initialState from "./initial-state"
+import {CARDS} from "../constants"
 
 export default function Cards(state = initialState.cards, action) {
   switch (action.type) {
     case "START_GAME":
-      return [
-        {rank: "A", suit: "hearts"},
-        {rank: "K", suit: "clubs"},
-        {rank: "Q", suit: "spades"},
-        {rank: "J", suit: "diamonds"},
-      ]
+      return take(shuffle(CARDS), 5)
     default:
       return state
   }
