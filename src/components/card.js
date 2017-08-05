@@ -1,6 +1,6 @@
 import React from "react"
 import {Box, Flex} from "reflexbox"
-import Invert from "./invert"
+import Rotate from "./rotate"
 import SuitAndRank from "./suit-and-rank"
 
 export default function Card({rank, suit}) {
@@ -11,9 +11,9 @@ export default function Card({rank, suit}) {
           <SuitAndRank rank={rank} suit={suit} />
         </Box>
         <Box>
-          <Invert>
+          <Rotate by={180}>
             <SuitAndRank rank={rank} suit={suit} />
-          </Invert>
+          </Rotate>
         </Box>
       </Flex>
     </div>
