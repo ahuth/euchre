@@ -1,1 +1,1 @@
-export {default as startGame} from "./start-game"
+export {default as dealHands} from "./deal-hands"

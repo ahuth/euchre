@@ -1,8 +1,8 @@
 import App from "../components/app"
 import {connect} from "react-redux"
 import {compose, lifecycle} from "recompose"
+import {dealHands} from "../actions"
 import {getHand} from "../selectors"
-import {startGame} from "../actions"
 
 function mapStateToProps(state) {
   return {
@@ -12,8 +12,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    startGame() {
-      dispatch(startGame())
+    dealHands() {
+      dispatch(dealHands())
     }
   }
 }
@@ -22,7 +22,7 @@ export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   lifecycle({
     componentDidMount() {
-      this.props.startGame()
+      this.props.dealHands()
     }
   })
 )(App)
