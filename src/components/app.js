@@ -1,17 +1,17 @@
 import React from "react"
-import Card from "./card"
 import {Box, Flex} from "reflexbox"
+import Hand from "./hand"
+import Pile from "./pile"
 
-export default function App({cards}) {
+export default function App({cards, handleCardClick, played}) {
   return (
-    <Flex p={1}>
-      {cards.map((card) => {
-        return (
-          <Box key={`${card.rank}${card.suit}`} p={1}>
-            <Card rank={card.rank} suit={card.suit} />
-          </Box>
-        )
-      })}
+    <Flex column justify="space-around" style={{height: "100vh"}}>
+      <Box w={1}>
+        <Pile cards={played} />
+      </Box>
+      <Box w={1}>
+        <Hand cards={cards} onCardClick={handleCardClick} />
+      </Box>
     </Flex>
   )
 }
