@@ -2,6 +2,7 @@ import React from "react"
 import {Box, Flex} from "reflexbox"
 import Card from "./card"
 import Rotate from "./rotate"
+import {Card as CardType} from "../types"
 
 export default function App({cards, handleCardClick, played}) {
   return (
@@ -9,7 +10,7 @@ export default function App({cards, handleCardClick, played}) {
       <Flex w={1} justify="center" style={{position: "relative"}}>
         {played.map(({card, rotation}) => {
           return (
-            <Box key={`${card.rank}${card.suit}`} style={{position: "absolute"}}>
+            <Box key={CardType.uniqueKey(card)} style={{position: "absolute"}}>
               <Rotate by={rotation}>
                 <Card rank={card.rank} suit={card.suit} />
               </Rotate>
@@ -21,7 +22,7 @@ export default function App({cards, handleCardClick, played}) {
         <Flex p={1} justify="center">
           {cards.map((card) => {
             return (
-              <Box key={`${card.rank}${card.suit}`} p={1}>
+              <Box key={CardType.uniqueKey(card)} p={1}>
                 <Card onClick={handleCardClick.bind(this, card)} rank={card.rank} suit={card.suit} />
               </Box>
             )
