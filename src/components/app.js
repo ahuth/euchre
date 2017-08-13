@@ -6,7 +6,9 @@ import Pile from "./pile"
 export default function App({cards, handleCardClick, played}) {
   return (
     <Flex column justify="space-around" style={{height: "100vh"}}>
-      <Pile cards={played} />
+      <Box w={1}>
+        <Pile cards={played} />
+      </Box>
       <Box w={1}>
         <Hand cards={cards} onCardClick={handleCardClick} />
       </Box>
