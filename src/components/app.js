@@ -9,7 +9,7 @@ export default function App({cards, handleCardClick, played}) {
       <Box w={1}>
         <Pile cards={played} />
       </Box>
-      <Box w={1}>
+      <Box w={1} style={{height: 100}}>
         <Hand cards={cards} onCardClick={handleCardClick} />
       </Box>
     </Flex>
