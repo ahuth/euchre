@@ -1,6 +1,6 @@
 import initialState from "./initial-state"
 
-export default function Hands(state = initialState.played, action) {
+export default function Played(state = initialState.played, action) {
   switch (action.type) {
     case "PLAY_CARD":
       return state.concat([{
