@@ -2,6 +2,7 @@ import React from "react"
 import {Box, Flex} from "reflexbox"
 import Rotate from "./rotate"
 import SuitAndRank from "./suit-and-rank"
+import {Card as CardType} from "../types"
 
 export default function Card({onClick, rank, suit}) {
   return (
@@ -22,7 +23,7 @@ export default function Card({onClick, rank, suit}) {
 
 const styles = {
   backgroundColor: "white",
-  boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
+  boxShadow: CardType.boxShadow,
   height: 100,
   padding: 4,
   width: 75,
