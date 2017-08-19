@@ -7,7 +7,7 @@ import {getHand, getPlayed} from "../selectors"
 function mapStateToProps(state) {
   return {
     cards: getHand(state, "south"),
-    played: getPlayed(state),
+    upCard: getHand(state, "kitty")[0] || {},
   }
 }
 

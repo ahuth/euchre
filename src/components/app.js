@@ -1,13 +1,15 @@
 import React from "react"
 import {Box, Flex} from "reflexbox"
 import Hand from "./hand"
-import Pile from "./pile"
+import Card from "./card"
 
-export default function App({cards, handleCardClick, played}) {
+export default function App({cards, handleCardClick, upCard}) {
   return (
     <Flex column justify="space-around" style={{height: "100vh"}}>
       <Box w={1} style={{height: 100}}>
-        <Pile cards={played} />
+        <Flex justify="center">
+          <Card rank={upCard.rank} suit={upCard.suit} />
+        </Flex>
       </Box>
       <Box w={1} style={{height: 100}}>
         <Hand cards={cards} onCardClick={handleCardClick} />
