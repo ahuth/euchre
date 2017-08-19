@@ -2,12 +2,12 @@ import App from "../components/app"
 import {branch, compose, lifecycle, renderNothing} from "recompose"
 import {connect} from "react-redux"
 import {dealHands, playCard} from "../actions"
-import {getHand, getUpCard} from "../selectors"
+import {hands} from "../selectors"
 
 function mapStateToProps(state) {
   return {
-    cards: getHand(state, "south"),
-    upCard: getUpCard(state),
+    cards: hands.getHand(state, "south"),
+    upCard: hands.getUpCard(state),
   }
 }
 

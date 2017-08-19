@@ -1,9 +1,14 @@
 import head from "lodash/head"
 
-export function getHand(state, position) {
+function getHand(state, position) {
   return state.hands[position]
 }
 
-export function getUpCard(state) {
+function getUpCard(state) {
   return head(state.hands.kitty)
+}
+
+export default {
+  getHand,
+  getUpCard,
 }

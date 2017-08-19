@@ -1,1 +1,1 @@
-export * from "./hands"
+export {default as hands} from "./hands"
