@@ -6,6 +6,7 @@ const initialState = {
     west: [],
     kitty: [],
   },
+  phase: "order up",
   positions: {
     dealer: "east",
     turn: "south",
