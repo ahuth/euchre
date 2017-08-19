@@ -6,6 +6,10 @@ const initialState = {
     west: [],
     kitty: [],
   },
+  positions: {
+    dealer: "east",
+    turn: "south",
+  },
 }
 
 export default initialState
