@@ -1,3 +1,5 @@
+import {Phase} from "../types"
+
 const initialState = {
   hands: {
     north: [],
@@ -6,7 +8,7 @@ const initialState = {
     west: [],
     kitty: [],
   },
-  phase: "order up",
+  phase: Phase.orderUp,
   positions: {
     dealer: "east",
     turn: "south",
