@@ -1,2 +1,1 @@
-export * from "./hands"
-export * from "./played"
+export {default as hands} from "./hands"

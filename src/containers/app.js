@@ -1,13 +1,13 @@
 import App from "../components/app"
+import {branch, compose, lifecycle, renderNothing} from "recompose"
 import {connect} from "react-redux"
-import {compose, lifecycle} from "recompose"
 import {dealHands, playCard} from "../actions"
-import {getHand, getPlayed} from "../selectors"
+import {hands} from "../selectors"
 
 function mapStateToProps(state) {
   return {
-    cards: getHand(state, "south"),
-    played: getPlayed(state),
+    cards: hands.getHand(state, "south"),
+    upCard: hands.getUpCard(state),
   }
 }
 
@@ -28,5 +28,9 @@ export default compose(
     componentDidMount() {
       this.props.dealHands()
     }
-  })
+  }),
+  branch(
+    props => !props.upCard,
+    renderNothing,
+  ),
 )(App)
