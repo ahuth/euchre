@@ -6,7 +6,6 @@ const initialState = {
     west: [],
     kitty: [],
   },
-  played: [],
 }
 
 export default initialState

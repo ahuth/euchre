@@ -2,7 +2,7 @@ import App from "../components/app"
 import {connect} from "react-redux"
 import {compose, lifecycle} from "recompose"
 import {dealHands, playCard} from "../actions"
-import {getHand, getPlayed} from "../selectors"
+import {getHand} from "../selectors"
 
 function mapStateToProps(state) {
   return {
