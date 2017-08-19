@@ -6,7 +6,7 @@ import {hands} from "../selectors"
 
 function mapStateToProps(state) {
   return {
-    cards: hands.getHand(state, "south"),
+    south: hands.getHand(state, "south"),
     upCard: hands.getUpCard(state),
   }
 }

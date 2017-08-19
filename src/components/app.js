@@ -4,9 +4,9 @@ import {Flex} from "reflexbox"
 import Card from "./card"
 import Layout from "./layout"
 
-export default function App({cards, upCard}) {
+export default function App({south, upCard}) {
   return (
-    <Layout cards={cards} onCardClick={noop}>
+    <Layout south={south} onCardClick={noop}>
       <Flex justify="center">
         <Card rank={upCard.rank} suit={upCard.suit} />
       </Flex>
