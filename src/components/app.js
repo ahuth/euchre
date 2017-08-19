@@ -4,7 +4,7 @@ import {Flex} from "reflexbox"
 import Card from "./card"
 import Layout from "./layout"
 
-export default function App({south, upCard}) {
+export default function App({east, north, south, upCard, west}) {
   return (
     <Layout south={south} onCardClick={noop}>
       <Flex justify="center">
