@@ -1,7 +1,6 @@
 import OrderUp from "../components/order-up"
 import {branch, compose, renderNothing} from "recompose"
 import {connect} from "react-redux"
-import {dealHands} from "../actions"
 import {getHand, getUpCard} from "../selectors"
 
 function mapStateToProps(state) {

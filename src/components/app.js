@@ -6,6 +6,7 @@ export default function App({phase}) {
   switch (phase) {
     case Phase.orderUp:
       return <OrderUp />;
-      break;
+    default:
+      return <span>Uh oh :-(</span>;
   }
 }
