@@ -1,15 +1,11 @@
 import React from "react"
-import noop from "lodash/noop"
-import {Flex} from "reflexbox"
-import Card from "./card"
-import Table from "./table"
+import OrderUp from "../containers/order-up"
+import {Phase} from "../types"
 
-export default function App({east, north, south, upCard, west}) {
-  return (
-    <Table south={south} onCardClick={noop}>
-      <Flex justify="center">
-        <Card rank={upCard.rank} suit={upCard.suit} />
-      </Flex>
-    </Table>
-  )
+export default function App({phase}) {
+  switch (phase) {
+    case Phase.orderUp:
+      return <OrderUp />;
+      break;
+  }
 }

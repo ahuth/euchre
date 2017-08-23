@@ -1,16 +1,12 @@
 import App from "../components/app"
-import {branch, compose, lifecycle, renderNothing} from "recompose"
+import {compose, lifecycle} from "recompose"
 import {connect} from "react-redux"
 import {dealHands} from "../actions"
 import {hands} from "../selectors"
 
 function mapStateToProps(state) {
   return {
-    north: hands.getHand(state, "north"),
-    south: hands.getHand(state, "south"),
-    east: hands.getHand(state, "east"),
-    west: hands.getHand(state, "west"),
-    upCard: hands.getUpCard(state),
+    phase: hands.getPhase(state),
   }
 }
 
@@ -29,8 +25,4 @@ export default compose(
       this.props.dealHands()
     }
   }),
-  branch(
-    props => !props.upCard,
-    renderNothing,
-  ),
 )(App)
