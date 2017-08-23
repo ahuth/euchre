@@ -1,7 +1,7 @@
 import OrderUp from "../components/order-up"
 import {branch, compose, renderNothing} from "recompose"
 import {connect} from "react-redux"
-import {getHand, getUpCard} from "../selectors"
+import {getHand, getTurn, getUpCard} from "../selectors"
 
 function mapStateToProps(state) {
   return {
@@ -9,6 +9,7 @@ function mapStateToProps(state) {
     south: getHand(state, "south"),
     east: getHand(state, "east"),
     west: getHand(state, "west"),
+    turn: getTurn(state),
     upCard: getUpCard(state),
   }
 }
