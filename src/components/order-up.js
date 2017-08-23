@@ -4,7 +4,7 @@ import {Box, Flex} from "reflexbox"
 import Card from "./card"
 import Table from "./table"
 
-export default function OrderUp({east, north, south, turn, upCard, west}) {
+export default function OrderUp({south, turn, upCard}) {
   return (
     <Table south={south} onCardClick={noop}>
       <Flex justify="center">

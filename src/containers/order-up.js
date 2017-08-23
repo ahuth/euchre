@@ -5,10 +5,7 @@ import {getHand, getTurn, getUpCard} from "../selectors"
 
 function mapStateToProps(state) {
   return {
-    north: getHand(state, "north"),
     south: getHand(state, "south"),
-    east: getHand(state, "east"),
-    west: getHand(state, "west"),
     turn: getTurn(state),
     upCard: getUpCard(state),
   }
