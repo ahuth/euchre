@@ -2,11 +2,11 @@ import App from "../components/app"
 import {compose, lifecycle} from "recompose"
 import {connect} from "react-redux"
 import {dealHands} from "../actions"
-import {hands} from "../selectors"
+import {getPhase} from "../selectors"
 
 function mapStateToProps(state) {
   return {
-    phase: hands.getPhase(state),
+    phase: getPhase(state),
   }
 }
 
