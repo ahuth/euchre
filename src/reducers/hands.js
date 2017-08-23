@@ -2,12 +2,12 @@ import shuffle from "lodash/shuffle"
 import slice from "lodash/slice"
 import without from "lodash/without"
 import initialState from "./initial-state"
-import {CARDS} from "../constants"
+import {Card} from "../types"
 
 export default function Hands(state = initialState.hands, action) {
   switch (action.type) {
     case "DEAL_HANDS":
-      const shuffled = shuffle(CARDS)
+      const shuffled = shuffle(Card.ALL)
       return {
         north: slice(shuffled, 0, 5),
         south: slice(shuffled, 5, 10),
