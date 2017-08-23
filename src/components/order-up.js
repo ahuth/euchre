@@ -10,14 +10,12 @@ export default function OrderUp({south, turn, upCard}) {
       <Flex justify="center">
         <Flex align="center" column>
           <Card rank={upCard.rank} suit={upCard.suit} />
-          <Box>
-            {turn === "south" &&
-              <div>
-                <button>Pick it up!</button>
-                <button>Pass</button>
-              </div>
-            }
-          </Box>
+          {turn === "south" &&
+            <Box>
+              <button>Pick it up!</button>
+              <button>Pass</button>
+            </Box>
+          }
         </Flex>
       </Flex>
     </Table>
