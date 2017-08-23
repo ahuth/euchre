@@ -1,13 +1,12 @@
 import App from "../components/app"
-import {branch, compose, lifecycle, renderNothing} from "recompose"
+import {compose, lifecycle} from "recompose"
 import {connect} from "react-redux"
-import {dealHands, playCard} from "../actions"
-import {hands} from "../selectors"
+import {dealHands} from "../actions"
+import {getPhase} from "../selectors"
 
 function mapStateToProps(state) {
   return {
-    cards: hands.getHand(state, "south"),
-    upCard: hands.getUpCard(state),
+    phase: getPhase(state),
   }
 }
 
@@ -15,9 +14,6 @@ function mapDispatchToProps(dispatch) {
   return {
     dealHands() {
       dispatch(dealHands())
-    },
-    handleCardClick(card) {
-      dispatch(playCard(card))
     },
   }
 }
@@ -29,8 +25,4 @@ export default compose(
       this.props.dealHands()
     }
   }),
-  branch(
-    props => !props.upCard,
-    renderNothing,
-  ),
 )(App)
