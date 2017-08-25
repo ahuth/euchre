@@ -4,6 +4,7 @@ import {getHand} from "../selectors"
 
 function mapStateToProps(state) {
   return {
+    north: getHand(state, "north"),
     south: getHand(state, "south"),
   }
 }
