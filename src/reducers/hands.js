@@ -18,7 +18,7 @@ export default function Hands(state = initialState.hands, action) {
     case "PLAY_CARD":
       return {
         ...state,
-        south: without(state.south, action.payload.card)
+        south: without(state.south, action.payload.card),
       }
     default:
       return state

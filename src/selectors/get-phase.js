@@ -1,3 +1,3 @@
 export default function getPhase(state) {
-  return state.phase;
+  return state.phase
 }

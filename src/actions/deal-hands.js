@@ -1,5 +1,5 @@
 export default function startGame() {
   return {
-    type: "DEAL_HANDS"
+    type: "DEAL_HANDS",
   }
 }

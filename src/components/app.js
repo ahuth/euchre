@@ -5,8 +5,8 @@ import {Phase} from "../types"
 export default function App({phase}) {
   switch (phase) {
     case Phase.orderUp:
-      return <OrderUp />;
+      return <OrderUp />
     default:
-      return <span>Uh oh :-(</span>;
+      return <span>Uh oh :-(</span>
   }
 }

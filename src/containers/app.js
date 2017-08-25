@@ -23,6 +23,6 @@ export default compose(
   lifecycle({
     componentDidMount() {
       this.props.dealHands()
-    }
-  }),
+    },
+  })
 )(App)
