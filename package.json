@@ -4,11 +4,11 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-redux": "^5.0.5",
-    "react-scripts": "^1.0.11",
-    "recompose": "^0.25.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-scripts": "^1.0.14",
+    "recompose": "^0.25.1",
     "redux": "^3.7.2",
     "reflexbox": "^3.0.0-0"
   },
