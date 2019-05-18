@@ -1,22 +1,14 @@
 import * as Deck from './deck';
-import * as Hand from './hand';
+import * as Hands from './hands';
 
 export enum Phase { callingTrump, trickTaking }
-export enum Position { N, E, S, W }
-
-interface Hands {
-  [Position.N]: Hand.Type;
-  [Position.E]: Hand.Type;
-  [Position.S]: Hand.Type;
-  [Position.W]: Hand.Type;
-}
 
 interface Round {
   alone: boolean,
-  called?: Position,
-  current: Position,
+  called?: Hands.Position,
+  current: Hands.Position,
   deck: Deck.Type,
-  hands: Hands,
+  hands: Hands.Type,
   phase: Phase,
 }
 
@@ -30,12 +22,7 @@ export function create(first: Position): Round {
     alone: false,
     current: first,
     deck: Deck.create(),
-    hands: {
-      [Position.N]: Hand.create(),
-      [Position.E]: Hand.create(),
-      [Position.S]: Hand.create(),
-      [Position.W]: Hand.create(),
-    },
+    hands: Hands.create(),
     phase: Phase.callingTrump,
   };
 }

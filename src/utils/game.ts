@@ -1,3 +1,4 @@
+import * as Hands from './hands';
 import * as Round from './round';
 
 interface Game {
@@ -13,7 +14,7 @@ export type Type = Game;
  */
 export function create(): Game {
   return {
-    round: Round.create(Round.Position.S),
+    round: Round.create(Hands.Position.S),
     score1: 0,
     score2: 0,
   };
