@@ -27,3 +27,10 @@ export function deal(deck: Deck, count: number): [Array<Card.Type>, Deck] {
   const rest = deck.slice(count);
   return [drawn, rest];
 }
+
+/**
+ * Get the first card in the deck without modifying the deck at all.
+ */
+export function peek(deck: Deck): Card.Type {
+  return deck[0];
+}
