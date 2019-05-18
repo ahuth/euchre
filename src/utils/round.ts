@@ -1,3 +1,4 @@
+import * as Card from './card';
 import * as Deck from './deck';
 import * as Hands from './hands';
 
@@ -26,5 +27,51 @@ export function create(dealer: Hands.Position): Round {
     deck: Deck.create(),
     hands: Hands.create(),
     phase: Phase.callingTrump,
+  };
+}
+
+/**
+ * Deal out all four hands.
+ */
+export function deal(round: Round): Round {
+  let { current, deck, hands } = round;
+  let cards: Array<Card.Type>;
+
+  // Deal 2 cards, then 3, 2, 3, 3, 2, 3, 2, which results in each hand having 5 cards.
+  [cards, deck] = Deck.deal(deck, 2);
+  hands = Hands.dealTo(hands, current, cards);
+
+  current = Hands.nextPosition(current);
+  [cards, deck] = Deck.deal(deck, 3);
+  hands = Hands.dealTo(hands, current, cards);
+
+  current = Hands.nextPosition(current);
+  [cards, deck] = Deck.deal(deck, 2);
+  hands = Hands.dealTo(hands, current, cards);
+
+  current = Hands.nextPosition(current);
+  [cards, deck] = Deck.deal(deck, 3);
+  hands = Hands.dealTo(hands, current, cards);
+
+  current = Hands.nextPosition(current);
+  [cards, deck] = Deck.deal(deck, 3);
+  hands = Hands.dealTo(hands, current, cards);
+
+  current = Hands.nextPosition(current);
+  [cards, deck] = Deck.deal(deck, 2);
+  hands = Hands.dealTo(hands, current, cards);
+
+  current = Hands.nextPosition(current);
+  [cards, deck] = Deck.deal(deck, 3);
+  hands = Hands.dealTo(hands, current, cards);
+
+  current = Hands.nextPosition(current);
+  [cards, deck] = Deck.deal(deck, 2);
+  hands = Hands.dealTo(hands, current, cards);
+
+  return {
+    ...round,
+    deck,
+    hands,
   };
 }
