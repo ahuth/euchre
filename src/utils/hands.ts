@@ -31,7 +31,7 @@ export function dealTo(hands: Hands, position: Position, cards: Array<Card.Type>
   return {
     ...hands,
     [position]: Hand.deal(hands[position], cards),
-  }
+  };
 }
 
 /**

@@ -10,7 +10,7 @@ const ALL_CARDS = [
   Card.create('9', 'diamonds'), Card.create('10', 'diamonds'), Card.create('J', 'diamonds'), Card.create('Q', 'diamonds'), Card.create('K', 'diamonds'), Card.create('A', 'diamonds'),
   Card.create('9', 'hearts'), Card.create('10', 'hearts'), Card.create('J', 'hearts'), Card.create('Q', 'hearts'), Card.create('K', 'hearts'), Card.create('A', 'hearts'),
   Card.create('9', 'spades'), Card.create('10', 'spades'), Card.create('J', 'spades'), Card.create('Q', 'spades'), Card.create('K', 'spades'), Card.create('A', 'spades'),
-]
+];
 
 /**
  * Create a shuffled deck.
