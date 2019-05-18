@@ -12,6 +12,7 @@
   "scripts": {
     "build": "react-scripts build",
     "deploy": "gh-pages -d build",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "predeploy": "npm run build",
     "start": "react-scripts start",
     "test": "react-scripts test",
