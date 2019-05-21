@@ -2,7 +2,7 @@ import * as Card from './card';
 import * as Deck from './deck';
 import * as Hands from './hands';
 
-export enum Phase { callingTrump, trickTaking }
+export enum Phase { starting, callingTrump, trickTaking }
 
 interface Round {
   alone: boolean,
@@ -26,7 +26,7 @@ export function create(dealer: Hands.Position): Round {
     dealer: dealer,
     deck: Deck.create(),
     hands: Hands.create(),
-    phase: Phase.callingTrump,
+    phase: Phase.starting,
   };
 }
 
@@ -73,5 +73,6 @@ export function deal(round: Round): Round {
     ...round,
     deck,
     hands,
+    phase: Phase.callingTrump,
   };
 }
