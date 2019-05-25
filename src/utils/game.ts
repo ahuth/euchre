@@ -23,3 +23,14 @@ export function create(): Game {
     state: State.notStarted,
   };
 }
+
+/**
+ * Begin paying.
+ */
+export function start(game: Game): Game {
+  return {
+    ...game,
+    round: Round.deal(game.round),
+    state: State.playing,
+  };
+}

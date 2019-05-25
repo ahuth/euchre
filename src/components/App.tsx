@@ -1,6 +1,17 @@
-import React from 'react';
-import Card from './Card';
+import React, { useReducer } from 'react';
+import reducer from '../reducer';
+import NotStarted from './NotStarted';
+import * as Game from '../utils/game';
+
+const initialState = Game.create();
 
 export default function App() {
-  return <Card rank="A" suit="hearts" />;
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  switch (state.state) {
+    case (Game.State.notStarted):
+      return <NotStarted dispatch={dispatch} />;
+    default:
+      return null;
+  }
 }
