@@ -9,7 +9,7 @@ export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   switch (state.state) {
-    case (Game.State.notStarted):
+    case (Game.State.NotStarted):
       return <NotStarted dispatch={dispatch} />;
     default:
       return null;

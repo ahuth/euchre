@@ -1,7 +1,7 @@
 import * as Hands from './hands';
 import * as Round from './round';
 
-export enum State { notStarted, playing, won, lost }
+export enum State { NotStarted, Playing, Won, Lost }
 
 interface Game {
   round: Round.Type,
@@ -20,7 +20,7 @@ export function create(): Game {
     round: Round.create(Hands.Position.S),
     score1: 0,
     score2: 0,
-    state: State.notStarted,
+    state: State.NotStarted,
   };
 }
 
@@ -31,6 +31,6 @@ export function start(game: Game): Game {
   return {
     ...game,
     round: Round.deal(game.round),
-    state: State.playing,
+    state: State.Playing,
   };
 }
