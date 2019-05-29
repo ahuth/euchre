@@ -9,7 +9,7 @@ export type Action =
   | PickItUp
   | PickItUpAlone
   | PlayCard
-  | StartAction
+  | Start
 ;
 
 type CallTrump = { type: 'call_trump', suit: Suit }
@@ -19,7 +19,7 @@ type Pass = { type: 'pass' }
 type PickItUp = { type: 'pick_it_up' }
 type PickItUpAlone = { type: 'pick_it_up_alone' }
 type PlayCard = { type: 'play_card', card: Card }
-type StartAction = { type: 'start' }
+type Start = { type: 'start' }
 
 export default function reducer(state: Game.Type, action: Action) {
   switch (action.type) {
