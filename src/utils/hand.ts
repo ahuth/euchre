@@ -24,3 +24,13 @@ export function deal(hand: Hand, cards: Array<Card.Type>): Hand {
     cards: hand.cards.concat(cards),
   };
 }
+
+/**
+ * Remove a card from the hand.
+ */
+export function remove(hand: Hand, card: Card.Type): Hand {
+  return {
+    ...hand,
+    cards: hand.cards.filter(c => !Card.equal(c, card)),
+  };
+}

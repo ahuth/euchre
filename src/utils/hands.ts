@@ -35,6 +35,16 @@ export function dealTo(hands: Hands, position: Position, cards: Array<Card.Type>
 }
 
 /**
+ * Remove a card from the specified hand.
+ */
+export function removeFrom(hands: Hands, position: Position, card: Card.Type): Hands {
+  return {
+    ...hands,
+    [position]: Hand.remove(hands[position], card),
+  };
+}
+
+/**
  * Get the next position, to the left of one passed in.
  */
 export function nextPosition(position: Position): Position {

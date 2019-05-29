@@ -14,3 +14,10 @@ export type Type = Card;
 export function create(rank: Rank, suit: Suit): Card {
   return { rank, suit };
 }
+
+/**
+ * Determine if two cards are the same or not.
+ */
+export function equal(a: Card, b: Card): boolean {
+  return a.rank === b.rank && a.suit === b.suit;
+}

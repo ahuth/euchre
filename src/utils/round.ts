@@ -30,6 +30,24 @@ export function create(dealer: Hands.Position): Round {
   };
 }
 
+export function callTrump(round: Round, suit: Card.Suit, alone: boolean): Round {
+  return {
+    ...round,
+    alone,
+    called: round.current,
+    current: Hands.nextPosition(round.dealer),
+    phase: Phase.TrickTaking,
+  };
+}
+
+export function discard(round: Round, card: Card.Type): Round {
+  return {
+    ...round,
+    current: Hands.nextPosition(round.dealer),
+    hands: Hands.removeFrom(round.hands, round.dealer, card),
+  };
+}
+
 /**
  * Deal out all four hands.
  */

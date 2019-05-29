@@ -26,11 +26,17 @@ export function create(): Game {
 }
 
 export function callTrump(game: Game, suit: Card.Suit, alone = false): Game {
-  return game;
+  return {
+    ...game,
+    round: Round.callTrump(game.round, suit, alone),
+  };
 }
 
 export function discard(game: Game, card: Card.Type): Game {
-  return game;
+  return {
+    ...game,
+    round: Round.discard(game.round, card),
+  };
 }
 
 export function pass(game: Game): Game {
