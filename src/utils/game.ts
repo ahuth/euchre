@@ -1,3 +1,4 @@
+import * as Card from './card';
 import * as Hands from './hands';
 import * as Round from './round';
 
@@ -22,6 +23,26 @@ export function create(): Game {
     score2: 0,
     state: State.NotStarted,
   };
+}
+
+export function callTrump(game: Game, suit: Card.Suit, alone = false) {
+  return game;
+}
+
+export function discard(game: Game, card: Card.Type) {
+  return game;
+}
+
+export function pass(game: Game) {
+  return game;
+}
+
+export function pickItUp(game: Game, alone = false) {
+  return game;
+}
+
+export function playCard(game: Game, card: Card.Type) {
+  return game;
 }
 
 /**

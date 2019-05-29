@@ -23,6 +23,20 @@ type Start = { type: 'start' }
 
 export default function reducer(state: Game.Type, action: Action) {
   switch (action.type) {
+    case 'call_trump':
+      return Game.callTrump(state, action.suit, false);
+    case 'call_trump_alone':
+      return Game.callTrump(state, action.suit, true);
+    case 'discard':
+      return Game.discard(state, action.card);
+    case 'pass':
+      return Game.pass(state);
+    case 'pick_it_up':
+      return Game.pickItUp(state, false);
+    case 'pick_it_up_alone':
+      return Game.pickItUp(state, true);
+    case 'play_card':
+      return Game.playCard(state, action.card);
     case 'start':
       return Game.start(state);
     default:
