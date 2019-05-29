@@ -25,23 +25,23 @@ export function create(): Game {
   };
 }
 
-export function callTrump(game: Game, suit: Card.Suit, alone = false) {
+export function callTrump(game: Game, suit: Card.Suit, alone = false): Game {
   return game;
 }
 
-export function discard(game: Game, card: Card.Type) {
+export function discard(game: Game, card: Card.Type): Game {
   return game;
 }
 
-export function pass(game: Game) {
+export function pass(game: Game): Game {
   return game;
 }
 
-export function pickItUp(game: Game, alone = false) {
+export function pickItUp(game: Game, alone = false): Game {
   return game;
 }
 
-export function playCard(game: Game, card: Card.Type) {
+export function playCard(game: Game, card: Card.Type): Game {
   return game;
 }
 
