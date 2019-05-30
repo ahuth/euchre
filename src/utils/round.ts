@@ -12,6 +12,7 @@ interface Round {
   deck: Deck.Type,
   hands: Hands.Type,
   phase: Phase,
+  trump?: Card.Suit,
 }
 
 export type Type = Round;
@@ -37,6 +38,7 @@ export function callTrump(round: Round, suit: Card.Suit, alone: boolean): Round 
     called: round.current,
     current: Hands.nextPosition(round.dealer),
     phase: Phase.TrickTaking,
+    trump: suit,
   };
 }
 
