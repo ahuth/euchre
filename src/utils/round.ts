@@ -2,7 +2,7 @@ import * as Card from './card';
 import * as Deck from './deck';
 import * as Hands from './hands';
 
-export enum Phase { Starting, PickingUp, Discarding, CallingTrump, TrickTaking }
+export enum Phase { Starting, PickingUp, Discarding, CallingTrump, TrickTaking, MisDeal }
 
 interface Round {
   alone: boolean,
@@ -48,6 +48,29 @@ export function discard(round: Round, card: Card.Type): Round {
     current: Hands.nextPosition(round.dealer),
     hands: Hands.removeFrom(round.hands, round.dealer, card),
   };
+}
+
+export function pass(round: Round): Round {
+  if (round.current === round.dealer) {
+    if (round.phase === Phase.PickingUp) {
+      return {
+        ...round,
+        current: Hands.nextPosition(round.current),
+        phase: Phase.CallingTrump,
+      };
+    } else {
+      return {
+        ...round,
+        current: Hands.nextPosition(round.current),
+        phase: Phase.MisDeal,
+      };
+    }
+  } else {
+    return {
+      ...round,
+      current: Hands.nextPosition(round.current),
+    };
+  }
 }
 
 export function pickItUp(round: Round, alone: boolean): Round {

@@ -40,7 +40,10 @@ export function discard(game: Game, card: Card.Type): Game {
 }
 
 export function pass(game: Game): Game {
-  return game;
+  return {
+    ...game,
+    round: Round.pass(game.round),
+  };
 }
 
 export function pickItUp(game: Game, alone = false): Game {
