@@ -50,6 +50,20 @@ export function discard(round: Round, card: Card.Type): Round {
   };
 }
 
+export function pickItUp(round: Round, alone: boolean): Round {
+  const [topCard, deck] = Deck.deal(round.deck, 1);
+
+  return {
+    ...round,
+    alone,
+    called: round.current,
+    current: Hands.nextPosition(round.dealer),
+    deck,
+    hands: Hands.dealTo(round.hands, round.dealer, topCard),
+    phase: Phase.Discarding,
+  };
+}
+
 /**
  * Deal out all four hands.
  */

@@ -44,7 +44,10 @@ export function pass(game: Game): Game {
 }
 
 export function pickItUp(game: Game, alone = false): Game {
-  return game;
+  return {
+    ...game,
+    round: Round.pickItUp(game.round, alone),
+  };
 }
 
 export function playCard(game: Game, card: Card.Type): Game {
