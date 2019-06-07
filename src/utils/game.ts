@@ -67,3 +67,18 @@ export function start(game: Game): Game {
     state: State.Playing,
   };
 }
+
+function computeScore(result: Round.TrickResult): number {
+  switch (result) {
+    case Round.TrickResult.WonAllAlone:
+      return 4;
+    case Round.TrickResult.WonAll:
+    case Round.TrickResult.WonAlone:
+      return 2;
+    case Round.TrickResult.Won:
+      return 1;
+    case Round.TrickResult.Pending:
+    case Round.TrickResult.Lost:
+      return 0;
+  }
+}

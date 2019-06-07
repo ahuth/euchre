@@ -3,6 +3,7 @@ import * as Deck from './deck';
 import * as Hands from './hands';
 
 export enum Phase { Starting, PickingUp, Discarding, CallingTrump, TrickTaking, MisDeal };
+export enum TrickResult { WonAllAlone, WonAlone, WonAll, Won, Lost, Pending };
 
 interface Round {
   alone: boolean,
