@@ -2,7 +2,7 @@ import * as Card from './card';
 import * as Hands from './hands';
 import * as Round from './round';
 
-export enum State { NotStarted, Playing, Won, Lost }
+export enum State { NotStarted, Playing, Done };
 
 interface Game {
   round: Round.Type,

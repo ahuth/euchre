@@ -4,7 +4,7 @@ export type Suit = 'clubs' | 'diamonds' | 'hearts' | 'spades';
 interface Card {
   rank: Rank,
   suit: Suit,
-}
+};
 
 export type Type = Card;
 

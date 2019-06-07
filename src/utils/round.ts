@@ -2,7 +2,7 @@ import * as Card from './card';
 import * as Deck from './deck';
 import * as Hands from './hands';
 
-export enum Phase { Starting, PickingUp, Discarding, CallingTrump, TrickTaking, MisDeal }
+export enum Phase { Starting, PickingUp, Discarding, CallingTrump, TrickTaking, MisDeal };
 
 interface Round {
   alone: boolean,
@@ -13,7 +13,7 @@ interface Round {
   hands: Hands.Type,
   phase: Phase,
   trump?: Card.Suit,
-}
+};
 
 export type Type = Round;
 

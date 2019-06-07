@@ -1,14 +1,14 @@
 import * as Card from './card';
 import * as Hand from './hand';
 
-export enum Position { N, E, S, W }
+export enum Position { N, E, S, W };
 
 interface Hands {
   [Position.N]: Hand.Type;
   [Position.E]: Hand.Type;
   [Position.S]: Hand.Type;
   [Position.W]: Hand.Type;
-}
+};
 
 export type Type = Hands;
 
