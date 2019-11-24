@@ -12,29 +12,23 @@
     "test": "react-scripts test",
     "types": "tsc --noEmit"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "dependencies": {
     "lodash": "^4.17.15",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-scripts": "^3.2.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.144",
-    "@types/react": "^16.9.9",
-    "@types/react-dom": "^16.9.2",
+    "@types/lodash": "^4.14.149",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
     "gh-pages": "^2.1.1",
-    "typescript": "^3.6.4"
-  }
+    "typescript": "^3.7.2"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
