@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
-import { Rank, Suit } from '../utils/card';
+import { Ranks, Suits } from '../Card';
 
 type Props = {
-  rank: Rank,
-  suit: Suit,
+  rank: Ranks,
+  suit: Suits,
 }
 
 export default function SuitAndRank({ rank, suit }: Props) {
@@ -17,22 +17,33 @@ export default function SuitAndRank({ rank, suit }: Props) {
 
   return (
     <div style={styles}>
-      <div>{rank}</div>
-      <div>{suits[suit]}</div>
+      <div>{rankSymbols[rank]}</div>
+      <div>{suitSymbols[suit]}</div>
     </div>
   );
 }
 
 const colors = {
-  clubs: 'black',
-  diamonds: 'red',
-  hearts: 'red',
-  spades: 'black',
+  [Suits.Spades]: 'black',
+  [Suits.Hearts]: 'red',
+  [Suits.Clubs]: 'black',
+  [Suits.Diamonds]: 'red',
 };
 
-const suits = {
-  clubs: '♣',
-  diamonds: '♦',
-  hearts: '♥',
-  spades: '♠',
+const suitSymbols = {
+  [Suits.Spades]: '♠',
+  [Suits.Hearts]: '♥',
+  [Suits.Clubs]: '♣',
+  [Suits.Diamonds]: '♦',
+};
+
+const rankSymbols = {
+  [Ranks.Four]: '4',
+  [Ranks.Six]: '6',
+  [Ranks.Nine]: '9',
+  [Ranks.Ten]: '10',
+  [Ranks.Jack]: 'J',
+  [Ranks.Queen]: 'Q',
+  [Ranks.King]: 'K',
+  [Ranks.Ace]: 'A',
 };

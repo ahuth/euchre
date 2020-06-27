@@ -1,11 +1,11 @@
 import React from 'react';
 import Rotate from './Rotate';
 import SuitAndRank from './SuitAndRank';
-import { Rank, Suit } from '../utils/card';
+import { Ranks, Suits } from '../Card';
 
 type Props = {
-  rank: Rank,
-  suit: Suit,
+  rank: Ranks,
+  suit: Suits,
 }
 
 export default function Card({ rank, suit }: Props) {
