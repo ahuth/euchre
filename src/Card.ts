@@ -9,7 +9,44 @@ export class Card {
     this.rank = rank;
     this.suit = suit;
   }
+
+  displayColor() {
+    return colors[this.suit];
+  }
+
+  displayRank() {
+    return rankSymbols[this.rank];
+  }
+
+  displaySuit() {
+    return suitSymbols[this.suit];
+  }
 }
+
+const colors = {
+  [Suits.Spades]: 'text-black',
+  [Suits.Hearts]: 'text-red-600',
+  [Suits.Clubs]: 'text-black',
+  [Suits.Diamonds]: 'text-red-600',
+};
+
+const suitSymbols = {
+  [Suits.Spades]: '♠',
+  [Suits.Hearts]: '♥',
+  [Suits.Clubs]: '♣',
+  [Suits.Diamonds]: '♦',
+};
+
+const rankSymbols = {
+  [Ranks.Four]: '4',
+  [Ranks.Six]: '6',
+  [Ranks.Nine]: '9',
+  [Ranks.Ten]: '10',
+  [Ranks.Jack]: 'J',
+  [Ranks.Queen]: 'Q',
+  [Ranks.King]: 'K',
+  [Ranks.Ace]: 'A',
+};
 
 export const cards = [
   new Card(Ranks.Ace, Suits.Spades),
