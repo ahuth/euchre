@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React from 'react';
+import clsx from 'clsx';
 import { Ranks, Suits } from '../Card';
 
 type Props = {
@@ -7,16 +8,8 @@ type Props = {
 }
 
 export default function SuitAndRank({ rank, suit }: Props) {
-  const styles = useMemo(() => {
-    return {
-      color: colors[suit],
-      display: 'inline-block',
-      textAlign: 'center',
-    } as const;
-  }, [suit]);
-
   return (
-    <div style={styles}>
+    <div className={clsx('inline-block text-center', colors[suit])}>
       <div>{rankSymbols[rank]}</div>
       <div>{suitSymbols[suit]}</div>
     </div>
@@ -24,10 +17,10 @@ export default function SuitAndRank({ rank, suit }: Props) {
 }
 
 const colors = {
-  [Suits.Spades]: 'black',
-  [Suits.Hearts]: 'red',
-  [Suits.Clubs]: 'black',
-  [Suits.Diamonds]: 'red',
+  [Suits.Spades]: 'text-black',
+  [Suits.Hearts]: 'text-red-600',
+  [Suits.Clubs]: 'text-black',
+  [Suits.Diamonds]: 'text-red-600',
 };
 
 const suitSymbols = {
