@@ -1,6 +1,6 @@
 import React from 'react';
 import SuitAndRank from './SuitAndRank';
-import CardInstance from '../Card';
+import {Card as CardInstance} from '../Card';
 
 type Props = {
   card: CardInstance

@@ -1,14 +1,13 @@
 import React from 'react';
 import Back from './Back';
 import Card from './Card';
-import CardInstance, { Ranks, Suits } from '../Card';
-
-const testCard = new CardInstance(Ranks.Ace, Suits.Hearts);
+import sample from 'lodash/sample';
+import { cards } from '../Card';
 
 export default function App() {
   return (
     <div>
-      <Card card={testCard} />
+      <Card card={sample(cards)!} />
       <br />
       <Back />
     </div>
