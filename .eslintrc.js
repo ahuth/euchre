@@ -1,5 +1,9 @@
 module.exports = {
   extends: 'react-app',
+  env: {
+    'jest/globals': true,
+  },
+  plugins: ['jest'],
   rules: {
     'comma-dangle': ['error', {
       arrays: 'always-multiline',
@@ -10,5 +14,5 @@ module.exports = {
     }],
     semi: ['error', 'always'],
     quotes: ['error', 'single'],
-  }
-}
+  },
+};
