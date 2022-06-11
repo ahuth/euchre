@@ -6,9 +6,9 @@ module.exports = {
       objects: 'always-multiline',
       imports: 'always-multiline',
       exports: 'always-multiline',
-      functions: 'always-multiline'
+      functions: 'always-multiline',
     }],
     semi: ['error', 'always'],
-    quotes: ['error', 'single']
+    quotes: ['error', 'single'],
   }
 }
