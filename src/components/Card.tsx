@@ -6,7 +6,7 @@ type Props = {
   card: CardInstance
 }
 
-export default function Card({ card }: Props) {
+export function Card({ card }: Props) {
   return (
     <div className="bg-white flex flex-col justify-between p-1 w-[4.625rem] h-[6.25rem] shadow shadow-slate-400">
       <div>
@@ -16,6 +16,12 @@ export default function Card({ card }: Props) {
         <SuitAndRank card={card} />
       </div>
     </div>
+  );
+}
+
+export function Back() {
+  return (
+    <div className="border border-white border-4 bg-gradient-to-r from-indigo-500 to-black shadow shadow-slate-400 w-[4.625rem] h-[6.25rem]" />
   );
 }
 
