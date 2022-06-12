@@ -13,6 +13,6 @@ module.exports = {
       functions: 'always-multiline',
     }],
     semi: ['error', 'always'],
-    quotes: ['error', 'single'],
+    quotes: ['error', 'single', {avoidEscape: true}],
   },
 };
