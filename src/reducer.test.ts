@@ -5,11 +5,11 @@ describe('deal', () => {
   const action: Action = {
     type: 'deal',
     cards: {
-      1: cards.slice(0, 5),
-      2: cards.slice(5, 10),
-      3: cards.slice(10, 15),
-      4: cards.slice(15, 20),
-      kitty: cards.slice(20),
+      1: [],
+      2: [],
+      3: [],
+      4: [],
+      kitty: [],
     },
   };
 
@@ -81,7 +81,7 @@ describe('ordering_pick', () => {
     pickedBy: 1 as const,
     cards: {
       ...initialState.cards,
-      kitty: [cards[0]],
+      kitty: [cards.ace_hearts],
     },
   };
 
@@ -102,6 +102,6 @@ describe('ordering_pick', () => {
 
   it('captures trump from the top card in the kitty', () => {
     const nextState = reducer(state, action);
-    expect(nextState.trump).toEqual(cards[0].suit);
+    expect(nextState.trump).toEqual(cards.ace_hearts.suit);
   });
 });
