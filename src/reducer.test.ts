@@ -105,3 +105,76 @@ describe('ordering_pick', () => {
     expect(nextState.trump).toEqual(cards.ace_hearts.suit);
   });
 });
+
+describe('picking_pass', () => {
+  const action: Action = {
+    type: 'picking_pass',
+  };
+
+  describe('when the current position is the dealer', () => {
+    const state = {
+      ...initialState,
+      phase: 'picking',
+      current: 3,
+      dealer: 3,
+    } as const;
+
+    it('moves to misdeal', () => {
+      const nextState = reducer(state, action);
+      expect(nextState.phase).toEqual('misdeal');
+    });
+  });
+
+  describe('when the current position is NOT the dealer', () => {
+    const state = {
+      ...initialState,
+      phase: 'picking',
+      current: 1,
+      dealer: 3,
+    } as const;
+
+    it('stays at picking', () => {
+      const nextState = reducer(state, action);
+      expect(nextState.phase).toEqual('picking');
+    });
+
+    it('advances the current position to the left', () => {
+      const nextState = reducer(state, action);
+      expect(nextState.current).toEqual(2);
+    });
+  });
+});
+
+describe('picking_pick', () => {
+  const action: Action = {
+    type: 'picking_pick',
+    suit: cards.ace_clubs.suit,
+  };
+
+  const state = {
+    ...initialState,
+    dealer: 1 as const,
+    current: 3 as const,
+    pickedBy: 1 as const,
+  };
+
+  it('moves to playing', () => {
+    const nextState = reducer(state, action);
+    expect(nextState.phase).toEqual('playing');
+  });
+
+  it("sets the current position to the dealer's left", () => {
+    const nextState = reducer(state, action);
+    expect(nextState.current).toEqual(2);
+  });
+
+  it('captures who ordered it up', () => {
+    const nextState = reducer(state, action);
+    expect(nextState.pickedBy).toEqual(3);
+  });
+
+  it('captures the trump suit', () => {
+    const nextState = reducer(state, action);
+    expect(nextState.trump).toEqual(cards.ace_clubs.suit);
+  });
+});
