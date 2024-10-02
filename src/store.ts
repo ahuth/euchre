@@ -2,7 +2,7 @@ import {create} from 'zustand';
 import {shuffleDeck, type Card} from './cards';
 
 type State = {
-  phase: 'idle' | 'dealing';
+  phase: 'idle' | 'picking';
   hand1: Card[];
   hand2: Card[];
   hand3: Card[];
@@ -25,7 +25,7 @@ export const useStore = create<State>((set) => {
       deal: () => {
         const deck = shuffleDeck();
         set({
-          phase: 'dealing',
+          phase: 'picking',
           hand1: deck.slice(0, 5),
           hand2: deck.slice(5, 10),
           hand3: deck.slice(10, 15),
