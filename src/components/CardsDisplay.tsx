@@ -7,11 +7,12 @@ export default function CardsDisplay() {
   const hand3 = useStore((state) => state.hand3);
   const hand4 = useStore((state) => state.hand4);
   const kitty = useStore((state) => state.kitty);
+  const dealer = useStore((state) => state.dealer);
 
   return (
     <ul className="flex flex-col gap-4">
       <li>
-        <h1 className="text-lg">Hand 1</h1>
+        <h1 className="text-lg">Hand 1 {dealer === 1 && '(dealer)'}</h1>
         <ul className="flex flex-wrap gap-2">
           {hand1.map((card) => {
             return (
@@ -23,7 +24,7 @@ export default function CardsDisplay() {
         </ul>
       </li>
       <li>
-        <h1 className="text-lg">Hand 2</h1>
+        <h1 className="text-lg">Hand 2 {dealer === 2 && '(dealer)'}</h1>
         <ul className="flex flex-wrap gap-2">
           {hand2.map((card) => {
             return (
@@ -35,7 +36,7 @@ export default function CardsDisplay() {
         </ul>
       </li>
       <li>
-        <h1 className="text-lg">Hand 3</h1>
+        <h1 className="text-lg">Hand 3 {dealer === 3 && '(dealer)'}</h1>
         <ul className="flex flex-wrap gap-2">
           {hand3.map((card) => {
             return (
@@ -47,7 +48,7 @@ export default function CardsDisplay() {
         </ul>
       </li>
       <li>
-        <h1 className="text-lg">Hand 4</h1>
+        <h1 className="text-lg">Hand 4 {dealer === 4 && '(dealer)'}</h1>
         <ul className="flex flex-wrap gap-2">
           {hand4.map((card) => {
             return (
