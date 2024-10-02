@@ -1,5 +1,5 @@
 import {useStore} from '../store';
-import Card from './Card';
+import Hand from './Hand';
 
 export default function CardsDisplay() {
   const hand1 = useStore((state) => state.hand1);
@@ -11,75 +11,32 @@ export default function CardsDisplay() {
   const current = useStore((state) => state.current);
 
   return (
-    <ul className="flex flex-col gap-4">
-      <li>
-        <h1 className="text-lg">
-          Hand 1 {dealer === 1 && '(dealer)'} {current === 1 && '(up)'}
-        </h1>
-        <ul className="flex flex-wrap gap-2">
-          {hand1.map((card) => {
-            return (
-              <li key={`${card.rank}-${card.suit}`}>
-                <Card rank={card.rank} suit={card.suit} />
-              </li>
-            );
-          })}
-        </ul>
-      </li>
-      <li>
-        <h1 className="text-lg">
-          Hand 2 {dealer === 2 && '(dealer)'} {current === 2 && '(up)'}
-        </h1>
-        <ul className="flex flex-wrap gap-2">
-          {hand2.map((card) => {
-            return (
-              <li key={`${card.rank}-${card.suit}`}>
-                <Card rank={card.rank} suit={card.suit} />
-              </li>
-            );
-          })}
-        </ul>
-      </li>
-      <li>
-        <h1 className="text-lg">
-          Hand 3 {dealer === 3 && '(dealer)'} {current === 3 && '(up)'}
-        </h1>
-        <ul className="flex flex-wrap gap-2">
-          {hand3.map((card) => {
-            return (
-              <li key={`${card.rank}-${card.suit}`}>
-                <Card rank={card.rank} suit={card.suit} />
-              </li>
-            );
-          })}
-        </ul>
-      </li>
-      <li>
-        <h1 className="text-lg">
-          Hand 4 {dealer === 4 && '(dealer)'} {current === 4 && '(up)'}
-        </h1>
-        <ul className="flex flex-wrap gap-2">
-          {hand4.map((card) => {
-            return (
-              <li key={`${card.rank}-${card.suit}`}>
-                <Card rank={card.rank} suit={card.suit} />
-              </li>
-            );
-          })}
-        </ul>
-      </li>
-      <li>
-        <h1 className="text-lg">Kitty</h1>
-        <ul className="flex flex-wrap gap-2">
-          {kitty.map((card) => {
-            return (
-              <li key={`${card.rank}-${card.suit}`}>
-                <Card rank={card.rank} suit={card.suit} />
-              </li>
-            );
-          })}
-        </ul>
-      </li>
-    </ul>
+    <div className="flex flex-col gap-4">
+      <Hand
+        title="Hand 1"
+        cards={hand1}
+        dealer={dealer === 1}
+        current={current === 1}
+      />
+      <Hand
+        title="Hand 2"
+        cards={hand2}
+        dealer={dealer === 2}
+        current={current === 2}
+      />
+      <Hand
+        title="Hand 3"
+        cards={hand3}
+        dealer={dealer === 3}
+        current={current === 3}
+      />
+      <Hand
+        title="Hand 4"
+        cards={hand4}
+        dealer={dealer === 4}
+        current={current === 4}
+      />
+      <Hand title="Kitty" cards={kitty} dealer={false} current={false} />
+    </div>
   );
 }
