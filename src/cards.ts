@@ -1,5 +1,4 @@
 import shuffle from 'lodash/shuffle';
-import take from 'lodash/take';
 
 export type Rank = 9 | 10 | 'J' | 'Q' | 'K' | 'A';
 export type Suit = 'hearts' | 'diamonds' | 'clubs' | 'spades';
@@ -32,6 +31,6 @@ const cards: Card[] = [
   {rank: 'A', suit: 'spades'},
 ];
 
-export function dealHand() {
-  return take(shuffle(cards), 5);
+export function shuffleDeck() {
+  return shuffle(cards);
 }
