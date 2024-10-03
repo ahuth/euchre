@@ -1,7 +1,7 @@
 import {useStore} from '../store';
 import Hand from './Hand';
 
-export default function CardsDisplay() {
+export default function Ordering() {
   const hand1 = useStore((state) => state.hand1);
   const hand2 = useStore((state) => state.hand2);
   const hand3 = useStore((state) => state.hand3);

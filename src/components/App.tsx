@@ -1,9 +1,10 @@
 import {useEffect} from 'react';
 import {useStore} from '../store';
-import CardsDisplay from './CardsDisplay';
+import Ordering from './Ordering';
 
 export default function App() {
   const actions = useStore((state) => state.actions);
+  const phase = useStore((state) => state.phase);
 
   useEffect(() => {
     actions.deal();
@@ -11,7 +12,9 @@ export default function App() {
 
   return (
     <div className="p-8">
-      <CardsDisplay />
+      {phase === 'ordering' ?
+        <Ordering />
+      : null}
     </div>
   );
 }
