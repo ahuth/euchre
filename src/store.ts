@@ -2,7 +2,7 @@ import {create} from 'zustand';
 import {shuffleDeck, type Card, type Suit} from './cards';
 
 type State = {
-  phase: 'idle' | 'ordering';
+  phase: 'idle' | 'ordering' | 'discarding' | 'picking';
   hand1: Card[];
   hand2: Card[];
   hand3: Card[];
@@ -13,6 +13,8 @@ type State = {
   trump: Suit | null;
   actions: {
     deal: () => void;
+    orderUp: () => void;
+    passOrderUp: () => void;
   };
 };
 
@@ -45,6 +47,34 @@ export const useStore = create<State>((set) => {
             kitty: deck.slice(20),
             dealer: (state.dealer + 1) % 4,
             current: dealersLeft,
+          };
+        });
+      },
+      orderUp: () => {
+        set((state) => {
+          if (state.phase !== 'ordering') {
+            return {};
+          }
+          return {
+            phase: 'discarding',
+            trump: state.kitty[0].suit,
+            current: (state.dealer + 1) % 4,
+          };
+        });
+      },
+      passOrderUp: () => {
+        set((state) => {
+          if (state.phase !== 'ordering') {
+            return {};
+          }
+          if (state.current === state.dealer) {
+            return {
+              phase: 'picking',
+              current: (state.dealer + 1) % 4,
+            };
+          }
+          return {
+            current: (state.current + 1) % 4,
           };
         });
       },

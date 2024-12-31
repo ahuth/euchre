@@ -5,14 +5,13 @@ type Props = {
   title: string;
   cards: Card[];
   dealer: boolean;
-  current: boolean;
 };
 
-export default function Hand({title, cards, dealer, current}: Props) {
+export default function Hand({title, cards, dealer}: Props) {
   return (
     <section>
       <h1 className="text-lg">
-        {title} {dealer && '(dealer)'} {current && '(up)'}
+        {title} {dealer && '(dealer)'}
       </h1>
       <ul className="flex flex-wrap gap-2">
         {cards.map((card) => {

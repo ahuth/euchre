@@ -14,7 +14,7 @@ export default function App() {
     <div className="p-8">
       {phase === 'ordering' ?
         <Ordering />
-      : null}
+      : phase}
     </div>
   );
 }

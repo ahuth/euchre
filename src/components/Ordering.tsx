@@ -2,6 +2,7 @@ import {useStore} from '../store';
 import Hand from './Hand';
 
 export default function Ordering() {
+  const actions = useStore((state) => state.actions);
   const hand1 = useStore((state) => state.hand1);
   const hand2 = useStore((state) => state.hand2);
   const hand3 = useStore((state) => state.hand3);
@@ -12,31 +13,56 @@ export default function Ordering() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Hand
-        title="Hand 1"
-        cards={hand1}
-        dealer={dealer === 1}
-        current={current === 1}
-      />
-      <Hand
-        title="Hand 2"
-        cards={hand2}
-        dealer={dealer === 2}
-        current={current === 2}
-      />
-      <Hand
-        title="Hand 3"
-        cards={hand3}
-        dealer={dealer === 3}
-        current={current === 3}
-      />
-      <Hand
-        title="Hand 4"
-        cards={hand4}
-        dealer={dealer === 4}
-        current={current === 4}
-      />
-      <Hand title="Kitty" cards={kitty} dealer={false} current={false} />
+      <div className="flex flex-wrap gap-2">
+        <Hand title="Hand 1" cards={hand1} dealer={dealer === 0} />
+        {current === 0 && (
+          <Selector onOrderUp={actions.orderUp} onPass={actions.passOrderUp} />
+        )}
+      </div>
+      <div className="flex flex-wrap gap-2">
+        <Hand title="Hand 2" cards={hand2} dealer={dealer === 1} />
+        {current === 1 && (
+          <Selector onOrderUp={actions.orderUp} onPass={actions.passOrderUp} />
+        )}
+      </div>
+      <div className="flex flex-wrap gap-2">
+        <Hand title="Hand 3" cards={hand3} dealer={dealer === 2} />
+        {current === 2 && (
+          <Selector onOrderUp={actions.orderUp} onPass={actions.passOrderUp} />
+        )}
+      </div>
+      <div className="flex flex-wrap gap-2">
+        <Hand title="Hand 4" cards={hand4} dealer={dealer === 3} />
+        {current === 3 && (
+          <Selector onOrderUp={actions.orderUp} onPass={actions.passOrderUp} />
+        )}
+      </div>
+      <Hand title="Kitty" cards={kitty} dealer={false} />
+    </div>
+  );
+}
+
+function Selector({
+  onOrderUp,
+  onPass,
+}: {
+  onOrderUp: () => void;
+  onPass: () => void;
+}) {
+  return (
+    <div className="flex items-end gap-2">
+      <button
+        className="h-12 rounded bg-green-500 px-4 py-2 text-white"
+        onClick={onOrderUp}
+      >
+        Order Up
+      </button>
+      <button
+        className="h-12 rounded bg-red-500 px-4 py-2 text-white"
+        onClick={onPass}
+      >
+        Pass
+      </button>
     </div>
   );
 }
