@@ -1,13 +1,13 @@
+import {useSelector} from '@xstate/store/react';
 import {useEffect} from 'react';
-import {useStore} from '../store';
+import {store} from '../store';
 import Ordering from './Ordering';
 
 export default function App() {
-  const actions = useStore((state) => state.actions);
-  const phase = useStore((state) => state.phase);
+  const phase = useSelector(store, (state) => state.context.phase);
 
   useEffect(() => {
-    actions.deal();
+    store.send({type: 'deal'});
   }, []);
 
   return (

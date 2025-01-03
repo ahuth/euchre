@@ -1,83 +1,60 @@
-import {create} from 'zustand';
+import {createStore} from '@xstate/store';
 import {shuffleDeck, type Card, type Suit} from './cards';
 
-type State = {
-  phase: 'idle' | 'ordering' | 'discarding' | 'picking';
-  hand1: Card[];
-  hand2: Card[];
-  hand3: Card[];
-  hand4: Card[];
-  kitty: Card[];
-  dealer: number;
-  current: number;
-  trump: Suit | null;
-  actions: {
-    deal: () => void;
-    orderUp: () => void;
-    passOrderUp: () => void;
-  };
-};
-
-export const useStore = create<State>((set) => {
-  return {
-    phase: 'idle',
-    hand1: [],
-    hand2: [],
-    hand3: [],
-    hand4: [],
-    kitty: [],
+export const store = createStore({
+  context: {
+    phase: 'idle' as 'idle' | 'ordering' | 'discarding' | 'picking',
+    hand1: [] as Card[],
+    hand2: [] as Card[],
+    hand3: [] as Card[],
+    hand4: [] as Card[],
+    kitty: [] as Card[],
     dealer: 0,
     current: 0,
-    trump: null,
-    actions: {
-      deal: () => {
-        set((state) => {
-          if (state.phase !== 'idle') {
-            return {};
-          }
-          const deck = shuffleDeck();
-          const nextDealer = (state.dealer + 1) % 4;
-          const dealersLeft = (nextDealer + 1) % 4;
-          return {
-            phase: 'ordering',
-            hand1: deck.slice(0, 5),
-            hand2: deck.slice(5, 10),
-            hand3: deck.slice(10, 15),
-            hand4: deck.slice(15, 20),
-            kitty: deck.slice(20),
-            dealer: (state.dealer + 1) % 4,
-            current: dealersLeft,
-          };
-        });
-      },
-      orderUp: () => {
-        set((state) => {
-          if (state.phase !== 'ordering') {
-            return {};
-          }
-          return {
-            phase: 'discarding',
-            trump: state.kitty[0].suit,
-            current: (state.dealer + 1) % 4,
-          };
-        });
-      },
-      passOrderUp: () => {
-        set((state) => {
-          if (state.phase !== 'ordering') {
-            return {};
-          }
-          if (state.current === state.dealer) {
-            return {
-              phase: 'picking',
-              current: (state.dealer + 1) % 4,
-            };
-          }
-          return {
-            current: (state.current + 1) % 4,
-          };
-        });
-      },
+    trump: null as Suit | null,
+  },
+  on: {
+    deal: (context) => {
+      if (context.phase !== 'idle') {
+        return {};
+      }
+      const deck = shuffleDeck();
+      const nextDealer = (context.dealer + 1) % 4;
+      const dealersLeft = (nextDealer + 1) % 4;
+      return {
+        phase: 'ordering' as const,
+        hand1: deck.slice(0, 5),
+        hand2: deck.slice(5, 10),
+        hand3: deck.slice(10, 15),
+        hand4: deck.slice(15, 20),
+        kitty: deck.slice(20),
+        dealer: (context.dealer + 1) % 4,
+        current: dealersLeft,
+      };
     },
-  };
+    orderUp: (context) => {
+      if (context.phase !== 'ordering') {
+        return {};
+      }
+      return {
+        phase: 'discarding' as const,
+        trump: context.kitty[0].suit,
+        current: (context.dealer + 1) % 4,
+      };
+    },
+    passOrderUp: (context) => {
+      if (context.phase !== 'ordering') {
+        return {};
+      }
+      if (context.current === context.dealer) {
+        return {
+          phase: 'picking' as const,
+          current: (context.dealer + 1) % 4,
+        };
+      }
+      return {
+        current: (context.current + 1) % 4,
+      };
+    },
+  },
 });
