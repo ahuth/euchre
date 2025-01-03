@@ -1,6 +1,5 @@
-import {useSelector} from '@xstate/store/react';
 import {useCallback} from 'react';
-import {store} from '../store';
+import {store, useSelector} from '../store';
 import Hand from './Hand';
 
 export default function Ordering() {

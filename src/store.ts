@@ -1,6 +1,8 @@
 import {createStore} from '@xstate/store';
 import {shuffleDeck, type Card, type Suit} from './cards';
 
+export {useSelector} from '@xstate/store/react';
+
 export const store = createStore({
   context: {
     phase: 'idle' as 'idle' | 'ordering' | 'discarding' | 'picking',

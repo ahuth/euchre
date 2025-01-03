@@ -1,6 +1,5 @@
-import {useSelector} from '@xstate/store/react';
 import {useEffect} from 'react';
-import {store} from '../store';
+import {store, useSelector} from '../store';
 import Ordering from './Ordering';
 
 export default function App() {
