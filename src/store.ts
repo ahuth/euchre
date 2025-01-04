@@ -5,7 +5,7 @@ export {useSelector} from '@xstate/store/react';
 
 export const store = createStore({
   context: {
-    phase: 'idle' as 'idle' | 'ordering' | 'discarding' | 'picking',
+    phase: 'idle' as 'idle' | 'ordering' | 'discarding' | 'picking' | 'playing',
     hand1: [] as Card[],
     hand2: [] as Card[],
     hand3: [] as Card[],
@@ -30,6 +30,22 @@ export const store = createStore({
         kitty: deck.slice(20),
         dealer: (context.dealer + 1) % 4,
         current: dealersLeft,
+      };
+    },
+    discard: (context, event: {card: Card}) => {
+      const dealerHandKey =
+        context.current === 0 ? 'hand1'
+        : context.current === 1 ? 'hand2'
+        : context.current === 2 ? 'hand3'
+        : 'hand4';
+
+      return {
+        phase: 'playing' as const,
+        current: (context.dealer + 1) % 4,
+        kitty: [event.card, ...context.kitty],
+        [dealerHandKey]: context[dealerHandKey].filter(
+          (card) => card !== event.card,
+        ),
       };
     },
     orderUp: (context) => {
