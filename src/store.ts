@@ -51,3 +51,7 @@ export const store = createStore({
     },
   },
 });
+
+store.inspect((inspectionEvent) => {
+  console.log(inspectionEvent);
+});
