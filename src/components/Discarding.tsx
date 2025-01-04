@@ -17,9 +17,7 @@ export default function Discarding() {
           cards={hand1}
           dealer={dealer === 0}
           onCardClick={
-            dealer === 0 ?
-              (card) => store.send({type: 'discard', card})
-            : undefined
+            dealer === 0 && ((card) => store.send({type: 'discard', card}))
           }
         />
       </div>
@@ -29,9 +27,7 @@ export default function Discarding() {
           cards={hand2}
           dealer={dealer === 1}
           onCardClick={
-            dealer === 1 ?
-              (card) => store.send({type: 'discard', card})
-            : undefined
+            dealer === 1 && ((card) => store.send({type: 'discard', card}))
           }
         />
       </div>
@@ -41,9 +37,7 @@ export default function Discarding() {
           cards={hand3}
           dealer={dealer === 2}
           onCardClick={
-            dealer === 2 ?
-              (card) => store.send({type: 'discard', card})
-            : undefined
+            dealer === 2 && ((card) => store.send({type: 'discard', card}))
           }
         />
       </div>
@@ -53,9 +47,7 @@ export default function Discarding() {
           cards={hand4}
           dealer={dealer === 3}
           onCardClick={
-            dealer === 3 ?
-              (card) => store.send({type: 'discard', card})
-            : undefined
+            dealer === 3 && ((card) => store.send({type: 'discard', card}))
           }
         />
       </div>

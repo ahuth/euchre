@@ -5,7 +5,7 @@ type Props = {
   title: string;
   cards: Card[];
   dealer: boolean;
-  onCardClick?: (card: Card) => void;
+  onCardClick?: ((card: Card) => void) | false;
 };
 
 export default function Hand({title, cards, dealer, onCardClick}: Props) {
