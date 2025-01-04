@@ -21,7 +21,7 @@ export const store = createStore({
     dealer: 0,
     current: 0,
     orderedBy: 0,
-    trump: null as Suit | null,
+    biden: null as Suit | null,
   },
   on: {
     deal: (context) => {
@@ -54,7 +54,7 @@ export const store = createStore({
       return {
         phase: 'discarding' as const,
         orderedBy: context.current,
-        trump: topCard.suit,
+        biden: topCard.suit,
         kitty: context.kitty.slice(1),
         [dealerHandKey]: context[dealerHandKey].concat(topCard),
       };
@@ -83,7 +83,7 @@ export const store = createStore({
     pickSuit: (context, event: {suit: Suit}) => {
       return {
         phase: 'playing' as const,
-        trump: event.suit,
+        biden: event.suit,
         orderedBy: context.current,
         current: toLeft(context.dealer),
       };
