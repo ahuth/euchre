@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import {suitToSymbol, type Suit} from '../cards';
 import {store, useSelector} from '../store';
+import Button from './ui/Button';
 import Display from './Display';
 
 /**
@@ -42,12 +43,9 @@ function Selector({except}: {except: Suit}) {
           {suitToSymbol(suit)}
         </button>
       ))}
-      <button
-        className="h-12 rounded bg-red-500 px-4 py-2 text-white"
-        onClick={() => store.send({type: 'passPickSuit'})}
-      >
+      <Button onClick={() => store.send({type: 'passPickSuit'})} variant="warn">
         Pass
-      </button>
+      </Button>
     </div>
   );
 }

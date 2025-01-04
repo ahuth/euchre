@@ -1,4 +1,5 @@
 import {store, useSelector} from '../store';
+import Button from './ui/Button';
 import Display from './Display';
 
 /**
@@ -20,18 +21,10 @@ export default function Ordering() {
 function Selector() {
   return (
     <div className="flex items-end gap-2">
-      <button
-        className="h-12 rounded bg-green-500 px-4 py-2 text-white"
-        onClick={() => store.send({type: 'orderUp'})}
-      >
-        Order Up
-      </button>
-      <button
-        className="h-12 rounded bg-red-500 px-4 py-2 text-white"
-        onClick={() => store.send({type: 'passOrderUp'})}
-      >
+      <Button onClick={() => store.send({type: 'orderUp'})}>Order Up</Button>
+      <Button onClick={() => store.send({type: 'passOrderUp'})} variant="warn">
         Pass
-      </button>
+      </Button>
     </div>
   );
 }

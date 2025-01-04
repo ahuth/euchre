@@ -1,4 +1,5 @@
 import {store} from '../store';
+import Button from './ui/Button';
 import Display from './Display';
 
 /**
@@ -7,12 +8,7 @@ import Display from './Display';
 export default function Misdeal() {
   return (
     <>
-      <button
-        className="h-12 rounded bg-green-500 px-4 py-2 text-white"
-        onClick={() => store.send({type: 'deal'})}
-      >
-        Deal next hand
-      </button>
+      <Button onClick={() => store.send({type: 'deal'})}>Deal next hand</Button>
       <Display />
     </>
   );
