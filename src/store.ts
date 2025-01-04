@@ -5,7 +5,13 @@ export {useSelector} from '@xstate/store/react';
 
 export const store = createStore({
   context: {
-    phase: 'idle' as 'idle' | 'ordering' | 'discarding' | 'picking' | 'playing',
+    phase: 'idle' as
+      | 'idle'
+      | 'ordering'
+      | 'discarding'
+      | 'picking'
+      | 'misdeal'
+      | 'playing',
     hand1: [] as Card[],
     hand2: [] as Card[],
     hand3: [] as Card[],
@@ -73,6 +79,24 @@ export const store = createStore({
       }
       return {
         current: (context.current + 1) % 4,
+      };
+    },
+    passPickSuit: (context) => {
+      if (context.current === context.dealer) {
+        return {
+          phase: 'misdeal' as const,
+        };
+      }
+      return {
+        current: (context.current + 1) % 4,
+      };
+    },
+    pickSuit: (context, event: {suit: Suit}) => {
+      return {
+        phase: 'playing' as const,
+        trump: event.suit,
+        orderedBy: context.current,
+        current: (context.dealer + 1) % 4,
       };
     },
   },
