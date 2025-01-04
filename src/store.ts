@@ -1,5 +1,6 @@
 import {createStore} from '@xstate/store';
 import {shuffleDeck, type Card, type Suit} from './cards';
+import {toHandKey, toLeft} from './game';
 
 export {useSelector} from '@xstate/store/react';
 
@@ -25,8 +26,8 @@ export const store = createStore({
   on: {
     deal: (context) => {
       const deck = shuffleDeck();
-      const nextDealer = (context.dealer + 1) % 4;
-      const dealersLeft = (nextDealer + 1) % 4;
+      const nextDealer = toLeft(context.dealer);
+      const dealersLeft = toLeft(nextDealer);
       return {
         phase: 'ordering' as const,
         hand1: deck.slice(0, 5),
@@ -34,20 +35,15 @@ export const store = createStore({
         hand3: deck.slice(10, 15),
         hand4: deck.slice(15, 20),
         kitty: deck.slice(20),
-        dealer: (context.dealer + 1) % 4,
+        dealer: nextDealer,
         current: dealersLeft,
       };
     },
     discard: (context, event: {card: Card}) => {
-      const dealerHandKey =
-        context.current === 0 ? 'hand1'
-        : context.current === 1 ? 'hand2'
-        : context.current === 2 ? 'hand3'
-        : 'hand4';
-
+      const dealerHandKey = toHandKey(context.dealer);
       return {
         phase: 'playing' as const,
-        current: (context.dealer + 1) % 4,
+        current: toLeft(context.dealer),
         kitty: [event.card, ...context.kitty],
         [dealerHandKey]: context[dealerHandKey].filter(
           (card) => card !== event.card,
@@ -56,12 +52,7 @@ export const store = createStore({
     },
     orderUp: (context) => {
       const topCard = context.kitty[0];
-      const dealerHandKey =
-        context.dealer === 0 ? 'hand1'
-        : context.dealer === 1 ? 'hand2'
-        : context.dealer === 2 ? 'hand3'
-        : 'hand4';
-
+      const dealerHandKey = toHandKey(context.dealer);
       return {
         phase: 'discarding' as const,
         orderedBy: context.current,
@@ -74,11 +65,11 @@ export const store = createStore({
       if (context.current === context.dealer) {
         return {
           phase: 'picking' as const,
-          current: (context.dealer + 1) % 4,
+          current: toLeft(context.dealer),
         };
       }
       return {
-        current: (context.current + 1) % 4,
+        current: toLeft(context.current),
       };
     },
     passPickSuit: (context) => {
@@ -88,7 +79,7 @@ export const store = createStore({
         };
       }
       return {
-        current: (context.current + 1) % 4,
+        current: toLeft(context.current),
       };
     },
     pickSuit: (context, event: {suit: Suit}) => {
@@ -96,7 +87,7 @@ export const store = createStore({
         phase: 'playing' as const,
         trump: event.suit,
         orderedBy: context.current,
-        current: (context.dealer + 1) % 4,
+        current: toLeft(context.dealer),
       };
     },
   },
