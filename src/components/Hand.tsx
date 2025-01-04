@@ -19,7 +19,10 @@ export default function Hand({title, cards, dealer, onCardClick}: Props) {
           return (
             <li key={`${card.rank}-${card.suit}`}>
               {onCardClick ?
-                <button onClick={() => onCardClick(card)}>
+                <button
+                  className="motion-safe:transform motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-1"
+                  onClick={() => onCardClick(card)}
+                >
                   <CardComponent rank={card.rank} suit={card.suit} />
                 </button>
               : <CardComponent rank={card.rank} suit={card.suit} />}
