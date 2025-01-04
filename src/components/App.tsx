@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import {store, useSelector} from '../store';
 import Discarding from './Discarding';
 import Display from './Display';
+import Misdeal from './Misdeal';
 import Ordering from './Ordering';
 import Picking from './Picking';
 
@@ -14,13 +15,15 @@ export default function App() {
 
   return (
     <div className="p-8">
-      {phase}
+      <div>{phase}</div>
       {phase === 'ordering' ?
         <Ordering />
       : phase === 'discarding' ?
         <Discarding />
       : phase === 'picking' ?
         <Picking />
+      : phase === 'misdeal' ?
+        <Misdeal />
       : <Display />}
     </div>
   );
