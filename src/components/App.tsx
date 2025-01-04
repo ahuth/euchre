@@ -3,6 +3,7 @@ import {store, useSelector} from '../store';
 import Discarding from './Discarding';
 import Display from './Display';
 import Ordering from './Ordering';
+import Picking from './Picking';
 
 export default function App() {
   const phase = useSelector(store, (state) => state.context.phase);
@@ -18,6 +19,8 @@ export default function App() {
         <Ordering />
       : phase === 'discarding' ?
         <Discarding />
+      : phase === 'picking' ?
+        <Picking />
       : <Display />}
     </div>
   );

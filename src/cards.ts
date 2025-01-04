@@ -34,3 +34,16 @@ const cards: Card[] = [
 export function shuffleDeck() {
   return shuffle(cards);
 }
+
+export function suitToSymbol(suit: Suit) {
+  switch (suit) {
+    case 'hearts':
+      return '♥';
+    case 'diamonds':
+      return '♦';
+    case 'clubs':
+      return '♣';
+    case 'spades':
+      return '♠';
+  }
+}
