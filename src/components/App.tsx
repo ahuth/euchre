@@ -5,6 +5,7 @@ import Display from './Display';
 import Misdeal from './Misdeal';
 import Ordering from './Ordering';
 import Picking from './Picking';
+import Playing from './Playing';
 
 export default function App() {
   const phase = useSelector(store, (state) => state.context.phase);
@@ -24,6 +25,8 @@ export default function App() {
         <Picking />
       : phase === 'misdeal' ?
         <Misdeal />
+      : phase === 'playing' ?
+        <Playing />
       : <Display />}
     </div>
   );

@@ -1,6 +1,6 @@
 import {createStore} from '@xstate/store';
 import {shuffleDeck, type Card, type Suit} from './cards';
-import {removeCard, toHandKey, toLeft} from './game';
+import {removeCard, toHandKey, toPlayedKey, toLeft} from './game';
 
 export {useSelector} from '@xstate/store/react';
 
@@ -19,9 +19,14 @@ export const store = createStore({
     hand4: [] as Card[],
     kitty: [] as Card[],
     dealer: 0,
+    starter: 0,
     current: 0,
     orderedBy: 0,
     biden: null as Suit | null,
+    played1: null as Card | null,
+    played2: null as Card | null,
+    played3: null as Card | null,
+    played4: null as Card | null,
   },
   on: {
     deal: (context) => {
@@ -41,9 +46,11 @@ export const store = createStore({
     },
     discard: (context, event: {card: Card}) => {
       const dealerHandKey = toHandKey(context.dealer);
+      const dealersLeft = toLeft(context.dealer);
       return {
         phase: 'playing' as const,
-        current: toLeft(context.dealer),
+        current: dealersLeft,
+        starter: dealersLeft,
         kitty: [event.card, ...context.kitty],
         [dealerHandKey]: removeCard(context[dealerHandKey], event.card),
       };
@@ -80,12 +87,27 @@ export const store = createStore({
         current: toLeft(context.current),
       };
     },
+    playCard: (context, event: {card: Card}) => {
+      const handKey = toHandKey(context.current);
+      const playedKey = toPlayedKey(context.current);
+      if (context.current === context.starter && context[playedKey] != null) {
+        // Score the trick and deal another hand...
+        return {};
+      }
+      return {
+        current: toLeft(context.current),
+        [handKey]: removeCard(context[handKey], event.card),
+        [playedKey]: event.card,
+      };
+    },
     pickSuit: (context, event: {suit: Suit}) => {
+      const dealersLeft = toLeft(context.dealer);
       return {
         phase: 'playing' as const,
         biden: event.suit,
         orderedBy: context.current,
-        current: toLeft(context.dealer),
+        current: dealersLeft,
+        starter: dealersLeft,
       };
     },
   },
