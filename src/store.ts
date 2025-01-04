@@ -17,9 +17,6 @@ export const store = createStore({
   },
   on: {
     deal: (context) => {
-      if (context.phase !== 'idle') {
-        return {};
-      }
       const deck = shuffleDeck();
       const nextDealer = (context.dealer + 1) % 4;
       const dealersLeft = (nextDealer + 1) % 4;
@@ -35,9 +32,6 @@ export const store = createStore({
       };
     },
     orderUp: (context) => {
-      if (context.phase !== 'ordering') {
-        return {};
-      }
       return {
         phase: 'discarding' as const,
         trump: context.kitty[0].suit,
@@ -45,9 +39,6 @@ export const store = createStore({
       };
     },
     passOrderUp: (context) => {
-      if (context.phase !== 'ordering') {
-        return {};
-      }
       if (context.current === context.dealer) {
         return {
           phase: 'picking' as const,
