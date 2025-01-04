@@ -5,9 +5,10 @@ type Props = {
   title: string;
   cards: Card[];
   dealer: boolean;
+  onCardClick?: (card: Card) => void;
 };
 
-export default function Hand({title, cards, dealer}: Props) {
+export default function Hand({title, cards, dealer, onCardClick}: Props) {
   return (
     <section>
       <h1 className="text-lg">
@@ -17,7 +18,11 @@ export default function Hand({title, cards, dealer}: Props) {
         {cards.map((card) => {
           return (
             <li key={`${card.rank}-${card.suit}`}>
-              <CardComponent rank={card.rank} suit={card.suit} />
+              {onCardClick ?
+                <button onClick={() => onCardClick(card)}>
+                  <CardComponent rank={card.rank} suit={card.suit} />
+                </button>
+              : <CardComponent rank={card.rank} suit={card.suit} />}
             </li>
           );
         })}
