@@ -1,3 +1,5 @@
+import type {Card} from './cards';
+
 export function toLeft(position: number) {
   return (position + 1) % 4;
 }
@@ -13,4 +15,8 @@ export function toHandKey(position: number) {
     return 'hand3';
   }
   return 'hand4';
+}
+
+export function removeCard(hand: Card[], card: Card) {
+  return hand.filter((c) => c !== card);
 }

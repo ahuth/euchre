@@ -1,6 +1,6 @@
 import {createStore} from '@xstate/store';
 import {shuffleDeck, type Card, type Suit} from './cards';
-import {toHandKey, toLeft} from './game';
+import {removeCard, toHandKey, toLeft} from './game';
 
 export {useSelector} from '@xstate/store/react';
 
@@ -45,9 +45,7 @@ export const store = createStore({
         phase: 'playing' as const,
         current: toLeft(context.dealer),
         kitty: [event.card, ...context.kitty],
-        [dealerHandKey]: context[dealerHandKey].filter(
-          (card) => card !== event.card,
-        ),
+        [dealerHandKey]: removeCard(context[dealerHandKey], event.card),
       };
     },
     orderUp: (context) => {
