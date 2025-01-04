@@ -13,6 +13,7 @@ export const store = createStore({
     kitty: [] as Card[],
     dealer: 0,
     current: 0,
+    orderedBy: 0,
     trump: null as Suit | null,
   },
   on: {
@@ -32,10 +33,19 @@ export const store = createStore({
       };
     },
     orderUp: (context) => {
+      const topCard = context.kitty[0];
+      const dealerHandKey =
+        context.dealer === 0 ? 'hand1'
+        : context.dealer === 1 ? 'hand2'
+        : context.dealer === 2 ? 'hand3'
+        : 'hand4';
+
       return {
         phase: 'discarding' as const,
-        trump: context.kitty[0].suit,
-        current: (context.dealer + 1) % 4,
+        orderedBy: context.current,
+        trump: topCard.suit,
+        kitty: context.kitty.slice(1),
+        [dealerHandKey]: context[dealerHandKey].concat(topCard),
       };
     },
     passOrderUp: (context) => {
