@@ -1,16 +1,9 @@
 import clsx from 'clsx';
-import type {Rank, Suit} from '../cards';
+import {suitToSymbol, type Rank, type Suit} from '../cards';
 
 type Props = {
   rank: Rank;
   suit: Suit;
-};
-
-const suits = {
-  hearts: '♥',
-  diamonds: '♦',
-  clubs: '♣',
-  spades: '♠',
 };
 
 const colors = {
@@ -30,7 +23,7 @@ export default function Card({rank, suit}: Props) {
       )}
     >
       {rank}
-      {suits[suit]}
+      {suitToSymbol(suit)}
     </div>
   );
 }
